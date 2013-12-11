@@ -1,0 +1,77 @@
+
+	
+	
+/********** INFO BLOCK - SHOWS UP ON TRAINING REGISTRATION AND SUPPORT HOME PAGE **************/
+	
+.support-block{
+	font-size:1em;
+	border:1px solid #e6e6e6;
+	padding:0;
+	margin-bottom:2.9em;
+	color:#666666;
+}
+.support-block h2{
+	font-size:2.1em;
+	background-color: #e6e6e6;
+	font-weight:normal;
+	margin:0;
+	padding:0.6666667em 0.95238095em; /* 20px */
+	background-repeat: no-repeat;
+	
+}
+.support-block .support-block-content{
+	padding:1.42857143em; /* 20px */
+	font-size:1.5em;
+	line-height:1.2em;
+	margin:0;	
+}
+
+
+.support-block ul > li > ul  {padding-top:.5em;padding-bottom:.5em;}
+.support-block ul > li > ul > li {font-weight:normal;padding-bottom:.5em;}
+.support-block ul > li > ul > li > a{color:#107ab2;text-decoration:none;}
+.support-block ul > li > ul > li > a:hover{color:#107ab2;text-decoration:underline;}
+
+
+
+
+.support-block a{
+	color:#5bb4cf;
+	font-weight:normal;
+}
+.support-block a:hover{
+	color:#107ab2;
+}
+
+.support-block-contact h2{
+	background-image: url(../images/icon_phone.png);
+	background-size:0.95238095em 1.047861905em; /* 20px x 22px */
+	background-position: 0.9047619em 0.6em; /* 19px x 16px */
+	padding-left:2.3em;
+}
+.support-block-warranty h2{
+	background-image: url(../images/icon_shield.png);
+	background-size:0.80952381em 1.047861905em; /* 17px x 22px */
+	background-position: 0.9047619em 0.6em; /* 19px x 16px */
+	padding-left:2.3em;
+}
+.support-block-helpfullinks h2{
+	background-image: url(../images/icon_helpful_links.png);
+	background-size:1.1947619em 1.1947619em; /* 25px x 25px */
+	background-position: 0.9047619em 0.6em; /* 19px x 16px */
+	padding-left:2.5em;
+}
+
+
+.support-block-contact dl{margin-top:1em;}
+.support-block-contact dl > dt{font-weight:bold;}
+.support-block dl > dd,
+.support-block ul > li{padding-bottom:.4em;}
+.support-block dl dd:last-child{padding-bottom:0;}
+
+.support-block-warranty ul{margin-top:1em;}
+.support-block select{max-width:100%;}
+
+@media screen and (min-width: 600px) {	
+	
+}

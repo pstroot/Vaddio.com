@@ -1,0 +1,99 @@
+.content form{
+	width:100%;
+	max-width:100%;
+	padding:2em 2em;
+	margin:2em auto;
+	background-color:#E9E9E9;
+}
+.form-block {
+    margin: 0em;
+}
+.content form input[type=text],
+.content form input[type=password]{
+	font-size:1.5em; 
+	margin-top:0;
+	padding:.2em;
+	vertical-align:middle;
+}
+.content .form-block label{
+	font-size:1.5em; 
+	vertical-align:middle;
+}
+.form-block-submit{text-align:left;margin-top:1.3em;}
+
+.form-block-submit label{display:none;}
+.form-block-submit .rounded-corner-button{
+	-moz-border-radius: 1.2em;
+    -webkit-border-radius: 1.2em;
+    -khtml-border-radius: 1.2em;
+    border-radius: 1.2em;
+	font-size:1.5em;
+	padding:0 1em;
+	cursor: pointer;
+}
+.register, .forgot-password-prompt{
+	font-size:1.5em;
+	margin-top:0.3em;
+}
+.register {
+	margin-top: 1.5em;
+}
+.content .forgot-password-prompt{
+	margin-bottom:0.2em;
+}
+
+
+
+
+
+
+
+body.forgot-password label{
+	width:15%;
+	font-size:1.25em;
+}
+body.forgot-password input{width:85%;}
+
+body.login 			 .errormessage,
+body.forgot-password .errormessage{
+	padding:.5em;
+	background-color:#feb8b8;
+	border:1px solid #e44047;
+	color:#e44047;
+	margin:1em auto;
+	font-size:1.2em;
+	line-height:1.4em;
+	width:50%;
+	min-width:30em;
+	
+    -moz-border-radius: .4em;
+    -webkit-border-radius: .4em;
+    -khtml-border-radius: .4em;
+    border-radius: .4em;
+}
+
+
+@media screen and (min-width: 600px) {
+	html body.login  input[type=password],
+	html body.login  input[type=text]{width:70%;}
+}
+@media screen and (min-width: 760px) {	
+	.content form{
+		width:70%;
+		min-width:30em;
+		padding:3.2em 5em;
+	}
+	.form-block-submit label{display:inline-block;}
+	.register, .forgot-password-prompt{
+		font-size:1.5em;
+		margin-top:0.3em;
+		margin-left:20%; /* same as label width */
+	}
+	.form-block {
+		margin: 0 0 1.3em;
+	}
+
+	body.forgot-password form  .form-error{
+		margin-left:15%;		
+	}
+}

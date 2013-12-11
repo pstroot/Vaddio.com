@@ -1,0 +1,114 @@
+body.categories .header{margin-bottom:1em;}
+
+
+body.categories ul.categories{
+	margin-bottom:7em;
+	margin-left:-2em;
+	margin-right:-2em; /* desired padding (1.4) * font size (1.4) */
+}
+
+body.categories ul.categories li{
+	display:inline;
+	width:100%;	
+	vertical-align:top;
+	display:inline-block;
+	padding-top:1.4em;
+	padding-bottom:1.4em;
+	padding-left:1.4em;
+	padding-right:1.4em;	
+}
+body.categories ul.categories li a{
+	text-decoration:none;	
+	color:#193C73;
+}
+body.categories ul.categories li{
+	font-size:1.5em;
+	line-height:1.4em;
+}
+body.categories ul.categories li h2{	
+	font-weight:bold;		
+	font-size:1.15em;		
+	padding:.4em 0;	
+}
+body.categories ul.categories li h2 a{	color:#5bb4cf;}
+body.categories ul.categories li h2 a:hover{color:#193C73;}
+
+body.categories ul.categories li .image{
+	overflow:hidden;
+	text-align:center;
+}		
+body.categories ul.categories li .image img{
+	max-height:100%;
+	max-width:100%;	
+}	
+body.categories ul.categories li .image{
+	height:auto;
+	position:relative;
+}	
+body.categories ul.categories li .image img{
+	margin:auto; 
+	top:0;bottom:0;left:0; right: 0; 
+}	
+
+body.categories .content .productSearchPulldown{margin-top:1em;position:relative;}
+
+
+
+@media screen and (min-width: 600px) {	
+	body.categories ul.categories {
+		margin-left:-2.1em; /* 14px cell padding x 15px font size */		
+		margin-right:-2.1em; 
+	}
+	
+	body.categories ul.categories li.item .image{
+		height:12em;
+	}		
+	
+	body.categories ul.categories li.item h2 a{color:#193C73;}
+	
+	
+	body.categories .header h1{display:inline-block;width:49%;vertical-align:top;}
+	body.categories .content .productSearchPulldown{display:inline-block;width:49%;margin-top:0;}
+	body.categories .content .productSearchPulldown select{width:100%;margin-top:0.4em;padding:.2em;line-height:4em;}	
+}
+
+
+
+
+body.categories ul.categories > li.item{width:100%;display:inline-block;}
+
+/* horizontal line between rows styling */
+body.categories ul.categories > li.spacer{
+	width:auto;
+	height:0;
+	border-bottom:1px solid #CCCCCC;
+	padding:0;
+	margin-left:1.4em;
+	margin-right:1.4em;
+}
+
+
+/* THIS CONTROLS THE NUMBER OF COLUMNS AND THE HORIZONTAL LINES BETWEEN THE ROWS */
+body.categories ul.categories > li.spacer{display:block;}	
+body.categories ul.categories > li.spacer:nth-last-child(1){border-bottom:none;} /* removes the bottom rule */
+@media screen and (min-width: 400px) {
+	body.categories ul.categories > li.item{width:50%;} /* 2 columns */
+	body.categories ul.categories > li.spacer{display:none;}
+	body.categories ul.categories > li.spacer:nth-child(4n){display:block;}
+	
+	body.categories ul.categories li .image{height:11.7em;}	
+	body.categories ul.categories li .image img{position:absolute; }	
+}
+@media screen and (min-width: 600px) {	
+	body.categories ul.categories > li.item{width:33.33333333%;}/* 3 columns */
+	body.categories ul.categories > li.spacer:nth-child(4n){display:none;}
+	body.categories ul.categories > li.spacer:nth-child(6n){display:block;}
+}
+@media screen and (min-width: 800px) {
+	body.categories ul.categories > li.item{width:25%;} /* 4 columns */
+	body.categories ul.categories > li.spacer:nth-child(6n){display:none;}
+	body.categories ul.categories > li.spacer:nth-child(8n){display:block;}
+}
+
+
+

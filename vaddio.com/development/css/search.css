@@ -1,0 +1,110 @@
+
+
+.header .searchForm input[type=text]{
+	font-size:1.7em;
+	padding:.3em;
+	border:.1em solid #f3f3f3;
+	width:80%;
+}
+.header .searchForm input[type=submit]{
+    text-indent:1000%;
+	background-position: -3em bottom;
+	background-image: url(../images/layout/mobile_nav_icons.png);
+	background-size:9em 6.7em;;
+	background-color:transparent;
+	
+	height:3.0em;
+	width:3.1em;
+	font-size:1em;
+	padding:0;
+	margin:0;
+	border:none;
+	cursor:pointer;
+}
+
+.content h2{
+	font-size:1.5em;
+	color:#666666;
+}
+
+
+
+body.search .leftCol section{
+	border-top:1px solid #CCCCCC;
+	font-size:1.5em;
+	line-height:1.2em;
+	margin-top:1.4666667em; /* 22px at 1.5 font size */
+	padding-top:0.3em;
+}
+
+
+body.search .leftCol section .number-of-results{
+	font-weight:bold;
+	padding:.2em 0 .4em 0;
+}
+body.search .leftCol section ul{
+	padding-top:.5em;	
+}
+body.search .leftCol section ul li{
+	padding-bottom:1.5em;
+}
+
+body.search .leftCol section.product-results .image{
+	display:inline-block;
+	vertical-align:top;
+	width:25%;
+}
+body.search .leftCol section.product-results .image img{
+	max-width:100%;
+}
+body.search .leftCol section.product-results .details{
+	width:75%;
+	display:inline-block;
+	padding-left:.5em;
+}
+body.search .leftCol section .numbers{
+	font-size:0.8em;
+}
+body.search .leftCol section .description{
+	font-size:0.8em;
+}
+body.search .orange-button{
+	font-size:.733333em; /* @ 15px parent size = 11px */
+	height:2.2em;
+	line-height:2.2em;
+}
+body.search .highlight{
+	background-color:#fce8a9;
+}
+.isDiscontinued{
+	color:#F0782C;
+	font-size:0.8em;
+	font-weight:bold;
+	margin-bottom:.3em;
+}
+
+@media screen and (min-width: 475px) {
+	/******************** SEARCH RESULTS ******************/	
+	body.search .leftCol section.product-results ul{
+		margin-left:-1em;
+		margin-right:-1em;
+	}
+	body.search .leftCol section.product-results ul li{
+		display:inline-block;
+		width:50%;
+		padding-left:1em;
+		padding-right:1em;
+		vertical-align:top;
+	}
+}
+
+
+@media screen and (min-width: 600px) {	
+	.rightCol {display:none;}
+	.leftCol {width:100%;padding-right:0;}	
+	.header .searchForm input[type=text]{width:50%;}
+}
+@media screen and (min-width: 900px) {
+	.rightCol {display:inline-block;width:25%;}
+	.leftCol {width:75%;padding-right:2.9em}
+}

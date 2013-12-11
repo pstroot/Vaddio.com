@@ -1,0 +1,313 @@
+
+
+.secondary-header{
+	font-size:1.6em;
+	background-color:#5bb4cf;
+	color:#FFF;	
+	padding:.375em 1.125em;
+	font-weight:normal;
+	text-transform:uppercase;
+	margin-left: -1.25em;
+    margin-right: -1.25em;
+}
+.secondary-header a{color:#FFFFFF;text-decoration:none;}
+
+.rightCol{display:none;}
+.leftCol{width:100%;}
+
+
+body.markets .header h1{
+	margin-left: 0;
+    margin-right: 0;
+}
+
+body.markets .content{
+	margin-left: 0;
+    margin-right: 0;
+}
+
+body.markets .header{
+	margin-left:0;
+	margin-right:0;
+	padding-left:2em;
+	margin-bottom:0;
+}
+body.markets .content .leftCol{
+	background-color:#107ab2;
+	padding:0 2em;
+}
+
+
+.content ul.markets{
+	padding:0;
+	padding-bottom:2.4em;
+	margin:0;
+	margin-left:-1em;margin-right:-1em; /* subtract the left and right padding */
+}
+.content ul.markets li{
+	padding-left:1em;
+	padding-right:1em;
+	padding-bottom:1.3em;
+	
+	display:inline-block;	
+	width:100%; 	
+	font-family:'Helvetica-Neue';
+}	
+.content ul.markets li img{width:100%}
+.content ul.markets li .title{font-size:1.5em;color:#FFFFFF;margin-top:.2em;margin-bottom:.4em;text-transform:uppercase;}
+.content ul.markets li a {color:#FFFFFF;text-decoration:none;}
+
+
+
+
+/************************************************************************************************/
+/********************************* MARKET DETAIL PAGE *******************************************/
+/************************************************************************************************/
+
+.rightCol{display:none;}
+
+body.market-detail .back-to-markets{
+	display:none;
+	float:right;
+	color:#FFF;
+	font-size:2.1em;
+	text-decoration:none;
+}
+body.market-detail .images{width:100%;}
+body.market-detail .images img{width:100%;}
+body.market-detail .description{
+	font-size:1.5em;
+	line-height:1.45em;
+	margin-top:2em;
+	margin-bottom:2em;
+}
+body.market-detail hr{clear:left;background-color:#cccccc;height:.1em; border:none;width:100%;}
+
+
+/* headers */
+body.market-detail .blue-box  		h2 {color:#FFFFFF;font-weight:normal;font-size:2.1em;}
+body.market-detail .blue-box2 		h2 {font-weight:normal;font-size:1.4em; }/* take into account that each list already has 1.5em of font size */
+body.market-detail .product-catalog h2 {margin-bottom:.6em;}
+body.market-detail .press 			h2 {margin-bottom:.7em;}
+body.market-detail .download-links  h2 {color:#193C73;margin-bottom:.8em;}
+body.market-detail .videos 			h2 {color:#193C73;margin-bottom:.8em;}
+
+
+
+/* blue box */
+
+body.market-detail .blue-box,
+body.market-detail .blue-box2{ 
+	margin-left:-2em;
+	margin-right:-2em;	
+	padding:3.1em 2em;
+}
+
+body.market-detail .blue-box{background-color:#5bb4cf;}
+body.market-detail .blue-box2{background-color:#cee1ed;}
+
+body.market-detail .blue-box .product-catalog{padding-bottom:.6em;}
+
+
+body.market-detail .blue-box .press a{font-size:1.5em; color:#FFFFFF; text-decoration:none;}
+body.market-detail .blue-box .product-catalog a{text-decoration:none;}
+body.market-detail .blue-box .product-catalog a:hover{text-decoration:none;}
+
+body.market-detail .blue-box h2 .icon{
+	background-repeat: no-repeat;
+	background-image: url(../images/market_detail_icons.png);
+	background-size:2.0952381em 0.85714286em; /* 44px x 18px at font size 2.1*/
+	width:1.14285714em; /* 24px */
+	height:0.85714286em;
+	display:inline-block;
+	margin-right:.3em;
+	display:none;	
+	margin-bottom:.3em;
+	vertical-align:top;
+	float:left;
+}
+
+body.market-detail .leftCol hr{display:none;}
+body.market-detail .product-catalog h2 .icon{
+	background-position: 0 0;
+}
+body.market-detail .press h2 .icon{
+	background-position: -1.14285714em 0;
+	margin-bottom:-0.2em;
+	padding-top:0;
+}
+body.market-detail .press ul{
+}
+body.market-detail .press li{
+	margin-bottom:1.5em;
+	line-height:1.6em;
+}
+body.market-detail .leftCol a:hover{
+	text-decoration:underline;
+}
+
+
+
+/* Download Links */
+
+body.market-detail .download-links{
+	margin-bottom:2em;	
+}
+body.market-detail .download-links ul {
+	list-style:disc;
+}
+body.market-detail .download-links ul li{
+	margin-left:2.4em;
+	margin-top:0.3em;
+	margin-bottom:0.3em;
+}
+
+
+
+/* videos */
+body.market-detail .videos .icon{
+	pointer-events : none;
+	margin:2em 0.9em;
+	position:absolute;
+	background-image: url(../images/video_play_btn.png);
+	background-size:100% 100%;
+	width:2.06666667em; 
+	height:2.066666667em; 
+	background-repeat: no-repeat;
+}
+
+body.market-detail .videos a{color:#666666;text-decoration:underline;font-weight:normal;}
+
+body.market-detail .videos ul:after {
+	content:' ';
+	display:table;
+	clear:left;	
+}
+body.market-detail .videos li{
+	margin-bottom:1em;
+	clear:left;
+}
+body.market-detail .videos li img{
+	width:8em; 
+	margin-right:1em;
+	float:left;
+	display:inline;
+	margin-bottom:1em;
+	
+}
+
+body.market-detail .videos .title{
+	line-height:1.2em;
+	display:block;
+	width:inherit;
+}
+
+
+
+body.market-detail .download-links,
+body.market-detail .videos{font-size:1.5em;line-height:1.4em; }
+body.market-detail .download-links a,
+body.market-detail .body.market-detail .videos a
+{text-decoration:underline;color:#666666;}
+
+
+@media screen and (min-width: 330px) {	
+	.content ul.markets li{	width:50%; 	}	
+	body.market-detail .blue-box h2 .icon{display:inline-block;}	
+	body.market-detail .press ul{margin-left:3em;}
+}
+
+@media screen and (min-width: 600px) {	
+	.content ul.markets li{width:100%;padding-left:0;padding-right:0;} 
+	.content ul.markets li img{width:100%;} 
+	.content ul.markets li .title{float:right;width:50%;padding-left:.6em;font-size:1.7em;}
+	.content ul.markets{margin-left:0;margin-right:0;}
+	.content ul.markets li .title{text-transform:none;}
+	body.markets .content ul.markets li .title{float:none;width:100%;padding-left:0;}
+
+
+	.secondary-header{display:none;}	
+	body.markets .content ul.markets{margin-left:-1em;margin-right:-1em;}
+	body.markets .content ul.markets li{width:33.3333%;padding-left:1em;padding-right:1em;}
+	body.markets .content ul.markets li a, .content ul.markets li .title {color:#666666;}
+	body.markets .content .leftCol{background-color:transparent;padding:0;}
+
+	
+	body.markets .content{
+		margin-left: auto;
+		margin-right: auto;
+	}
+	body.markets .header{
+		margin-left:inherit;
+		padding-left:2em;
+		margin-bottom:2.7em;
+	}		
+		
+		
+		
+		
+		
+		
+
+	
+	/************************************************************************************************/
+	/********************************* MARKET DETAIL PAGE *******************************************/
+	/************************************************************************************************/
+
+	body.market-detail .back-to-markets{
+		display:block;
+		margin-top:.3em;
+		margin-right:.2em;
+		background-image:url(../images/back_arrow.png);
+		background-size:1.42857143em 0.95238095em; /* 30px x 20px */
+		background-repeat: no-repeat;
+		background-position: right top;
+		padding-right:2em;
+		
+	}
+	body.market-detail .leftCol hr{display:block;margin-top:2.9em;margin-bottom:2.9em;}
+	
+
+	body.market-detail .description{
+		padding-left:0; /*1.42857143em;*/ /*  padding( 20px) / font size (14px) */
+		padding-right:0;
+		margin-top:0;
+		margin-bottom:0;
+	}
+	body.market-detail .download-links,
+	body.market-detail .videos{
+		/*padding-left:.71428571em; *//* padding (1em) divided by font size (1.4em) */
+	}
+	
+	body.market-detail .blue-box{
+		margin:0;
+	}
+	body.market-detail .blue-box2{
+		background-color:transparent;
+		padding-top:0;
+		padding-bottom:0;
+		padding-left:0; /*2em*/;
+		padding-right:2em;
+		margin:0;
+	}
+	.rightCol{display:none;}
+	.leftCol {width:100%;padding-right:0em;}	
+	
+	body.market-detail .press ul{margin-left:0;}
+	body.market-detail .blue-box h2 .icon{display:none;}
+}
+
+@media screen and (min-width: 900px) {
+	.rightCol {display:inline-block;width:25%;}
+	.leftCol {width:75%;padding-right:2.9em;}
+	body.markets .content .leftCol{padding-right:2.9em;}
+	.innerRightCol{padding-left:2.4em;}
+}
+
+@media screen and (min-width: 1060px) {	
+	body.markets .content ul.markets li{width:25%;} 
+	body.market-detail .blue-box h2 .icon{display:inline-block;}
+	
+	body.market-detail .press ul{margin-left:3em;}
+	body.market-detail .blue-box h2	{}
+}

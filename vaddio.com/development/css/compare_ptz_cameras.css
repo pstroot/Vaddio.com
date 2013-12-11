@@ -1,0 +1,278 @@
+@charset "utf-8";
+* {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing:    content-box;
+    box-sizing:         content-box;
+}
+
+html, body{height:100%;margin:0px;padding:0px;}
+body{min-width: 100%; width: auto;overflow-x:hidden;}
+body.compare-ptz{
+	background-image:none;
+    font-family: Arial,verdana, arial, sans-serif;
+	width: 100%;
+	height:100%;
+}
+body.compare-ptz #container {
+	position:absolute;
+	height: 100%;
+}
+body.no-popup{
+	height:auto;
+}
+
+
+
+.comparison-chart-container{
+	position:absolute;
+	width:100%;
+	height:100%;
+	z-index: 10000;
+	left: 0;
+	top: 0;
+}
+
+/*///////////////// top left boxes /////////////////////*/
+body.compare-ptz #chartLabel{
+	position:absolute;
+	left:0px;
+	top:32px;
+	width:137px;
+	height:138px;
+	background:#fff;
+	z-index:9999;
+	vertical-align:center;
+	padding: 10px 14px 0 14px;
+}
+body.compare-ptz #chartLabel h1{
+	margin-top:15px;
+	font-size:24px;
+	line-height:27px;
+	padding:0px;
+	color:#193c73;
+	font-weight:normal;
+	margin-bottom: 5px;
+}
+body.compare-ptz #chartLabel h2{
+	font-size:13px;
+	padding:0px;
+	color:#193c73;
+	font-weight:normal;
+	line-height: 1.25;
+} 
+body.compare-ptz #scrollLabel{
+	position:absolute;
+	left:0px;
+	top:172px;
+	width:137px;
+	height:49px;
+	background: #fff;
+	z-index:9999;
+	color: #c2c2c2;
+	vertical-align:center;
+	border-right: 1px solid #107ab2;
+	border-bottom: 1px solid #ccc;
+	font-size:15px;
+	font-style: italic;
+	padding: 0 14px;
+}
+body.compare-ptz #scrollLabel p{
+	padding:0px;
+	margin-top:18px;
+}
+body.compare-ptz #scrollArrow{
+	display: none;
+	position:absolute;
+	background-image: url(../images/PTZ_comparison/explore_arrow.png);
+	width:15px;
+	height:30px;
+	z-index:10000;
+	
+	margin-top:181px;
+	margin-left:136px;
+	
+}
+
+
+
+
+/*///////////////// Orange header bar //////////////////////////*/
+body.compare-ptz #chartHeader{
+	position:absolute;
+	z-index:999;
+	width:100%;
+	height: 32px;
+	/*
+	background-image: url(../images/PTZ_comparison/header_bkg_tile.jpg);
+	background-repeat:repeat-x;
+	background-position: left top;
+	*/
+	background-color: #107ab2;
+	text-align:right;
+	color:#FFFFFF;
+}
+body.compare-ptz #chartHeader-inner{
+	padding-right:8px;
+	/*
+	background-image: url(../images/PTZ_comparison/header_bkg.jpg);
+	background-repeat: no-repeat;
+	*/
+}
+
+body.compare-ptz #chartHeader #download-link{
+	background-image: url(../images/PTZ_comparison/pdf_icon.png);
+	background-position: right 3px;
+	background-repeat: no-repeat;
+	
+	padding-top:10px;
+	padding-right:30px;
+	height:22px;
+	margin-right:6px;
+	font-size:12px;
+}
+body.compare-ptz #chartHeader a{	
+	font-weight:normal;
+	color:#FFFFFF;
+    text-decoration:underline;
+}
+body.compare-ptz #chartHeader a:hover{	
+   text-decoration:none;
+}
+
+
+
+.tableBoxOuter {
+	height: 100%;
+	width: 100%;
+    background: #FFFFFF;
+}
+.scrolltable {
+	border-collapse:collapse;
+	text-align: left;
+    font-size: 12px;
+}
+.scrolltable td,.scrolltable th {
+	vertical-align:top;
+    font-size: 12px;
+    margin:0em;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-right: 4px;
+    padding-left: 4px;
+    table-layout: automatic;
+	width:157px; 
+}
+	
+	
+body.compare-ptz .cell{ 
+	width:137px; 
+	height:auto;
+	padding:10px;
+}
+.scrolltable td{
+	/*border-right:1px solid #e8e8e8;*/
+}
+
+
+/* header content */
+
+#headerSpacer th{height: 32px;padding:0px;background-color:#CCCCCC;}
+
+.scrolltable thead tr#thumbnails th {
+	height:138px;
+	padding:0px;
+	overflow:hidden;
+	vertical-align:middle;
+	border-right:1px solid #e8e8e8;
+	text-align:center;
+}
+.scrolltable thead tr#names th {
+	text-align:center;
+    font-size: 15px;
+	font-weight:bold;
+	color:#FFFFFF;
+	height:49px;
+	padding:0px;
+}
+.scrolltable thead tr#names th .cell{padding-top:7px;padding-bottom:0px;}
+.scrolltable thead tr#names th.col_1 {
+	background: #107ab2;
+}
+.scrolltable thead tr#names th.col_2{
+	background: #5bb4cf;
+}
+
+
+
+.scrolltable thead tr#type th {
+    font-size: 15px;
+	font-weight:normal;
+	color:#000000;
+}
+.scrolltable thead tr#type th .cell {
+	width:auto; 
+	height:auto;
+}
+.scrolltable thead tr#type th.col_1 {
+	background: #CCCCCC;
+}
+.scrolltable thead tr#type th.col_2{
+	background: #e8e8e8;
+}
+		
+		
+		
+		
+/* row labels */
+.scrolltable tbody th{
+	color:#5e5e5e;
+	width:157px;
+	font-weight:normal;
+}
+		
+.scrolltable tbody tr.row_1 th {
+	background: #ededed;
+	border-right: 1px solid #ccc;
+}
+.scrolltable tbody tr.row_2 th{
+	background: #e0e0e0;
+	border-right: 1px solid #ccc;
+}
+		
+/* row values */
+.scrolltable tbody tr.row_1 td.col_1 {
+	background: #d7e8f1;
+}
+.scrolltable tbody tr.row_2 td.col_1{
+	 background: #c8e0ed;
+}
+.scrolltable tbody tr.row_1 td.col_2 {
+	background: #FFFFFF;
+}
+.scrolltable tbody tr.row_2 td.col_2{
+	background: #e8f3f6;
+}
+		
+		
+.scrolltable tbody tr {
+	background: #00FFFF;
+}
+
+
+body.compare-ptz .content{
+	padding-left:0;
+	padding-right:0;
+	margin-left:0;
+	margin-right:0;
+}
+
+@media screen and (min-width: 600px) {	
+	
+body.compare-ptz .content{
+	margin-left:inherit;
+	margin-right:inherit;
+}
+
+
+}
+

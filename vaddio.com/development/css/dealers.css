@@ -1,0 +1,401 @@
+
+
+
+body.dealers dl{
+	font-size:1.5em;
+	line-height:1.4em;
+	padding: 0 1.4em;
+}
+body.dealers dt{
+	font-size:1.2em;
+	font-weight:bold;
+}
+body.dealers dd{
+	padding-bottom:1em;
+}
+
+
+.right-col-blue-box{
+	background-color:#cee1ed;	
+	padding:2em 1.3333333em 1.5em 1.3333333em; /* 30px x 20px @1.5em */
+	font-size:1.5em;
+	color:#666666;
+	line-height:1.4em;
+}
+
+.right-col-blue-box .rounded-corner-button{
+	width:100%;
+	margin-bottom:1em;
+	display:block;
+	font-size:1em;
+	-moz-border-radius: 1.2em;
+     -webkit-border-radius: 1.2em;
+     -khtml-border-radius: 1.2em;
+     border-radius: 1.2em;
+}
+.right-col-blue-box .blue-button{
+	background-color:#5bb4cf;
+	color:#FFFFFF;
+}
+.right-col-blue-box .blue-button:hover{background-color:#0E7AB2;}
+
+
+
+
+
+
+
+
+/* Dealers Header */
+
+.dealers-header {
+	position: relative;
+	background-color: #404040;
+	padding-left: 8.6em;
+}
+
+.dealers-header h1 {
+	font-weight: normal;
+}
+
+.dealers-header .dealers-link-button {
+	position: absolute;
+	display: block;
+	top: 1.7em;
+	right: 1.7em;
+	font-size: 1.2em;
+	color: white;
+	
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	-khtml-border-radius: 0;
+	padding: 0;
+	background-color: transparent;
+}
+
+.dealers-header .dealers-link-button:hover {
+	background-color: transparent;
+}
+
+.dealers-icon {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 3.2em 1.3em 1.5em 1.3em;
+	height: 100%;
+	text-align: center;
+	width: 8.6em;
+	background-image: url(../images/partners/dealers_icon.png);
+	background-repeat: no-repeat;
+	background-position: center 1.1em;
+	background-size: 2.1em 1.8em;
+}
+
+.dealers-icon span {
+	font-size: 1.1em;
+	text-transform: uppercase;
+	color: #c2c2c2;
+}
+
+
+
+
+
+
+
+/* Dealers form overrides */
+
+@media screen and (min-width: 600px) {
+	
+	.form-block-1of2,
+	.form-block-2of2 {
+		display: block;
+		/*width: 75%;*/
+		width: 100%;
+	}
+	
+	.form-block-2of2 label {
+		padding-left: 0;
+	}
+	
+	.form-block label {
+		width: 30%;
+	}
+	
+	.form-block input[type=text] {
+		width: 70%;
+	}
+	
+	.form-block-orphan {
+		width: 100%;
+		padding-right: 0;
+	}
+	
+}
+
+@media screen and (min-width: 1140px) {
+	
+	.form-block-1of2,
+	.form-block-2of2 {
+		display: inline-block;
+		width: 50%;
+	}
+	
+	.form-block label,
+	.form-block label {
+		width: 20%;
+	}
+	
+	.form-block-1of2 label,
+	.form-block-2of2 label {
+		width: 40%;
+	}
+	
+	.form-block input[type=text],
+	.form-block input[type=text] {
+		width: 80%;
+	}
+	
+	.form-block-1of2 input[type=text],
+	.form-block-2of2 input[type=text] {
+		width: 60%;
+	}
+	
+	.form-block-2of2 label {
+		padding-left: 3em;
+	}
+	
+	.form-block-orphan {
+		width: 100%;
+		padding-right: 50%;
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body.partners .summary{
+	font-size:1.2em;
+	margin-bottom:2em;
+}
+
+body.partners ul.partner-list li{
+	clear:left;
+	margin-bottom:1em;
+}
+body.partners ul.partner-list li:after{display:table;content:' ';clear:left;}
+
+body.partners ul.partner-list li .image{
+	width:auto;
+	float:left;
+	width:33%;
+}
+body.partners ul.partner-list li .image img{
+	padding-right:1em;
+	width:100%;
+}
+
+body.partners ul.partner-list li h2{
+	margin-left:33%;
+}
+body.partners ul.partner-list li .description{
+	margin-left:33%;
+}
+
+
+
+
+
+/* DEALER DOCS */
+
+body.partner-docs .summary {
+	font-family: "Helvetica-Neue",Helvetica,arial,sans-serif;
+	font-size: 1.9em;
+	margin-bottom: 2.1053em;
+	font-weight: bold;
+}
+body.partner-docs .content ul li ul{
+	padding-left:1em;
+}
+body.partner-docs .content ul .cat-name {
+	background-color: #e3ca84;
+	border: 1px solid #e3ca84;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #193C73;
+	margin: .2em 0 .2em 1.267em;
+	height: 2.93em;
+	line-height: 2.93em;
+	padding: 0 1.33em 0 3em;
+	cursor: pointer;
+	max-width: 48.33em;
+	
+	background-image: url(../images/partners/dealers_categories_arrows.png);
+	background-repeat: no-repeat;
+}
+
+body.partner-docs .content ul ._open .cat-name {
+	background-position: 0 -2.93em;
+	background-color: #f8ecc9;
+	border: 1px solid #107ab2;
+	color: #107ab2;
+}
+body.partner-docs .content .category .docs {
+	display: none;
+	margin-top: 2.8em;
+}
+body.partner-docs .content .category ._open .docs {
+	display: block;
+}
+body.partner-docs .content ul.docs li{
+	margin-bottom: 2.8em;
+}
+body.partner-docs .content ul.docs li .icon{
+	position: relative;
+	float:left;
+	margin: 0 2.5em 0 2.2em;
+}
+body.partner-docs .content ul.docs li .icon img{
+	max-width:4.1em;
+}
+body.partner-docs .content ul.docs li .icon span {
+	position: absolute;
+	top: 1.67em;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 1.2em;
+	font-family: "Helvetica-Neue",Helvetica,arial,sans-serif;
+	font-weight: bold;
+}
+body.partner-docs .content ul.docs li .detail {
+	font-size: 1.5em;
+	line-height: 1.2em;
+	margin-left: 5.867em;
+	padding-top: 0.33em;
+}
+body.partner-docs .content ul.docs li .detail a {
+	padding-bottom: .3em;
+	display: block;
+	color: #5e5e5e;
+	font-weight: bold;
+}
+
+
+.no-results{
+	font-size:1.5em;
+	ine-height:1.4em;
+		
+}
+
+
+/* JOB REGISTRATION */
+.job-registration-center {
+	max-width: 700px;
+	margin: 0 auto;
+}
+body.job-registration .content p{
+	font-size: 1.4em;	
+	line-height: 1.25;
+}
+body.job-registration .content ol{
+	list-style:inherit;
+	margin-left:1.5em;
+}
+body.job-registration .content ol li{
+	font-size:1.4em;
+	line-height: 1.25;	
+	margin-top:1em;	
+}
+body.job-registration .content a.form-link{
+	display: inline-block;
+	font-size: 1.4em;
+	text-align:center;
+	margin-top:2em;	
+	font-weight:bold;
+	
+}
+
+body.job-registration-success .bodycopy{padding-top:1em;}
+
+.form-block-model_number_and_quantity,
+.form-block-estimated_purchase_date,
+.form-block-estimated_delivery_date,
+.form-block-comments {
+	padding-left: 5.3em;
+}
+
+.form-block.form-block-model_number_and_quantity label,
+.form-block.form-block-estimated_purchase_date label,
+.form-block.form-block-estimated_delivery_date label,
+.form-block.form-block-comments label {
+	width: 23%;
+}
+
+.form-block.form-block-model_number_and_quantity textarea,
+.form-block.form-block-comments textarea {
+	width: 77%;
+}
+
+.form-block-estimated_purchase_date,
+.form-block-estimated_delivery_date {
+	display: block;
+	width: 100%;
+}
+
+.form-block.form-block-estimated_purchase_date input[type=text],
+.form-block.form-block-estimated_delivery_date input[type=text] {
+	width: 40%;
+}
+
+.form-block-estimated_delivery_date label {
+	padding-left: 0;
+}
+
+
+@media screen and (min-width: 600px) {
+	
+	.dealers-header {
+		padding-left: 10em;
+	}
+	
+	.dealers-icon {
+		background-position: center 1.4em;
+		background-size: 42px 35px;
+		padding: 5.3em 2em 1.5em 2em;
+		width: 10em;
+	}
+
+	.dealers-icon span {
+		font-size: 1.4em;
+	}
+	
+	.dealers-header .dealers-link-button {
+		top: 1.6429em;
+		right: 1.42857em;
+		font-size: 1.4em;
+		padding: 0 1.4em;
+		background-color: #f0782c;
+		-moz-border-radius: 1.2em;
+		-webkit-border-radius: 1.2em;
+		-khtml-border-radius: 1.2em;
+		border-radius: 1.2em;
+	}
+	
+	.dealers-header .dealers-link-button:hover {
+		background-color: #f38845;
+	}
+
+}

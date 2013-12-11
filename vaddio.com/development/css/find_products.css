@@ -1,0 +1,166 @@
+/*
+Dark Blue #203C8F
+Orange #ff723a
+Light Blue #f1f6ff
+text blue #337CEA
+*/
+
+
+/* MOBILE */
+section.home-products .findproducts,
+section.home-products .findproducts .find-products-pulldown {
+	display:none;
+}
+
+
+
+/* PRODUCT FINDER IN SIDEBAR */
+.content .findproducts-container {
+	position: relative;
+	background-color:#e6e6e6;
+	padding:2.2em 1.9em;
+}
+.content .findproducts-container  h1{font-weight:normal;font-size:2.1em;margin-bottom:.65em;}
+.content .findproducts .find-products-pulldown select{
+	width:100%;
+	margin-bottom:.8em;
+	border:1px solid #999999;
+	font-size:1.4em;
+}
+.findproducts .find-products-pulldown select{
+	padding:.2em;
+	
+}
+.content .findproducts .find-products-pulldown select:focus{
+	outline: none;
+    border-color: #0e7ab2;
+    box-shadow: 0 0 10px #0e7ab2;
+}
+.findproducts_catalog {
+	position: absolute;
+	font-size: 1.2em;
+	top: 2.5em;
+	right: 1.7em;
+}
+
+
+
+section.home-products .findproducts .findproducts_catalog{	display:none;} /* keep the "catalog" link from showing up on the home page */
+
+.submenu .findproducts_catalog {display: none;} /* keep the "catalog" link from showing up in the navigation */
+
+
+
+
+
+.rightCol .findproducts nav.find-products-by-category {
+	padding-top:2em;
+	margin-left:-1.3em;
+	margin-right:-1.3em;
+}
+nav.topnav nav.find-products-by-category {
+	/*margin-left:-1.3em;*/
+	margin-left:-1.6em;
+}
+
+
+
+/* all links */
+.findproducts nav.find-products-by-category ul li a{ 
+	display:block;
+	color:#5e5e5e;
+	text-decoration:none;
+	font-size:1.2em;
+	padding-top:.4em;
+	padding-bottom:.4em;
+}
+.findproducts nav.find-products-by-category ul li a:hover { color:#203C8F;text-decoration:underline; }
+.findproducts nav.find-products-by-category ul.fp-cats > li.active>a{ font-weight:bold;}
+.findproducts nav.find-products-by-category ul.fp-products > li.active>a{ color:#5bb4cf;text-decoration:none;font-weight:bold;}
+
+/* specific to each level */
+.findproducts nav.find-products-by-category > ul{/*margin-left:-1.3em;margin-right:-1.3em;*/}
+.findproducts nav.find-products-by-category > ul > li{}
+.findproducts nav.find-products-by-category > ul > li:hover{}
+.findproducts nav.find-products-by-category > ul > li  ul{}
+.findproducts nav.find-products-by-category > ul  li{
+	background-size:0.5em 0.5em;
+	background-repeat: no-repeat;
+	background-position: 0.8em 0.8em;
+	padding-left:1.7em;
+}
+.findproducts nav.find-products-by-category > ul > li ul > li						{/*background-size:0.5em 0.5em;background-image:url(../images/layout/grayPlus.png);*/}
+.findproducts nav.find-products-by-category   ul.fp-cats > li.active				{background-size:0.6em 0.5em;background-image:url(../images/layout/bluePlus.png);background-color:#f5f5f5;}
+.findproducts nav.find-products-by-category > ul > li  ul.fp-products > li			{background-position: 1.0em 0.8em;background-size:0.4em 0.4em;/*background-image:url(../images/layout/grayCircle.png);*/}
+.findproducts nav.find-products-by-category > ul > li  ul.fp-products > li.active	{background-image:url(../images/layout/activeCircle.png);}
+
+nav.topnav  .findproducts nav.find-products-by-category   ul.fp-cats > li.active{background-position: 0.7em 1em;}
+
+.home-blueboxes-wrapper .findproducts nav.find-products-by-category > ul{margin-left:0;}
+
+
+/* indenting for each level */
+.findproducts nav.find-products-by-category > ul > li > ul > li a{padding-left:0;}
+.findproducts nav.find-products-by-category > ul > li > ul > li > ul > li a{padding-left:0;}
+
+
+nav.find-products-by-category>ul.fp-cats ul.fp-products{display:none;}
+nav.find-products-by-category>ul.fp-cats ul.fp-cats{display:none;}
+	
+nav.find-products-by-category>ul.fp-cats li>ul.fp-products{display:none;}
+nav.find-products-by-category>ul.fp-cats li>ul.fp-cats{display:none;}
+/*nav.find-products-by-category>ul.fp-cats li>ul.fp-products li{font-size:0.8;}*/
+	
+nav.find-products-by-category>ul.fp-cats li.active>ul.fp-products{display:block;}
+nav.find-products-by-category>ul.fp-cats li.active>ul.fp-cats{display:block;}
+	
+	
+
+@media screen and (min-width: 600px) {
+	section.home-products .findproducts{
+		display:block;
+		width:100%;
+	}
+	
+	section.home-products .findproducts .find-products-pulldown{
+		padding:1em 0;
+	}
+	section.home-products .findproducts .find-products-pulldown h2{margin:0;padding:0;font-size:1.5em;color:#203C8F}
+	
+	section.home-products .productSearchPulldown select{ width:100%;}
+	
+	section.home-products nav.find-products-by-category {margin:0 -1.6em;padding-top:.1em;}
+	section.home-products nav.find-products-by-category ul {padding:0 1.6em;}
+	section.home-products nav.find-products-by-category li {display:block;padding:0;}
+	section.home-products nav.find-products-by-category>ul{font-size:1em;float:left;width:50%;line-height:1.6em;}
+	
+	section.home-products nav.find-products-by-category a{padding-top:.4em;padding-bottom:.3em;color:#666666;text-decoration:none;font-size:1.2em;font-weight:normal;font-family:'Helvetica-Neue'Arial, Helvetica, sans-serif;} 
+	section.home-products nav.find-products-by-category a:hover{color:#193C73;} 
+	
+	section.home-products nav.find-products-by-category ul li a{display:block;}
+	homesection.home-products nav.find-products-by-category ul li ul li a{padding-left:2em;display:block;}
+	section.home-products nav.find-products-by-category ul li ul li ul li a{padding-left:3em;display:block;}
+	
+	section.home-products nav.find-products-by-category li.active a{color:#ff723a;font-weight:bold;}
+	section.home-products nav.find-products-by-category li.active li a{color:#337CEA;font-weight:normal;}
+	
+		
+		
+	
+	/* do not show subnavs in top navigation */
+	nav.topnav nav.find-products-by-category>ul.fp-cats li.active>ul.fp-products{display:none;}
+	nav.topnav nav.find-products-by-category>ul.fp-cats li.active>ul.fp-cats{display:none;}
+	
+
+}
+
+@media screen and (min-width: 750px) {
+	section.home-products nav.find-products-by-category>ul{line-height:1.8em;}
+	section.home-products nav.find-products-by-category a{font-size:1.2em;} 
+	
+}
+@media screen and (min-width: 900px) {
+	.content .findproducts nav.find-products-by-category ul.fp-products > li > a{font-size:1.2em;}
+	/*section.home-products nav.find-products-by-category>ul{line-height:2em;}*/
+	section.home-products nav.find-products-by-category a{font-size:1.em;} 
+}

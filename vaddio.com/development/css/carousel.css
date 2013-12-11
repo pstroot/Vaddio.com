@@ -1,0 +1,795 @@
+/* Carousel CSS */
+
+.carousel {
+     position: relative;
+     height: 493px;
+     background-color: black;
+     overflow: hidden;
+     font-family: arial, sans-serif;
+}
+
+.carousel .rounded-corner-button {
+     
+}
+
+.carousel_spacer {
+     position: relative;
+     padding: 0 4em;
+     height: 100%;
+}
+
+.carousel_container {
+     position: relative;
+     max-width: 104.4em;
+     margin: 0 auto;
+     height: 100%;
+}
+
+.carousel_mobile {
+     display: none;
+	 margin-left:-2em;
+	 margin-right:-2em;
+}
+
+.carousel_panel {
+     visibility: hidden;
+     position: absolute;
+     width: 100%;
+     height: 100%;
+}
+
+.carousel_panel._open {
+     visibility: visible;
+}
+
+._legacy .carousel_panel._open {
+     visibility: visible;
+     display: none;
+}
+
+._legacy .carousel_panel._open._first {
+     display: block;
+}
+
+.carousel_background,
+.carousel_graphic,
+.carousel_text {
+     position: absolute;
+     opacity: 0;
+     filter: alpha(opacity=0);
+     -o-transition: opacity 2s, -o-transform 3s;
+     -ms-transition: opacity 2s, -ms-transform 3s;
+     -moz-transition: opacity 2s, -moz-transform 3s;
+     -webkit-transition: opacity 2s, -webkit-transform 3s;
+     transition: opacity 2s, transform 3s;
+     -webkit-perspective: 1000;
+     -webkit-backface-visibility: hidden;
+}
+
+.carousel_background {
+     -o-transform: translateX(220px) scale(1.9);
+     -ms-transform: translateX(220px) scale(1.9);
+     -moz-transform: translateX(220px) scale(1.9);
+     -webkit-transform: translateX(220px) scale(1.9);
+     transform: translateX(220px) scale(1.9);
+     -o-transition: opacity 1s ease-in-out, -o-transform 1s ease-in-out;
+     -ms-transition: opacity 1s ease-in-out, -ms-transform 1s ease-in-out;
+     -moz-transition: opacity 1s ease-in-out, -moz-transform 1s ease-in-out;
+     -webkit-transition: opacity 1s ease-in-out, -webkit-transform 1s ease-in-out;
+     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.carousel_graphic {
+     -o-transform: translateX(-50px);
+     -ms-transform: translateX(-50px);
+     -moz-transform: translateX(-50px);
+     -webkit-transform: translateX(-50px);
+     transform: translateX(-50px);
+}
+
+._trans1 .carousel_background,
+._trans2 .carousel_graphic,
+._trans3 .carousel_text {
+     opacity: 1;
+     filter: alpha(opacity=100);
+}  
+
+._legacy .carousel_background,
+._legacy .carousel_graphic,
+._legacy .carousel_text {
+     opacity: 1;
+     filter: alpha(opacity=100);
+     -o-transform: translateX(0) scale(1);
+     -ms-transform: translateX(0) scale(1);
+     -moz-transform: translateX(0) scale(1);
+     -webkit-transform: translateX(0) scale(1);
+     transform: translateX(0) scale(1);
+     -o-transition: none;
+     -ms-transition: none;
+     -moz-transition: none;
+     -webkit-transition: none;
+     transition: none;
+}
+
+._trans1 .carousel_background {
+     -o-transform: translateX(0) scale(1);
+     -ms-transform: translateX(0) scale(1);
+     -moz-transform: translateX(0) scale(1);
+     -webkit-transform: translateX(0) scale(1);
+     transform: translateX(0) scale(1);
+}
+
+._trans1 .carousel_graphic {
+     -o-transform: translateX(0);
+     -ms-transform: translateX(0);
+     -moz-transform: translateX(0);
+     -webkit-transform: translateX(0);
+     transform: translateX(0);
+}
+
+._out .carousel_background,
+._out .carousel_graphic,
+._out .carousel_text {
+     -o-transform: translateX(0) scale(1);
+     -ms-transform: translateX(0) scale(1);
+     -moz-transform: translateX(0) scale(1);
+     -webkit-transform: translateX(0) scale(1);
+     transform: translateX(0) scale(1);
+     -o-transition: opacity 1s;
+     -ms-transition: opacity 1s;
+     -moz-transition: opacity 1s;
+     -webkit-transition: opacity 1s;
+     transition: opacity 1s;
+}
+
+._first .carousel_background,
+._first .carousel_graphic,
+._first .carousel_text {
+     -o-transform: translateX(0) scale(1);
+     -ms-transform: translateX(0) scale(1);
+     -moz-transform: translateX(0) scale(1);
+     -webkit-transform: translateX(0) scale(1);
+     transform: translateX(0) scale(1);
+     -o-transition: none;
+     -ms-transition: none;
+     -moz-transition: none;
+     -webkit-transition: none;
+     transition: none;
+}
+
+.carousel_background img,
+.carousel_graphic img {
+     width: 100%;
+}
+
+.carousel_background ._mobile {
+     display: none;
+}
+
+.carousel_text h2 {
+     font-size: 42px;
+     color: #5bb4cf;
+     font-weight: bold;
+     margin: 0 0 15px 0;
+}
+
+.carousel_text h3 {
+     font-size: 24px;
+     color: white;
+     margin: 0;
+     line-height: 1.25;
+	 font-weight:normal;
+}
+
+.carousel_text p {
+     color: white;
+     line-height: 1.5;
+     margin: 15px 0;
+     font-size: 14px;
+}
+
+.carousel_text ul {
+     color: white;
+     margin: 15px 0;
+     font-size: 14px;
+     list-style-type: disc;
+}
+
+.carousel_text li {
+     margin-bottom: 7px;
+     margin-left: 30px;
+}
+
+p.carousel_action {
+     margin: 25px 0 0 0;
+     line-height: 28px;
+}
+
+.carousel_action a {
+     font-size: 11px;
+     color: #193C73;
+}
+
+.carousel_nav {
+     position: absolute;
+     bottom: 23px;
+     left: 0;
+     margin: 0;
+}
+
+.carousel_nav li {
+     float: left;
+     color: white;
+     font-size: 40px;
+     line-height: 10px;
+     cursor: pointer;
+     color: #5e5e5e;
+     text-align: center;
+     margin: 0 4px;
+}
+
+.carousel_nav li._active {
+     color: #c2c2c2;
+}
+
+#carousel_1 .carousel_background {
+     width: 1280px;
+     height: 493px;
+     top: 0;
+     left: 50%;
+     margin-left: -490px;
+}
+
+#carousel_1 .carousel_graphic {
+     width: 470px;
+     top: 95px;
+     left: 50%;
+     margin-left: -235px;
+}
+
+#carousel_1 .carousel_text {
+     width: 100%;
+     top: 0;
+     right: 0;
+}
+
+#carousel_1 .carousel_text h2 {
+     margin-top: 25px;
+     margin-bottom: 92px;
+     font-size: 36px;
+     text-align: center;
+}
+
+#carousel_1 .carousel_text h2 span {
+     display: block;
+     font-size: 24px;
+}
+
+#carousel_1 .carousel_text h3 {
+     margin-bottom: 0;
+}
+
+#carousel_1 .carousel_text p {
+     margin-top: 0;
+     font-size: 12px;
+}
+
+#carousel_1 .carousel_text_right p._bump {
+     margin-bottom: 33px;
+}
+
+#carousel_1 .carousel_text_left {
+     position: absolute;
+     top: 180px;
+     right: 67.0498%;
+     width: 285px;
+     text-align: right;
+}
+
+#carousel_1 .carousel_text_right {
+     position: absolute;
+     top: 180px;
+     left: 67.5287%;
+     width: 285px;
+}
+
+.carousel_text ul.carousel_1_photos {
+     list-style-type: none;
+     text-align: left;
+     overflow: hidden;
+}
+
+.carousel_1_photos li {
+     width: 126px;
+     float: left;
+     margin: 0 0 0 25px;
+     font-size: 13px;
+     line-height: 1.25;
+}
+
+.carousel_1_photos._left li {
+     float: right;
+     margin: 0 25px 0 0;
+}
+
+.carousel_1_photos li:first-child {
+     margin: 0;
+}
+
+.carousel_1_photos img {
+     width: 100%;
+     margin-bottom: 3px;
+}
+
+#carousel_2 .carousel_background {
+     width: 1280px;
+     height: 493px;
+     top: 0;
+     left: 50%;
+     margin-left: -345px;
+}
+
+#carousel_2 .carousel_graphic {
+     width: 793px;
+     height: 493px;
+     top: 0;
+     left: 50%;
+     margin-left: -340px;
+}
+
+#carousel_2 .carousel_text {
+     width: 300px;
+     top: 85px;
+     left: 0;
+}
+
+#carousel_3 .carousel_background {
+     width: 1280px;
+     height: 493px;
+     top: 0;
+     left: 50%;
+     margin-left: -640px;
+}
+
+#carousel_3 .carousel_graphic {
+     width: 649px;
+     height: 493px;
+     top: 0;
+     left: 50%;
+     margin-left: -470px;
+}
+
+#carousel_3 .carousel_text {
+     width: 240px;
+     top: 85px;
+     right: 0;
+}
+
+#carousel_4 .carousel_background {
+     width: 1280px;
+     height: 493px;
+     top: 0;
+     left: 50%;
+     margin-left: -265px;
+}
+
+#carousel_4 .carousel_graphic {
+     width: 627px;
+     height: 388px;
+     top: 100px;
+     left: 50%;
+     margin-left: -95px;
+}
+
+#carousel_4 .carousel_text {
+     width: 520px;
+     top: 90px;
+     left: 0;
+}
+
+#carousel_4 .carousel_text p {
+     width: 315px;
+}
+
+@media (max-width:980px) {
+     
+     .carousel {
+          height: 333px;
+     }
+     
+     .carousel_text h2 {
+          font-size: 30px;
+          margin: 0 0 15px 0;
+     }
+
+     .carousel_text h3 {
+          font-size: 16px;
+     }
+
+     .carousel_text p {
+          margin: 10px 0;
+          font-size: 12px;
+     }
+
+     .carousel_text ul {
+          margin: 10px 0;
+     }
+
+     .carousel_text li {
+          margin-bottom: 7px;
+          margin-left: 30px;
+          font-size: 12px;
+     }
+
+     p.carousel_action {
+          margin: 20px 0 0 0;
+     }
+     
+     .carousel_nav {
+          bottom: 16px;
+     }
+     
+     #carousel_1 .carousel_background {
+          width: 864px;
+          height: 333px;
+          margin-left: -335px;
+     }
+
+     #carousel_1 .carousel_graphic {
+          width: 317px;
+          top: 64px;
+          margin-left: -159px;
+     }
+
+     #carousel_1 .carousel_text h2 {
+          margin-top: 17px;
+          margin-bottom: 62px;
+          font-size: 24px;
+     }
+
+     #carousel_1 .carousel_text h2 span {
+          font-size: 16px;
+     }
+     
+     #carousel_1 .carousel_text p {
+          font-size: 10px;
+     }
+     
+     #carousel_1 .carousel_text_right p._bump {
+          margin-bottom: 10px;
+     }
+     
+     #carousel_1 .carousel_text h3 {
+          font-size: 14px;
+     }
+
+     #carousel_1 .carousel_text_left {
+          top: 122px;
+          width: 210px;
+     }
+
+     #carousel_1 .carousel_text_right {
+          top: 122px;
+          left: 67.5287%;
+          width: 192px;
+     }
+
+     .carousel_1_photos li {
+          width: 85px;
+          margin: 0 0 0 17px;
+          font-size: 9px;
+     }
+
+     .carousel_1_photos._left li {
+          margin: 0 17px 0 0;
+     }
+     
+     .carousel_1_photos li:first-child {
+          margin: 0;
+     }
+     
+     #carousel_2 .carousel_background {
+          width: 864px;
+          height: 333px;
+          margin-left: -155px;
+     }
+
+     #carousel_2 .carousel_graphic {
+          width: 535px;
+          height: 333px;
+          margin-left: -155px;
+     }
+
+     #carousel_2 .carousel_text {
+          width: 275px;
+          top: 65px;
+     }
+     
+     #carousel_3 .carousel_background {
+          width: 864px; /* 0.675 */
+          height: 333px;
+          margin-left: -445px;
+     }
+
+     #carousel_3 .carousel_graphic {
+          width: 440px;
+          height: 333px;
+          margin-left: -335px;
+     }
+
+     #carousel_3 .carousel_text {
+          width: 200px;
+          top: 55px;
+     }
+
+     #carousel_4 .carousel_background {
+          width: 864px;
+          height: 333px;
+          margin-left: -150px;
+     }
+
+     #carousel_4 .carousel_graphic {
+          width: 423px;
+          height: 262px;
+          top: 67px;
+          margin-left: -35px;
+     }
+
+     #carousel_4 .carousel_text {
+          width: 400px;
+          top: 65px;
+     }
+
+     #carousel_4 .carousel_text p {
+          width: 315px;
+     }
+     
+}
+
+@media (max-width:720px) {
+     
+     .carousel {
+          height: 227px;
+     }
+     
+     .carousel_text h2 {
+          font-size: 20px;
+          margin: 0 0 10px 0;
+     }
+
+     .carousel_text h3 {
+          font-size: 12px;
+     }
+
+     .carousel_text p {
+          margin: 10px 0;
+          font-size: 10px;
+     }
+
+     .carousel_text ul {
+          margin: 10px 0;
+     }
+
+     .carousel_text li {
+          margin-bottom: 7px;
+          margin-left: 30px;
+          font-size: 12px;
+     }
+
+     p.carousel_action {
+          margin: 15px 0 0 0;
+     }
+     
+     .carousel_nav {
+          bottom: 11px;
+     }
+     
+     .carousel_nav li {
+          font-size: 30px;
+     }
+     
+     #carousel_1 .carousel_background {
+          width: 588px;
+          height: 226px;
+          margin-left: -228px;
+     }
+
+     #carousel_1 .carousel_graphic {
+          width: 216px;
+          top: 44px;
+          margin-left: -108px;
+     }
+
+     #carousel_1 .carousel_text h2 {
+          margin-top: 12px;
+          margin-bottom: 42px;
+          font-size: 16px;
+     }
+
+     #carousel_1 .carousel_text h2 span {
+          font-size: 11px;
+     }
+     
+     #carousel_1 .carousel_text p {
+          font-size: 10px;
+     }
+
+     #carousel_1 .carousel_text_left {
+          top: 83px;
+          width: 160px;
+     }
+
+     #carousel_1 .carousel_text_right {
+          top: 83px;
+          left: 67.5287%;
+          width: 160px;
+     }
+
+     .carousel_1_photos {
+          display: none;
+     }
+     
+     #carousel_2 .carousel_background {
+          width: 589px;
+          height: 227px;
+          margin-left: -85px;
+     }
+
+     #carousel_2 .carousel_graphic {
+          width: 365px;
+          height: 227px;
+          margin-left: -85px;
+     }
+
+     #carousel_2 .carousel_text {
+          width: 275px;
+          top: 50px;
+     }
+
+     #carousel_3 .carousel_background {
+          width: 589px; /* 0.46 */
+          height: 227px;
+          margin-left: -335px;
+     }
+
+     #carousel_3 .carousel_graphic {
+          width: 299px;
+          height: 227px;
+          margin-left: -260px;
+     }
+
+     #carousel_3 .carousel_text {
+          width: 200px;
+          top: 30px;
+     }
+
+     #carousel_4 .carousel_background {
+          width: 589px;
+          height: 227px;
+          margin-left: -70px;
+     }
+
+     #carousel_4 .carousel_graphic {
+          width: 289px;
+          height: 178px;
+          top: 50px;
+          margin-left: 5px;
+     }
+
+     #carousel_4 .carousel_text {
+          width: 375px;
+          top: 33px;
+     }
+
+     #carousel_4 .carousel_text p {
+          width: 315px;
+     }
+     
+}
+
+@media (max-width:600px) {
+     
+     .carousel {
+          display: none;
+     }
+     
+     .carousel_mobile {
+          position: relative;
+          display: block;
+          overflow: hidden;
+          font-family: arial, sans-serif;
+          height: 330px;
+          background-image: url(../images/carousel/carousel_mobile_background.jpg);
+          background-position: center top;
+     }
+     
+     .carousel_mobile_background {
+          position: absolute;
+          display: block;
+          width: 320px;
+          height: 330px;
+          margin: 0 auto;
+     }
+     
+     .carousel_mobile_panel {
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          z-index: 1;
+          
+          -webkit-transition: opacity 1s;
+          -moz-transition: opacity 1s;
+          -ms-transition: opacity 1s;
+          -o-transition: opacity 1s;
+          transition: opacity 1s;
+     }
+     
+     .carousel_mobile_panel._open {
+          opacity: 1;
+          z-index: 2;
+     }
+     
+     .carousel_mobile_panel img {
+          width: 100%;
+          max-width: 320px;
+     }
+     
+     .carousel_mobile_content {
+          position: absolute;
+          bottom: 20px;
+          width: 240px;
+          left: 50%;
+          margin-left: -120px;
+     }
+     
+     .carousel_mobile_panel h2 {
+          font-size: 22px;
+          font-weight: bold;
+          color: #5bb4cf;
+          margin-bottom: 5px;
+     }
+     
+     .carousel_mobile_panel h3 {
+          font-size: 14px;
+          color: white;
+     }
+     
+     .carousel_mobile_panel a {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 3;
+     }
+     
+     .carousel_mobile_arrow {
+          position: absolute;
+          bottom: 15px;
+          width: 32px;
+          height: 64px;
+          background-image: url(../images/carousel/mobile_carousel_arrows.png);
+          background-size: 200% 200%;
+          z-index: 4;
+     }
+     
+     .carousel_mobile_arrow._right {
+          right: 0;
+          background-position: right top;
+     }
+     
+     html.no-touch .carousel_mobile_arrow:hover,
+     .carousel_mobile_arrow:active {
+          background-position: 0 -100%;
+     }
+     
+     html.no-touch .carousel_mobile_arrow._right:hover,
+     .carousel_mobile_arrow._right:active {
+          background-position: 100% -100%;
+     }
+     
+}

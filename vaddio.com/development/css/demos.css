@@ -1,0 +1,688 @@
+/* DEMOS */
+
+.allow-demo{display:none;}
+.disallow-demo{display:block;padding: 3em 0 2em 0;}
+body.demos-schedule .disallow-demo h2{
+	color: #193C73;
+    font-size: 2.3em;
+	padding-bottom:1em;
+}
+body.demos-schedule .disallow-demo .summary{font-size:1.5em;line-height:1.4em;}
+
+
+/*.form-step#step1{display:none;}*/
+.confirm-box{display:none;}
+
+/* DEMOS MAIN PAGE */
+
+body.demos .header{padding:0;height:auto;}
+
+body.demos .header .innerLeftCol{
+	vertical-align:top;
+	color:#FFFFFF;
+	display:inline-block;
+	width:100%;
+	height:100%;
+	min-height:1.29411765em;
+	min-height:1.29411765em;
+	line-height:1.1em;
+}
+body.demos .header .innerLeftCol h1{
+	background-image: url(../images/demo_icon.png);
+	background-position:0.1em 0; 
+	background-size:1.30555556em 1.3611111em; /* 4.7em 4.9em @ 3.6 font size */
+	min-height: 1.3611111em;
+	background-repeat: no-repeat;	
+	
+	margin-top:.5em;
+	margin-left:0.53em;	
+	padding-left:1.8em;	
+	padding-top:0.3em;	
+	padding-bottom:0.5em;	
+	font-size:3.0em;
+	line-height:1em;
+	font-weight:normal;
+			
+}
+
+body.demos .header .innerRightCol{
+	display:none;
+	width:100%;
+	width:50%;
+	height:100%;
+	background-image: url(../images/demo_image.jpg);
+	background-size:52.3em 31.4em; 
+	background-repeat: no-repeat;
+	background-position: left bottom;	
+}
+
+
+
+
+body.demos .leftCol h2{color:#193c73;font-size:2.3em;}
+body.demos .summary{font-size:1.5em;line-height:1.4em;padding-top:1.0em;padding-bottom:1.8em;}
+
+body.demos .rightCol .greyBox{background-color:#e0e0e0;padding:2.2em 1.8em;}
+body.demos .rightCol .greyBox h1{font-size:1.7em;}
+body.demos .rightCol .greyBox .demo-description{font-size:1.5em;line-height:1.4em;}
+body.demos .rightCol .greyBox .videoThumbnail{padding-top:1.3em;padding-bottom:1em;}
+body.demos .rightCol .greyBox .videoThumbnail .icon{
+	background-image: url("../images/video_play_btn_big.png");
+    background-repeat: no-repeat;
+    background-size: 4.6em 4.6em;
+    height: 4.6em;
+    width: 4.6em;
+    margin:1.7em 1em;
+    pointer-events: none;
+    position: absolute;
+}
+body.demos .schedule-now{
+	background-color:#5bb4cf;
+	font-size:1.7em;
+}
+body.demos .schedule-now:hover{background-color:#0E7AB2;}
+
+
+.leftCol {display:block;width:100%;padding-right:0;float:none;}
+.rightCol{display:block;width:100%;padding-left:0;padding-bottom:2.9em;}
+
+
+@media screen and (min-width: 600px) {
+	
+	.allow-demo{display:block;}
+	.disallow-demo{display:none;}
+
+	.rightCol{padding-bottom:0;margin-top:4em;}
+	
+	body.demos .header{height:25.7em;}
+	body.demos .header .innerRightCol{display:inline-block;}
+	body.demos .header .innerLeftCol{width:50%;}
+	body.demos .header .innerLeftCol h1{margin-top:1.9em; font-size:3.6em;max-width:10em;padding-top:1.7em;	padding-left:0em;}
+}
+@media screen and (min-width: 800px) {body.demos .header .innerLeftCol h1{margin-top:2.65em;}}
+@media screen and (min-width: 900px) {
+	.leftCol {display:inline-block;width:75%;padding-right:2.9em;float:left;}
+	.rightCol{display:inline-block;width:25%;padding-left:1.0em;margin-top:0;}
+}
+
+/* END DEMOS MAIN PAGE */
+
+
+
+
+
+
+
+
+
+
+
+/* BEGIN DEMO SCHEDULE PAGE */
+
+.header {padding:2.1em 1.8em 0 2.2em;}
+
+.header h1{
+	background-image: url(../images/demo_icon.png);
+	background-position:0.1em 0; 	
+	background-size:1.56666667em 1.6333333em; /* 4.7em 4.9em @ 3.0 font size */
+	min-height: 1.3611111em;
+	background-repeat: no-repeat;		
+	padding-left:2em;	
+	padding-top:0.4em;	
+	padding-bottom:0.5em;	
+	font-size:3.0em;
+	line-height:1em;
+	font-weight:normal;
+}
+.form-step{
+	padding-top:4.5em;	
+	padding-bottom:2em;	
+}
+
+/* skip step3 because it inherits form styles from styles.css */
+.form-step#step1 fieldset,
+.form-step#step2 fieldset,
+.form-step#step4 fieldset{
+	padding-top:1.6em;
+	padding-bottom:2.7em;	
+	padding-left:1.3333333em;
+	padding-right:1.3333333em;	
+	font-size:1.5em;
+	margin-left:0;
+	margin-top:1em;
+	clear:right;
+}
+	
+fieldset.dealer_info{font-size:inherit;}
+fieldset h2{
+	color:#193c73;
+	font-size:1em;
+	margin-bottom:1em;
+	font-weight:normal;
+	line-height:1.4em;
+}
+.form-step#step2 fieldset {padding-bottom:3em;}
+.form-step#step1 fieldset h2{color:#5e5e5e;}
+.form-step#step2 fieldset h2{margin-bottom:1.8em;}
+
+textarea,input{font-size:1.5em;font-family:Arial, Helvetica, sans-serif;}
+textarea{overflow: auto;}
+input[type=button]{cursor:pointer;}
+input[type=radio]{margin-right:1.5em;}
+
+
+
+
+.rounded-corner-button{
+	font-size:1.5em;
+	margin-top: -0.3em;
+	padding: 0 1.6em;
+}
+
+
+
+
+.redoButton{
+	background:none;
+	border:none;
+	color: #193c73;	
+	font-family:arial;
+	text-decoration:underlne;
+	padding:0;
+}
+
+/***************** STEP 1 BOX **************************/
+.form-step#step1 #continue_button_upper{
+	float:right;
+	margin-top: -0.5em;
+}
+/***************** STEP 1 CONFIRMATION BOX **************************/
+.rooms-selected-confirm{
+	padding:0;
+	margin:0;
+	margin-bottom:0.9em;
+}
+.rooms-selected-confirm li{
+	list-style:none;
+}
+.rooms-selected-confirm li a{
+	color:#193c73;
+	text-decoration:none;	
+	line-height:1.9em;
+	background-image: url(../images/schedule_a_demo/icon_info.png);
+	background-size:1em 1em; /* 19px x 19px @ 1.5em font size */ 
+	background-repeat: no-repeat;
+	background-position: right top;
+	padding-right:1.3em;
+}
+
+/***************** STEP 2 BOX **************************/
+.form-step#step2 #view-calendar-button{
+	font-size:1em;
+	margin-top: -0.3em;
+	padding: 0 1.6em;
+}
+
+
+/***************** STEP 3 BOX **************************/
+
+input.error{border:.1em solid #FF723A;background-color:#FFE7D1;}
+
+
+
+/***************** STEP 4 CONFIRMATION BOX **************************/
+
+
+.form-step#step4{
+	line-height:1.4em;
+}
+.form-step#step4 .bodyCopy{
+	font-size:1.5em;
+	margin-top:1em;
+}
+.form-step#step4 h2{
+	color:##193c73;
+	font-size:1.26666667em;
+}
+
+.form-step#step4 #thankyou-date{
+	margin-left:2em;
+	margin-top:1.5em;
+	margin-bottom:0.3em;
+	font-weight:bold;
+}
+.form-step#step4 ul.rooms{
+	font-weight:bold;
+	padding:0;
+	margin:0;
+	margin-left:2em;
+	padding-bottom:1.5em;
+}
+.form-step#step4 ul.rooms li{
+	list-style:none;
+	margin-top:0.4em;
+}
+
+
+
+/***************** SELECT DEMO DETAILS **************************/
+
+#select-demo-details-box label{ width:auto;text-align:left; }
+
+
+/******************* CONFIRMATION BOXES *******************/
+.confirm-box{
+	text-align:left;
+}
+.confirm-box .label{
+	line-height:1.4em;
+}
+.confirm-box h1{
+	/*font-size:12px;*/	
+	font-weight:bold;
+	color:#000;
+}
+.confirm-box ul.rooms-selected-confirm li{
+	font-weight:bold;
+	padding-bottom:0.1em;
+}
+
+
+
+/* PROGRESS BAR */
+body.demos-schedule .header {margin-bottom:0;}
+
+.demo-steps-container{
+	background-color:#107ab2;
+	padding:0.5em 2.3em;
+}
+.demo-steps{
+	width:100%;
+	margin-left:auto;
+	margin-right:auto;
+	border-collapse:collapse;
+	margin-bottom:1.4em;
+}
+
+.demo-steps td{
+	width:25%;
+}
+
+.demo-steps tr.numbers td{
+	height:3.8em;
+	background-image: url(../images/schedule_a_demo/demo-step-line_inactive.gif);
+	background-repeat: repeat-x;
+	background-position: center center;
+	text-align:center;
+}
+.demo-steps tr.numbers td p{
+	width:2.06666667em;
+	height:100%;
+	
+	background-image: url(../images/schedule_a_demo/progress_circle_incomplete.png);
+	background-size:2.06666667em 2.53333333em; /* 3.1em 3.8em @ 1.5 font size */
+	
+	
+	background-repeat: none;
+	background-position: bottom center;
+	
+	font-size:1.5em;
+	padding-left:0.7em;
+	font-weight:bold;
+	color:#5e5e5e;
+	text-align:left;
+	display:inline-block;
+	margin:0;
+	line-height:2.25em;
+}
+
+
+.demo-steps tr.numbers td.active{background-image: url(../images/schedule_a_demo/demo-step-line_active.gif);}
+.demo-steps tr.numbers td.complete{background-image: url(../images/schedule_a_demo/demo-step-line_complete.gif);}
+
+.demo-steps tr.numbers td.active p{background-image: url(../images/schedule_a_demo/progress_circle_active.png);color:#193c73;}
+.demo-steps tr.numbers td.complete p{background-image: url(../images/schedule_a_demo/progress_circle_complete.png);color:#FFF;}
+
+.demo-steps tr.numbers td.complete p{cursor:pointer;}
+.demo-steps tr.numbers td.complete p:hover{background-image: url(../images/schedule_a_demo/progress_circle_active.png);color:#193c73;}
+
+
+/* PROGRESS BAR - step details */
+.demo-steps tr.detail td{
+	text-align:center;
+	padding:0 0.7em;
+	vertical-align:top;
+}
+.demo-steps tr.detail td h3{
+	color:#FFFFFF;
+	padding:0.7em .5em;
+	font-size:1.13333em; /* 17px @ 1.5em font size */
+	/*height:32px;*/
+}
+
+.demo-steps tr.detail td .box{
+	font-size:1.5em;
+}
+.demo-steps tr.detail td.complete .box{
+	height:100%;
+	background-color:#FFFFFF;
+}
+@media (min-width:930px) {.demo-steps tr.detail td.complete .box{margin: 0 1em;}}
+
+
+.demo-steps tr.detail td.active h3{
+	color:#FFFFFF;
+}
+.demo-steps tr.detail td.complete .box h3{color:#193c73;}
+
+.form-step h1{
+	font-size:2.3em;
+	color:#193c73;
+}
+.confirm-box{
+	padding-bottom:1.3em;	
+	padding-left:1em;
+	padding-right:1em;
+}
+.confirm-box .prompt{ 
+	padding-bottom:0.9em;
+}
+.confirm-box #demo-date-value{ 
+	font-weight:bold;
+	margin-bottom:.5em;
+}
+.confirm-box #please-note{
+	padding-bottom:.7em;
+	line-height:1.5em;
+}
+/* END PROGRESS BAR */
+
+
+
+
+
+/* ****************************************************************** */
+/* ***************************** ROOMS ****************************** */
+/* ****************************************************************** */
+.room-selection{
+	cursor:pointer;
+	margin-bottom:1.7em;
+	padding-top:1.3em;
+	padding-bottom:2.2em;
+	padding-left:1.1em;
+	padding-right:2em;
+	
+	background-color: #ffffff;
+	border:.1em solid #ffffff;
+}
+
+
+
+
+input[name=room-select]{
+	margin-top:0.5em;
+	float:left;
+}
+
+.room-selection .option-room-icon, #tooltip .icon{
+	font-size:0.66666666666666667em; /* convert back to 10px font size so pixel calculates are consistant */
+	background-size:10.3em 31.2em;
+	background-size:100% auto;
+	float:left;
+	width:10.3em;
+	height:10.4em;
+	overflow:hidden;
+	margin-left:2.7em;
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+
+
+.room-selection.hovered .option-room-icon{
+	background-position: center center;
+}
+
+.room-selection .option-room-headline,
+.room-selection .option-room-tagline,
+.room-selection .option-room-description,
+.room-selection .option-room-products,
+.room-selection .option-room-download,
+.room-selection ul.option-room-productslist{
+	margin-left:6.7em;	
+}
+.room-selection .option-room-tagline{margin-top:.5em;}
+.room-selection .option-room-description{margin-top:.5em;}
+.room-selection .option-room-products{margin-top:.6em;line-height:1.4; /*17px as 1.5em font size */}
+.room-selection .option-room-products b{color:#203b96;}
+.room-selection .option-room-download{margin-top:1em;}
+
+.room-selection .option-room-headline, #tooltip .headline{
+	color:#203b96;
+	font-weight:bold;
+	font-size:1.266666em;
+	margin-top: 0.4em;
+}
+.room-selection .option-room-tagline, #tooltip .tagline{
+	color:#203b96;
+	font-weight:bold;
+	margin-top: 1em;
+}
+.room-selection .option-room-description, #tooltip .description{
+	line-height:1.4em;
+	margin-top: 0.7em;
+}
+.room-selection .option-calendar-id{display:none;}
+
+.room-selection ul.option-room-productslist{
+	display:none;
+	padding:0;line-height:1.4em;
+}
+
+#room-hover-detail{display:none;}
+
+.room-selection ul.option-room-productslist li{
+	display:inline-block;
+	width:25em;
+	padding-left: 1em;
+	list-style:disc;
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+
+.room-selection.active{
+	background-color:#cee1ed;
+	border:.1em solid #cee1ed;
+}
+
+.room-selection.active  .option-room-headline,
+.room-selection.active  .option-room-tagline,
+.room-selection.active .option-room-products b,
+.room-selection.active .option-room-download a {
+	color:#193c73;
+}
+.room-selection.hovered{
+	background-color:#FFFFFF;
+	border:.1em solid #5bb4cf;
+}
+
+.room-selection.hovered  .option-room-headline,
+.room-selection.hovered  .option-room-tagline,
+.room-selection.hovered .option-room-products b,
+.room-selection.hovered .option-room-download a {
+	color:#5bb4cf;
+}
+
+.room-selection.active b{
+	color:#193c73;
+}
+.room-selection.active .option-room-icon{
+	background-position: center bottom;
+}
+.room-selection.disabled{
+	opacity:.5;	
+}
+.option-room-download a {
+	text-decoration: underline;
+}
+/* END ROOMS */
+
+
+
+/* TOOLTIP */
+#tooltip {
+	width:55em;
+	height: auto; 
+	position: absolute;
+	z-index: 3000;
+	background-color: #eee;
+	padding: .5em;
+	opacity: 0.85;
+
+	padding:0;
+	opacity: 1;
+	
+	-webkit-box-shadow: 0 0 1.6em rgba(50, 50, 50, 0.5);
+	-moz-box-shadow:    0 0 1.6em rgba(50, 50, 50, 0.5);
+	box-shadow:         0 0 1.6em rgba(50, 50, 50, 0.5);
+
+	background-color:#FFFFFF;
+	border:.1em solid #cccccc;
+}
+#tooltip h3, #tooltip div { margin: 0; }
+
+#tooltip .hover-content{
+	padding:1.1em 1.8em 2em 1.8em;
+	width:100%; /* total with padding = 510px; */
+	overflow:hidden;	
+}
+
+#tooltip .headline 	  {font-size:1.9em; margin-left:3.8em} 
+#tooltip .tagline 	  {font-size:1.5em; margin-left:4.9em; line-height:1.2em; margin-top:0.7em;margin-bottom:0;}
+#tooltip .description {font-size:1.5em; margin-left:4.9em}
+#tooltip .products 	  {font-size:1.5em; margin-left:4.9em}
+#tooltip .arrow{
+	position:absolute;
+	margin-top:1em;
+	margin-left:-5.6em;
+	width:3.8em;
+	height:3.6em;
+	background-image: url(../images/schedule_a_demo/tooltip_arrow.png);
+	background-repeat: no-repeat;
+}
+#tooltip .icon{
+	font-size:0.5em;
+	margin-left:0;
+	margin-top:0.6em;
+	background-position: center top;
+}
+
+
+#tooltip div.products{
+	margin-top:.8em;
+	padding:0;
+	line-height:1.4em;
+}
+
+#tooltip div.products b{color:#3277F8;}
+
+
+/* END TOOLTIP */
+
+.warning-message {
+	margin-top:1em;
+	line-height: 1.8em;
+	padding: 0.2em;
+	background-color: #f5d787;
+	font-weight:bold;
+	font-size:1.5em;		
+	padding-left:.5em;
+}
+
+.warning-message{
+	color:#000;
+	background-color: #f5d787; /* Old browsers */
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* HIDING THE ROOM ICONS */
+.room-selection .option-room-icon, #tooltip .icon{display:none;}
+.room-selection .option-room-tagline,
+.room-selection .option-room-description,
+.room-selection .option-room-products,
+.room-selection ul.option-room-productslist{
+	margin-left:2.6em;	
+}
+.room-selection .option-room-headline{margin-left:2em;}
+.room-selection .option-room-icon, #tooltip .icon{
+	font-size:0.5em;
+}
+@media screen and (min-width: 450px) {
+	
+	.room-selection .option-room-tagline,
+	.room-selection .option-room-description,
+	.room-selection .option-room-products,
+	.room-selection ul.option-room-productslist,
+	.room-selection .option-room-download {
+		margin-left: 9em;
+	}
+	.room-selection .option-room-headline{margin-left: 7em;}
+	.room-selection .option-room-icon, #tooltip .icon{
+		display:block;
+	}
+}
+@media screen and (min-width: 600px) {
+	.room-selection .option-room-tagline,
+	.room-selection .option-room-description,
+	.room-selection .option-room-products,
+	.room-selection ul.option-room-productslist,
+	.room-selection .option-room-download {
+		margin-left: 12.3em;
+	}
+	.room-selection .option-room-headline{margin-left: 9.7em;}
+	.room-selection .option-room-icon, #tooltip .icon{
+		font-size:0.666667em;
+	}
+}
+/* END room icon hiding */
+
+
+
+
+/* mobile vs desktop */
+fieldset{margin-left:-2em;margin-right:-2em;}
+.demo-steps-container{margin-left:-2em;margin-right:-2em;width:auto;}
+@media screen and (min-width: 600px) {
+	fieldset{margin-left:0;margin-right:0;}
+	.demo-steps-container{margin-left:0;margin-right:0;}
+}

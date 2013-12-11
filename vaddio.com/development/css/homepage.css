@@ -1,0 +1,658 @@
+body.home .content{
+	padding:0;max-width:100%;
+}
+
+
+.home-products,
+.home-product-display{display:none;}
+
+.home-videos h1,
+.home-engage h1,
+.home-news h1,
+.home-events h1,
+.home-promotions h1{
+	color:#5e5e5e;
+	font-weight:normal;
+	font-size:2.6em;
+}
+.home-engage h1 {
+	margin-left: 0.76923em;
+	margin-right: 0.76923em;
+}
+.home-getstarted h1,
+.home-markets h1,
+.home-products h1{
+	color:#FFFFFF;
+	font-weight:normal;
+	font-size:2.6em;
+	margin-bottom:.4em;
+}
+.home-videos h1{margin-bottom:.4em;}
+.home-getstarted h1{margin-bottom:.8em;}
+.home-markets h1{margin-bottom:.8em;}
+
+.home-products h1{
+	color:#5e5e5e;
+}
+
+
+
+
+.home-videos .view-all, 
+.home-getstarted .view-all, 
+.home-markets .view-all,
+.home-events .view-all,
+.home-news .view-all,
+.home-promotions .view-all{ display:none}
+.home-blueboxes-wrapper{
+	width:auto;margin-right:-2em;margin-left:-2em;
+}
+.home-blueboxes-wrapper section{
+	padding:2.4em 2em;
+	
+}
+/****************** HOMEPAGE GET STARTED ****************************/
+.home-getstarted {
+	color:#FFF;
+	padding:2.4em 2em;
+	padding-bottom:1.3em;
+	background-color:#5bb4cf;
+}
+.home-blueboxes-wrapper section.home-getstarted {
+	padding-bottom: 2em;
+}
+.home-getstarted li {
+	position: relative;
+	background-color: #66bad4;
+	margin-bottom: 1.2em;
+}
+.home-getstarted li a {
+	display: block;
+	height: 4.44em;
+	padding-left: 5em;
+	padding-top: 1.667em;
+	color: white;
+	font-size: 1.2em;
+}
+.home-getstarted li a:hover {
+	text-decoration: none;
+}
+.home-getstarted li:hover {
+	background-color: #81c8dd;
+}
+.home-getstarted li span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 6em;
+	height: 5.33em;
+	display: block;
+	background-image: url(../images/layout/homepage-getstarted-icons.png);
+	background-size: 100% auto;
+}
+.home-getstarted-demos span {
+	background-position: 0 -5.33em;
+}
+.home-getstarted-training span {
+	background-position: 0 -10.66em;
+}
+.home-getstarted-compare span {
+	background-position: 0 -16em;
+}
+/****************** END HOMEPAGE GET STARTED ****************************/
+
+
+
+
+
+
+/****************** HOMEPAGE MARKETS ****************************/
+.home-markets{
+	width:auto;margin-right:-2em;margin-left:-2em;
+	color:#FFF;    
+	/*margin-bottom:1.3em;*/
+}
+.home-markets-inner{
+	background-color:#107ab2;
+	padding:2.4em 2em;
+	padding-bottom:1.3em;
+}
+
+.home-markets a{color:#FFF;text-decoration:none;}
+.home-markets ul li{width:49%;display:inline-block;margin:0;}
+.home-markets ul li a{text-transform:uppercase;color:#FFF;}
+.home-markets ul li img{display:block;width:100%;}
+
+
+/* PADDING BETWEEN MARKETS IMAGES */
+.home-markets ul li{padding:1em 1em 1em 1em;}
+.home-markets ul li:hover{background-color:#2786b8;}
+.home-markets ul li:hover a{text-decoration:underline;}
+.home-markets-inner{padding-right:1em;padding-left:1em;} /* 1 minus padding in the list cell (1em) */
+.home-markets h1{margin-left:.38461538em;} /* padding in list cell (1em) divided by font size (2.6em)  
+/*.home-markets h1{margin-left:.333333em;}*/ /* padding in list cell (1em) divided by font size (3em)  */
+
+
+
+
+
+/* MARKETS NUMBER OF COLUMNS */
+.home-markets ul li{width:50%;}
+
+/* MARKETS TEXT SIZE */
+.home-markets .title{font-size:.9em;}
+
+
+.home-markets .title{
+	font-weight:bold;
+	line-height:1.4em;
+	margin-bottom:.2em;
+	font-family:'Helvetica-Neue'Arial, Helvetica, sans-serif;
+}
+/****************** END HOMEPAGE MARKETS ****************************/
+
+
+
+
+
+
+/****************** HOMEPAGE ENGAGE ******************/
+.home-engage{width:auto;margin-right:-2em;margin-left:-2em;}
+.home-engage-inner{background-color:#ededed;width:100%;padding-bottom:2.2em;padding-top:2.4em;}
+
+.home-engage h1{padding-top:0;}
+.home-engage li{
+	background-color:#193C73;
+	text-align:center;
+	margin:1.4em 2.1em ;
+	display:block;
+}
+.home-engage .compare_ptz_link{display:none;}
+.home-engage li a{
+	display:block;
+	color:#FFF;
+	text-decoration:none;
+	font-size:1.8em;
+	padding-top:.8em;
+	padding-bottom:.85em;
+}
+.home-engage li a:hover{
+	display:block;
+	text-decoration:none;
+	background-color:#22447b;
+}
+.home-engage li a span{
+	margin:0 auto;
+	margin-bottom:0.3em; /*1.5em*/;
+	display:block;
+	background-image: url(../images/layout/home_engage_icons.png);
+	background-size:12.777777777em 5.555555555555556em; /* 1.8em font size = multiply by .55555     (23.0em 10.0em); */
+	width:3.333333333333333em; /*6em */;
+	height:2.7777777778em; /*5em*/;
+	background-repeat: no-repeat;
+}
+
+.home-engage .training-and-certification a 		 span	{	background-position: 0     top;}
+/*.home-engage .training-and-certification a:hover span	{	background-position: 0     bottom;}*/
+
+.home-engage .product-demos 			 a 		 span	{	background-position: -3.333333333333333em  top;}
+/*.home-engage .product-demos 			 a:hover span	{	background-position: -3.333333333333333em  bottom;}*/
+
+.home-engage .find-certified-integrators a 		 span 	{	background-position: -6.666666666666666em top;}
+/*.home-engage .find-certified-integrators a:hover span 	{	background-position: -6.666666666666666em bottom;}*/
+
+.home-engage .compare-ptz-cameras 		 a 		 span	{	background-position: -10em top;}
+/*.home-engage .compare-ptz-cameras 		 a:hover span	{	background-position: -10em bottom;}*/
+
+/****************** END HOMEPAGE ENGAGE ******************/
+
+
+
+
+
+
+/****************** HOMEPAGE FEATURED VIDEOS ****************************/
+.home-videos{
+	background-color:#FFFFFF;
+	padding-top:1em;
+	padding-bottom:1em;	
+	margin-right: -2em;
+	margin-left: -2em;
+}
+.home-videos h1{
+	padding-top:.65em;
+	padding-bottom:.41em;
+	padding-left: 0.7692em;
+}
+.home-videos li {
+	text-align: center;
+	background-color: #f5f5f5;
+	margin-bottom: 2em;
+}
+.home_video_container {
+	padding: 3em 2em;
+}
+.home-videos .title {
+	text-align: center;
+	color: #5e5e5e;
+	margin: 0;
+	font-size: 1.5em;
+	line-height: 1.25;
+}
+.home_video_thumb_container {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	max-width: 12em;
+	margin-bottom: 1em;
+}
+.home_video_thumb {
+	width: 100%;
+	height: 0;
+	padding-bottom: 75%;
+	box-shadow: inset 0 0 0 2px #c2c2c2;
+	background-size: 100% auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-color: black;
+}
+/****************** END HOMEPAGE FEATURED VIDEOS ****************************/
+
+
+
+
+
+
+
+/****************** HOMEPAGE FEATURED EVENTS ****************************/
+.home-events{
+	width:100%;
+	background-color:#FFFFFF;
+	padding-top:1em;
+	padding-bottom:1em;	
+}
+.home-events h1{
+	padding-top:.65em;
+	padding-bottom:.41em;
+}
+.home-events ul li{
+	margin:.6em 0 ;
+	border-top:1px solid #b4b4b4;
+	padding:2em 0 1.1em 0;
+	line-height:1.6em;
+}
+/*
+.home-events ul li:last{
+	border-bottom:1px solid #b4b4b4;
+}
+*/
+.home-events ul li .description{
+	font-size:1.5em;
+	line-height:1.4em;
+	color:#5e5e5e;
+	padding-top:0.8em;
+}
+.home-events ul li h2{
+	font-size:1em; /*19px divided by parent's font size of 1.5em */
+	margin-bottom:.2em;
+}
+.home-events ul li .description a{
+	color:#1f4470;
+	text-decoration:none;
+}
+.home-events ul li .description a:hover{
+	text-decoration:underline;
+}
+.home-events ul li .event-image{
+	height:6.2em;
+	text-align:center;
+}
+.home-events ul li img{
+	max-height:5em;
+}
+/****************** END HOMEPAGE FEATURED EVENTS ****************************/
+
+hr.gradient, hr.gradient2{
+	display:block;
+	clear:both;
+	height:4.6em;
+	width:auto;
+	background-repeat: repeat-x;
+	background-image: url(../images/layout/divider_gradient.jpg);
+	background-position: center top;
+	border:none;
+	margin:0;
+	margin-right:-2em;
+	margin-left:-2em;
+}
+
+hr.gradient{display:none;}
+hr.gradient2{
+	height:3.2em;
+	background-image: url(../images/layout/divider_gradient_2.jpg);
+}
+	
+/****************** HOMEPAGE NEWS ****************************/
+.home-news{
+	display:block;
+}	
+
+.home-news ul{display:table;width:100%;margin-bottom:6em;margin-top:2.9em;}
+.home-news ul li{/*width:50%;display:table-cell;*/}
+.home-news ul li .news-image img{ max-width:14em;}
+.home-news ul li .news-description{ line-height:1.6em;font-size:1.5em;color:#5e5e5e;}
+.home-news ul li h2{color:#193C73;font-size:1em; line-height:1.4em;}
+
+
+.home-news ul li .news-image{ float:none;}
+
+.home-news ul li .read-more-link{padding-bottom:2.5em;}
+/******** END HOMEPAGE NEWS *************/
+	
+	
+
+
+
+/****************** HOMEPAGE PROMOTIONS ****************************/
+.home-promotions{padding-bottom:2.5em;}
+/******** END HOMEPAGE PROMOTIONS *************/
+
+
+
+
+
+
+@media screen and (min-width: 300px) {	.home-markets .title{font-size:1.5em;} }
+@media screen and (min-width: 450px) {	
+	.home-markets ul li{width:33.33333%;}
+	.home-markets .title{font-size:1.5em;}
+	.home-promotions .promotions-container {margin-left:-1em;margin-right:-1em;}
+	.home-promotions .promotions-container .promo{width:50%;display:inline-block;padding:1em 1em;}
+}
+
+@media screen and (min-width: 600px) {	
+	.home-markets .title{font-size:1.2em;}
+	.home-markets ul li{width:25%;}
+	.home-engage h1,
+	.home-news h1,
+	.home-events h1,
+	.home-videos h1,
+	.home-getstarted h1,
+	.home-markets h1,
+	.home-products h1{
+		font-size:3em;
+	}
+	.home-products h1{ margin-bottom:.63em;}
+	.home-getstarted h1  { margin-bottom:1em;}
+	
+	.home-engage h1,
+	.home-news h1{
+		margin-left:0em;
+	}
+
+	body.home .view-all{ float:right;display:block;} 
+	
+	
+	
+	/******** END HOMEPAGE FEATURED PRODUCTS *************/
+	
+	.home-blueboxes-wrapper{
+		width:100%;margin-right:auto;margin-left:auto;
+	}
+		
+	.home-blueboxes-wrapper{
+		width:100%;		
+		display:table;
+		padding-top:5em;
+		padding-bottom:6.5em;
+		display:block;
+	}
+	.home-blueboxes-wrapper section{
+		vertical-align:top;
+		width:50%; 
+		display:table-cell;
+		padding: 2.5em 2.5em;
+	}
+	
+	
+	
+	/******** HOMEPAGE PRODUCTS *************/
+	.home-products{background-color:#e0e0e0;}
+	/******** END HOMEPAGE PRODUCTS *************/
+	
+	/******** HOMEPAGE MARKETS *************/
+	.home-markets {		
+		width:100%;margin-right:auto;margin-left:auto;
+		padding-bottom:3em;
+	}
+
+	.home-markets-inner{
+		padding:3em 2.4em 2em 2.4em;
+	}
+	.home-markets h1{margin-bottom:.35em;}
+	.home-markets  .title{margin-bottom:.9em;}
+	/******** END HOMEPAGE MARKETS *************/
+	
+	
+	
+	/******** HOMEPAGE ENGAGE *************/
+	.home-engage{		
+		width:100%;margin-right:0;margin-left:0;
+		background-color:#193C73;
+	}
+	.home-engage-inner{	
+		padding:0;
+		background-color:transparent;
+	}
+	.home-engage-inner:after{ display:table;clear:both;content:" "; }
+	
+	.home-engage h1{ display:none; }
+	.home-engage li{
+		width:25%;
+		margin:0;
+		margin-top:1em;
+		margin-bottom:1.5em;
+		float:left;
+		background-color:transparent;
+		-webkit-box-shadow: none;
+		-moz-box-shadow:    none;
+		box-shadow:         none;
+	}
+	.home-engage .compare_ptz_link{display:inherit;}
+	.home-engage li a span{
+		margin:0 auto;
+		margin-bottom:0.7em;
+		width:3.333333333333333em; 
+		height:2.7777777778em;
+	}
+	
+	
+		
+	.home-engage li a{ font-size:1.5em;}
+	.home-engage li a span{font-size:1.3em;	}
+	
+	
+	/******** END HOMEPAGE ENGAGE *************/
+	
+		
+	
+	/****************** HOMEPAGE FEATURED VIDEOS ****************************/
+	.home-videos{	
+		clear:both;		
+		background-color:#FFFFFF;
+		padding-top:3.2em;
+		padding-bottom:3.2em;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	
+	/* adjust left and right padding to account for the padding on the first and last list items */
+	.home-videos	{ padding-left :2em;padding-right:2em; }  /* 4em (global padding) - 2em (list padding) */
+	.home-videos h1 { margin-left:.666666666em; padding-left: 0;}					/* 2em (list padding) padding divided by font size (3em) */
+	.home-videos .view-all{ margin-right: 2em; margin-top: 1.8em; }
+	.home-videos ul {
+		display: table;
+		border-spacing: 2em;
+	}
+	.home-videos li {
+		display: table-cell;
+		width: 25%;
+		text-align: center;
+		background-color: #f5f5f5;
+		margin: 0;
+	}
+	/*.home-videos li {
+		padding: 0 1em;
+	}
+	.home-videos li:first-child {
+		padding-left: 2em;
+	}
+	.home-videos li:last-child {
+		padding-right: 2em;
+	}*/
+	.home_video_container {
+		padding: 1em;
+	}
+	.home-videos .title {
+		font-size: 1.1em;
+	}
+	/****************** END HOMEPAGE FEATURED VIDEOS ****************************/
+	
+		
+		
+		
+	/****************** HOMEPAGE FEATURED EVENTS ****************************/
+	.home-events{	
+		clear:both;		
+		width:100%;
+		background-color:#FFFFFF;
+		padding-top:3.2em;
+		padding-bottom:1em;			
+	}
+	
+	/* adjust left and right padding to account for the padding on the first and last list items */
+	.home-events	{ padding-left :2em;padding-right:2em; }  /* 4em (global padding) - 2em (list padding) */
+	.home-events h1 { margin-left:.666666666em; }					/* 2em (list padding) padding divided by font size (3em) */
+	.home-events .view-all{ margin-right: 2em; margin-top: 1.8em; }	
+		
+		
+	.home-events ul{
+		margin-bottom:3.6em;
+	}
+	
+	.home-events ul li{		
+		display:inline-block;
+		width:25%;
+		border-right:1px solid #b4b4b4;
+		padding:1.1em 2em;/* (list padding) */
+		margin:0;
+		border-top:none;	
+		vertical-align:top;	
+	}
+	.home-events ul li:last-child{
+		border-right:none;
+	}
+	.home-events ul li .event-image img{
+		max-width:90%;
+	}
+	/****************** END HOMEPAGE FEATURED EVENTS ****************************/
+
+
+	/****************** HOMEPAGE NEWS ****************************/
+	/*
+	.home-news ul li{width:50%;display:table-cell;padding-right:2.4em;}
+	*/
+	.home-news ul li .news-description{ margin-left:11em;}
+	
+	.home-news ul li .news-image{ float:left;}
+	/****************** END HOMEPAGE NEWS ****************************/
+	
+	
+	.home-news-promotions-container{
+		padding-left: 2em;
+		padding-right: 2em;		
+	}
+	body.home .home-news{	   width:75%;display:inline-block;vertical-align:top;padding-left:2em;padding-right:4.5em;}
+	body.home .home-promotions{width:25%;display:inline-block;vertical-align:top;padding-left:0;}
+	body.home hr.before-promotions{display:none;}
+	
+	.home-promotions .promotions-container {margin-left:-1em;margin-right:-1em;margin-top:2.5em;}
+	.home-promotions .promotions-container .promo{width:100%;display:inline-block;padding:1em 1em;}
+
+
+	
+	hr.gradient{
+		margin:0;
+		display:block;
+	}
+	
+	hr.gradient2{
+		margin:0;
+	}
+	
+}
+
+@media screen and (min-width: 700px) {	
+	.home-markets .title{font-size:1.5em;} 
+	
+	.home-engage li a{ font-size:1.8em;}
+	
+	.home-engage li a span{
+		font-size:1em;
+	}
+	
+	.home-engage .training-and-certification a 		 span	{	background-position: 0     top;}
+	/*.home-engage .training-and-certification a:hover span	{	background-position: 0     bottom;}*/
+	
+	.home-engage .product-demos 			 a 		 span	{	background-position: -3.333333333333333em  top;}
+	/*.home-engage .product-demos 			 a:hover span	{	background-position: -3.333333333333333em  bottom;}*/
+	
+	.home-engage .find-certified-integrators a 		 span 	{	background-position: -6.666666666666666em top;}
+	/*.home-engage .find-certified-integrators a:hover span 	{	background-position: -6.666666666666666em bottom;}*/
+	
+	.home-engage .compare-ptz-cameras 		 a 		 span	{	background-position: -10em top;}
+	/*.home-engage .compare-ptz-cameras 		 a:hover span	{	background-position: -10em bottom;}*/
+	
+	
+	.home_video_container {
+		padding: 2em;
+	}
+	.home-videos .title {
+		font-size: 1.2em;
+	}
+
+	.content .findproducts nav.find-products-by-category ul li a{font-size:1.2em;}
+
+}
+
+@media screen and (min-width: 750px) {
+	.content .findproducts nav.find-products-by-category ul li a{font-size:1.3em;}
+	.home-blueboxes-wrapper section {padding:3.2em 3.2em;}
+	.home-getstarted li a {font-size: 1.4em;}
+	.home-getstarted li span { width: 6.2em; height: 5.51em; }
+}
+
+@media screen and (min-width: 825px) {
+	.content .findproducts nav.find-products-by-category ul li a{font-size:1.4em;}
+	.home-videos .title { font-size: 1.5em; }
+}
+@media screen and (min-width: 900px) {
+	.content .findproducts nav.find-products-by-category ul.fp-cats > li > a{font-size:1.5em;}
+	.home-getstarted li a {font-size: 1.8em;}
+	.home-getstarted li span { width: 9em; height: 8em; }
+	.home-getstarted-demos span {background-position: 0 -8em;}
+	.home-getstarted-training span {background-position: 0 -16em;}
+	.home-getstarted-compare span {background-position: 0 -24em;}
+	.home_video_container { padding: 3em 2em; }
+}
+
+
+@media screen and (min-width: 1000px) {	
+	.home-markets .title{font-size:1.2em;}
+	.home-markets ul li{width:14.285714285714%}
+}
+
+
+
+
+

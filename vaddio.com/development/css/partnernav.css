@@ -1,0 +1,198 @@
+nav.partnernav {
+     display: none;
+}
+
+@media screen and (min-width: 600px) {
+     
+     nav.partnernav {
+          display: block;
+          position: relative;
+          width: 100%;
+          min-height: 4em;
+          background-color: #242424;
+          cursor: pointer;
+          margin-bottom: 0.8em;
+     }
+
+     .partnernav_container {
+          max-width: 112.4em;
+          padding: 0 2.4em;
+          margin: 0 auto;
+     }
+     
+     nav.partnernav ul {
+          height: 0;
+          clear: both;
+          overflow: hidden;
+          -webkit-transition: height 1s;
+          -moz-transition: height 1s;
+          -ms-transition: height 1s;
+          -o-transition: height 1s;
+          transition: height 1s;
+     }
+     
+     nav.partnernav ul._show {
+          height: 27.6em;
+     }
+     
+     nav.partnernav ul li:first-child {
+          margin-top: 1em;
+     }
+     
+     nav.partnernav ul li:last-child {
+          margin-bottom: 1em;
+     }
+     
+     nav.partnernav ul li a {
+          display: block;
+          font-size: 1.4em;
+          height: 2.2em;
+          line-height: 2.2em;
+          color: white;
+          padding: 0 1.1428em;
+     }
+
+     nav.partnernav ul li a:hover {
+          background-color: #5bb4cf;
+          text-decoration: none;
+     }
+
+     nav.partnernav ul li._active a {
+          background-color: white;
+          color: #404040;
+     }
+     
+     .partnernav_logo {
+          float: left;
+          background-color: #404040;
+          height: 3.3571em;
+          line-height: 3.3571em;
+          margin-top: 0;
+          background-image: url(../images/partners/partners_nav_icon.png);
+          background-repeat: no-repeat;
+          background-position: 1.1429em 0.92857em;
+          background-size: 1.92857em 1.6429em;
+          padding-left: 3.7143em;
+          padding-right: 1.2143em;
+          color: #c2c2c2;
+          font-family: "Helvetica Neue",Helvetica,arial,sans-serif;
+          text-transform: uppercase;
+          margin-right: 1em;
+          height: 3.3571em;
+          line-height: 3.3571em;
+          font-size: 1.2em;
+     }
+     .partnernav_logo a{color:#FFFFFF;}
+     .partnernav_arrow {
+          float: right;
+          width: 1.2em;
+          height: 0.7em;
+          margin-top: 1.6em;
+          margin-right: 1.6em;
+          background-repeat: no-repeat;
+          background-image: url(../images/button_down_karat.png);
+     }
+     
+}
+     
+@media screen and (min-width: 842px) {
+     
+     nav.partnernav {
+          cursor: default;
+     }
+     
+     .partnernav_arrow {
+          display: none;
+     }
+     
+     nav.partnernav ul {
+          height: auto;
+          overflow: hidden;
+          clear: none;
+     }
+
+     nav.partnernav ul li {
+          float: left;
+          margin-top: 0.5em;
+     }
+     
+     nav.partnernav ul li:first-child {
+          margin-top: 0.5em;
+     }
+     
+     nav.partnernav ul li:last-child {
+          margin-bottom: 0;
+     }
+
+     nav.partnernav ul li a {
+          display: block;
+          padding: 0 0.8571em;
+          font-size: 1.2em;
+          height: 2.92857em;
+          line-height: 2.92857em;
+          color: white;
+     }
+
+     nav.partnernav ul li a:hover {
+          background-color: #5bb4cf;
+          text-decoration: none;
+     }
+
+     nav.partnernav ul li._active a {
+          background-color: white;
+          color: #404040;
+     }
+     
+}
+
+@media screen and (min-width: 955px) {
+     
+     nav.partnernav {
+          min-height: 4.7em;
+     }
+     
+     nav.partnernav ul li {
+          margin-top: 0.6em;
+     }
+     
+     nav.partnernav ul li:first-child {
+          margin-top: 0.6em;
+     }
+     
+     nav.partnernav ul li a {
+          font-size: 1.4em;
+     }
+     
+     .partnernav_logo {
+          font-size: 1.4em;
+     }
+     
+}
+
+
+
+
+
+
+
+
+
+
+
+/* RETINA DISPLAY IMAGES */
+/*
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {   
+     nav.topnav a#pull {background-url: url('../images/layout/nav-icon@2x.png')}
+}
+
+@media screen 
+and (min-width: 600px)
+and (-webkit-min-device-pixel-ratio: 2){
+}
+*/

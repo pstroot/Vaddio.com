@@ -1,0 +1,117 @@
+@charset "utf-8";
+/*
+Even though this entire stylesheet is only included for high density pixel browsers based on a media query when it is included, we do the media query again for IE8, which will ignore the original media query. */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+    only screen and (-o-min-device-pixel-ratio: 3/2),
+    only screen and (min--moz-device-pixel-ratio: 1.5),
+    only screen and (min-device-pixel-ratio: 1.5) {
+	
+	/* CSS Document */
+	
+	/* THIS ENTIRE STYLESHEET SHOULD ONLY BE INCLUDED FOR BROWSERS THAT DISPLAY GREATER THAN 1 device-pixel-ratio */
+	
+	
+	/* top nav and header */
+	
+	nav.topnav a#pull { 						background-image: url("../images/layout/nav-icon@2x.png") }
+	nav.topnav .submenu-products .learn-more{	background-image: url("../images/layout/nav_partners_icon@2x.png");}
+	nav.topnav ul li .submenu-training h2{		background-image: url("../images/layout/nav_checkmark_badge@2x.png");}
+	.utility-links li.login a{					background-image: url("../images/layout/mobile_nav_icons@2x.png");}	
+	header .search a {  						background-image: url("../images/layout/mobile_nav_icons@2x.png");}	
+	.socialmedia-links li.image-link a{			background-image: url("../images/layout/utility_links@2x.png");}
+	.header .search a{							background-image: url("../images/layout/mobile_nav_icons@2x.png");}
+	.header .support-button{					background-image: url("../images/support_icon@2x.png");}
+	
+	/* Home Page */
+	.home-videos .icon { 						background-image: url("../images/video_play_btn@2x.png")}
+	.home-videos li:hover  .icon{				background-image: url("../images/video_play_btn_hover@2x.png");}
+	.home-engage li a span {					background-image: url("../images/layout/home_engage_icons@2x.png");}
+	
+	/* Footer */
+	footer .logo a {							background-image: url("../images/layout/footer_logo@2x.png");}
+	footer ul.socialmedia li a {				background-image: url("../images/layout/utility_links@2x.png");}
+	
+	/* Careers */	
+	body.career-detail .back-to-careers{		background-image: url("../images/back_arrow@2x.png");	}
+	
+	/* Products */
+	.home_products_scroller_callouts li span { 	background-image: url("../images/products/product_display_pointer@2x.png");}
+	.content ul.products li .systems{			background-image: url("../images/layout/gears@2x.png");}
+	
+	/* Compare PTZ Cameras */
+	body.compare-ptz #scrollArrow{				background-image: url("../images/PTZ_comparison/explore_arrow@2x.png");}
+	
+	/* Find Products */
+	.findproducts nav.find-products-by-category > ul > li ul > li						{/*background-image:url("../images/layout/grayPlus@2x.png");*/}
+	.findproducts nav.find-products-by-category   ul.fp-cats > li.active				{background-image:url("../images/layout/bluePlus@2x.png");}
+	.findproducts nav.find-products-by-category > ul > li  ul.fp-products > li.active	{background-image:url("../images/layout/activeCircle@2x.png");}
+	
+		
+			
+	/* markets */
+	body.market-detail .videos .icon{			background-image: url("../images/video_play_btn@2x.png");}
+	body.market-detail .back-to-markets{		background-image: url("../images/back_arrow.png");}
+	body.market-detail .blue-box h2 .icon{		background-image: url("../images/market_detail_icons@2x.png");}
+	
+	/* product accessories */
+	.content ul.products li .systems{			background-image: url("../images/layout/gears@2x.png");}
+	
+	/* product detail */
+	.header .support-button{					background-image: url("../images/layout/support_icon@2x.png");}
+	.product-detail-systems .systems-header{	background-image: url("../images/layout/gears@2x.png");}
+	.product-detail-compare{					background-image: url("../images/compare_ptz_icon.png");}
+	body.products .content .videos .icon{		background-image: url("../images/video_play_btn@2x.png");}
+	.system-header{   							background-image: url("../images/layout/gears@2x.png");}
+	body.products .content .videos li:hover .icon{background-image: url("../images/video_play_btn_hover@2x.png");}
+	
+	/* product slider */
+	.home_products_scroller_arrows a._right {	background-image: url("../images/product_slider/product_slider_buttons@2x.png");}
+	.home_products_scroller_arrows a._left  {	background-image: url("../images/product_slider/product_slider_buttons@2x.png");}
+	.home_products_scroller_callouts li span {  background-image: url("../images/product_slider/product_display_pointer@2x.png");}
+	
+	/* support */
+	body.support-search .header{				background-image: url("../images/layout/support_icon@2x.png");}
+	body.support .finder input[type=submit]{	background-image: url("../images/layout/mobile_nav_icons@2x.png");}
+	body.support .finder .see-listing{			background-image: url("../images/icon_right_arrow_white@2x.png");}
+	#close-category-window{						background-image: url("../images/icon_close_x@2x.png");}
+	#choose-a-different-category{				background-image: url("../images/supportLeftArrow@2x.png");}
+	body.support-detail .downloads h1{			background-image: url("../images/icon_down_arrow_white@2x.png");}
+	body.support-resources  a.back-to-top{		background-image: url("../images/backtotopArrow@2x.png");}
+	.support-block-contact h2{					background-image: url("../images/icon_phone@2x.png");}
+	.support-block-warranty h2{					background-image: url("../images/icon_shield@2x.png");}
+	.support-block-helpfullinks h2{				background-image: url("../images/icon_helpful_links@2x.png");}
+	body.support .headerRightCol, body.support-products .header, body.support-detail .header, body.support-resources .header, body.support-search .header {background-image: url("../images/layout/support_icon@2x.png");}
+	
+	/* Training */
+	body.training .innerRightCol h1{			background-image: url("../images/layout/nav_checkmark_badge_white@2x.png");}
+	body.training-register .header{				background-image: url("../images/layout/nav_checkmark_badge_white@2x.png");}
+	.info-block-moreinfo h2{					background-image: url("../images/icon_more_info@2x.png");}
+		
+	/* Video */
+	.videos section h2 .arrow{					background-image: url("../images/button_down_karat@2x.png");}
+	.tooltip .tooltipArrow {    				background-image: url("../images/tooltipArrowRight@2x.png");}
+	.tooltip.hoverRight .tooltipArrow {   		background-image: url("../images/tooltipArrowLeft@2x.png"); }
+	header h1.logo{								background-image: url("../images/layout/logo_small@2x.png");}
+
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 600px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 600px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 600px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 600px),
+only screen and (                min-resolution: 192dpi) and (min-width: 600px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 600px) {
+
+	header h1.logo{							background-image: url("../images/layout/logo@2x.png");}
+	.utility-links li.login a{				background-image: url("../images/layout/utility_link_login_lock@2x.png");}
+	.socialmedia-links li.image-link a{		background-image: url("../images/layout/utility_links@2x.png");}
+	
+	.carousel_mobile_arrow {				background-image: url("../images/carousel/mobile_carousel_arrows@2x.png");}
+	 
+	 /* product slider */
+	.home_products_scroller_arrows a._right { background-image: url("../images/product_slider/product_slider_buttons@2x.png");	}	
+	.home_products_scroller_arrows a._left  { background-image: url("../images/product_slider/product_slider_buttons@2x.png");	}
+
+}

@@ -1,0 +1,472 @@
+@charset "utf-8";
+/* CSS Document */
+
+	
+ul.bulleted-list{margin-bottom:.8em;}
+ul.bulleted-list, body.training-details ul.bulleted-list ul{
+	margin-left:1.7em;	
+} 
+ul ul.bulleted-list{
+	margin-bottom:0;
+} 
+ul.bulleted-list  li{
+	list-style:disc;		
+} 
+
+
+/******************** TRAINING HOME PAGE **********************/
+body.training .rightCol 	{ display:none; }
+body.training .innerLeftCol { display:none; }
+	
+body.training .innerRightCol{
+	padding:2.0em 2.8em 4em 2.8em;
+	color:#FFFFFF;
+	background-color:#107ab2;
+	margin-left:-2em;
+	margin-right:-2em;
+}
+body.training .innerRightCol h1{
+	color:#FFFFFF;
+	background-position: 0 0;
+	background-image: url(../images/layout/nav_checkmark_badge_white.png);
+	background-size:1.29411765em 1.29411765em; /* 44px x 44px */
+	min-height:1.29411765em;
+	font-size:3.4em;
+	font-weight:normal;
+	background-repeat: no-repeat;
+	padding-left:1.6em;
+	line-height:1.1em;
+	padding-bottom:.3em;
+}
+body.training .innerRightCol h2{
+	color:#FFFFFF;
+	font-weight:normal;
+	font-size:2.1em;
+	margin-bottom:.2em;
+}
+body.training .innerRightCol section{
+	margin-top:3em;
+}
+body.training .innerRightCol section#section-1{
+	margin-top:1.8em;
+}
+body.training .innerRightCol p{
+	font-size:1.6em;
+	line-height:1.4em;
+	margin-bottom:.4em;
+}
+
+body.training .innerRightCol .rounded-corner-button{
+	display:inline-block;
+	margin-top:.3em;
+	margin-right:1.6em;
+}
+
+
+
+
+
+/*********************** TRAINING REGISTRATION PAGE ***********************************/
+
+body.training-register fieldset {
+	padding: 6.2em 2.7em 1.4em 2.7em;
+	margin-top: 3.2em;
+	margin-bottom: 1.4em;
+}
+
+body.training-register legend {
+	font-size: 2.1em;
+	font-weight: normal;
+	padding: 0.6666667em 0.95238095em;
+	height: auto;
+	line-height: 1;
+}
+
+body.training-register .rightCol 	{ display:none; }
+
+body.training-register .innerLeftCol{
+	/*padding-right: 2.95em;*/
+	margin-bottom:2.3em;
+}
+
+body.training-register .header{
+	background-image: url(../images/layout/nav_checkmark_badge_white.png);
+	background-repeat: no-repeat;
+	background-size: 4.4em 4.4em; /* 44px square */
+	background-position: 2.0em 1.8em;
+	padding-left:7.4em;	
+}
+
+body.training-register h2{font-size:2.1em;font-weight:normal;}
+body.training-register .innerLeftCol h2{margin-bottom:1em;}
+body.training-register ul.tabs{
+}
+body.training-register ul.tabs li{
+	display:inline-block;
+	font-size:1.5em;
+	text-transform:uppercase;
+}
+body.training-register ul.tabs li a{
+	display:inline-block;
+	text-decoration:none;
+	color:#666666;
+	padding:.65em .6em;
+	vertical-align:top;
+}
+body.training-register ul.tabs li a:hover{
+	color:#193C73;
+}
+/* active navigation tabs */
+body.training-register-onsite ul.tabs li.onsite a,
+body.training-register-online ul.tabs li.online a{
+	border:1px solid #d2d2d2;
+	border-bottom:1px solid #FFFFFF;
+	color:#193C73;
+	background-color:#FFFFFF;
+}
+
+hr.tabs-bottom-border{
+	border:none;
+	border-bottom:1px solid #d2d2d2;
+	margin-top:-1px;
+	margin-bottom:2.41em;
+	padding:0;
+	height:1px;
+}
+
+
+body.training-register .form-block-class label{
+	width:auto;
+	max-width:inherit;
+	margin-bottom:1em;
+	font-size:2.1em;
+	color:#666666;
+	font-weight:normal;
+}
+body.training-register .form-block-class .scrollable{
+	/*background-color:#e6eff5;*/
+	background-color: #f7f7f7;
+	max-height: 30em;
+    overflow-x: hidden;
+    overflow-y: auto;
+	padding:2.4em 2em;
+	border: 1px solid #ccc;
+}
+body.training-register .form-block-class .scrollable:hover {
+	border: 1px solid #177ab0;
+}
+body.training-register .form-block-class .class-block{
+	width:100%;
+	margin-bottom:1em;
+}
+body.training-register .form-block-class .class-block input[type="radio"]{
+	margin:0;
+	margin-right:.3em;
+	float:left;
+}
+body.training-register .form-block-class .class-block .radio-description{
+	line-height:1.4em;
+	margin-left:2em;
+	max-width:inherit;
+	font-size:1.2em;
+	font-weight:normal;
+}
+body.training-register .form-block-class .class-block .radio-description .message{
+	color:#E9762E;
+}
+body.training-register .form-block-class .form-error{
+	padding:.5em;
+	text-align:center;
+	
+	background-color:#F5E9EC;
+	border:1px solid #D16D70;
+	color:#D16D70;
+	margin:1em auto;
+	font-size:1.2em;
+	line-height:1.4em;
+	min-width:30em;
+	
+}
+.info-block-moreinfo h2{
+	background-image: url(../images/icon_more_info.png);
+	background-repeat: no-repeat;
+	background-size:1.047861905em 1.047861905em; /* 22px x 22px */
+	background-position: 0.9047619em 0.6em; /* 19px x 16px */
+	padding-left:2.3em;
+}
+.info-block-moreinfo img{
+	margin-top:1.5em;	
+	margin-bottom:0.7em;
+	max-width:100%;	
+}
+body.training-register .form-block-submit{padding-bottom:2em;}
+body.training-register .form-block-submit label{display:none;}
+
+
+body.training-register .input[type=submit]{
+	font-size:1.1em;
+	padding:.7em 1.4em .5em 1.4em;
+	-moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -khtml-border-radius: 1em;
+    border-radius: 1em;
+	text-decoration:none;
+	white-space:nowrap;
+}
+
+
+
+/*********************** TRAINING DETAILS PAGE ***********************************/
+
+
+body.training-details .big-blue-header {
+	margin-bottom: 0;
+}
+
+body.training-details .content {
+	padding-bottom: 2em;
+}
+
+body.training-details .content section{
+	font-size:1.5em;
+	line-height:1.4em;
+	margin: 1em -1.333em;
+	max-width: 720px;
+	padding-left: 1.2em;
+} 
+body.training-details .content h2 {
+	background-color: #5bb4cf;
+	color: white;
+	font-size: 1.9em;
+	font-weight: normal;
+	padding: 0.65789474em 0.9474em;
+	margin: 0 -1.0526em;
+	margin-bottom:1em;
+}
+body.training-details h3{margin-bottom:.6em;}
+
+@media screen and (min-width:600px) {
+	
+	body.training-details .big-blue-header {
+		margin-bottom: 2em;
+	}
+
+	body.training-details .content section{
+		margin: 1em 0;
+		padding-left: 1.33em;
+	} 
+	body.training-details .content h2 {
+		padding: 0.65789474em 1.05em;
+		margin: 0 0 1.4em;
+	}
+	
+}
+
+
+
+
+/******************** WHY CERTIFY PAGE **********************/
+body.why-certify .rightCol {display:none;}
+body.why-certify .innerRightCol img {	display:none;}
+
+body.why-certify .header{height:auto;background-color:#107ab2;margin-bottom:2em;}
+
+body.why-certify .leftCol{margin-bottom:2.5em;}
+
+body.why-certify .innerRightCol{
+	color:#FFF;
+	width:100%;
+	height:100%;
+	padding:2.4em 2.3em;
+}
+body.why-certify .innerLeftCol{
+	display:none;
+	width:100%;
+	height:100%;
+	background-image: url(../images/why-certify-header.jpg);
+	background-size:52.3em 29.6em;
+	background-repeat: no-repeat;
+	background-position: center top;	
+}
+
+body.why-certify .innerRightCol h1{
+	font-size:3.6em;
+	font-weight:normal;
+	margin-bottom:.4em;
+}
+body.why-certify .innerRightCol h2{
+	font-size:2.9em;
+	font-weight:normal;
+	line-height:1.07em;
+}
+body.why-certify .innerRightCol{font-size:.8em}
+
+body.why-certify #infocomm-logo{padding-top:.5em;padding-bottom:.5em;}
+
+@media screen and (min-width: 700px) {body.why-certify .innerRightCol{font-size:0.9em}}
+@media screen and (min-width: 1100px) {body.why-certify .innerRightCol{font-size:1em} body.why-certify .innerRightCol{padding:2.4em 1.8em;}}
+	
+
+body.why-certify .innerRightCol img {
+	width:4.4em;height:4.4em;
+}
+
+
+body.why-certify .bodyCopy{
+	font-size:1.5em;
+	line-height:1.4em;
+	padding-bottom:1.6666667em;
+}
+
+body.why-certify .bodyCopy p{margin-bottom:0.7em;}
+body.why-certify .bodyCopy h2{
+	font-size:1.4em; /* 21px @ 27px font size */
+	font-weight:normal;
+	color:#666666;
+	padding-bottom:.7em;
+	padding-top:1em;
+}
+body.why-certify .bodyCopy h3{
+	font-size:1em; /* 14px */
+	color:#666666;
+}
+body.why-certify .bodyCopy ul > li{margin-bottom:1em;}
+.bodyCopy .rounded-corner-button{font-size:0.8em;margin-top:0.4em;display:inline-block;}
+
+
+
+
+/******************** REGISTRATION SUCCESS PAGE **********************/
+body.training-success .classNameHeader{
+	margin-top:1em;
+	font-size:1.5em;	
+	line-height:1.4em;
+	background-color:#CEE1ED;
+	padding:1.3em;
+}
+body.training-success .classNameHeader h3{
+	font-size:1.2em;
+}
+
+body.training-success .bodycopy{
+	font-size:1.5em;	
+	line-height:1.4em;
+	padding-bottom:1em;
+}
+
+
+
+@media screen and (min-width: 600px) {
+	
+	
+	body.training .innerLeftCol {
+		display:inline-block;
+		position:absolute;
+		height:100%;
+		background-color:#777777;
+		background-position: top center;
+		background-image: url(../images/training_home.jpg);
+		background-size:53.7em 53.2em;
+		background-repeat:no-repeat;
+		background-size:auto 100%; /* 44px x 44px */
+		background-color:#666666;
+	}
+	body.training .innerRightCol{
+		margin-left:0;
+		margin-right:0;
+		margin-left:33.333333%;
+		background-color:#107ab2;
+		color:#FFFFFF;
+	}
+	
+	
+	
+	
+	
+	/*********************** TRAINING REGISTRATION PAGE ***********************************/
+	body.training-register .leftCol { width:100%; padding-right:0; }
+	
+	body.training-register .innerLeftCol  label{width:100%;max-width:inherit;}
+	body.training-register .innerLeftCol  input[type="text"]{width:100%;max-width:inherit;}
+	
+	body.training-register .form-block {
+		margin-bottom: 0.25em;
+	}
+
+	body.training-register .form-block-class label{
+		width:auto;
+		max-width:inherit;
+	}
+
+	
+	body.training-register .innerRightCol,
+	body.training-register .rightCol{
+		margin-top:3.2em;
+	}
+	body.training-register .innerRightCol{
+		width:33.3333333%;
+		padding-left: 0;
+	}
+	body.training-register .innerLeftCol{
+		width:66.6666666%;
+		padding-right: 2.95em;
+	}
+	
+	
+	body.training-register form .form-error{
+		margin-left:0;		
+	}
+	
+	
+	/******************** WHY CERTIFY PAGE **********************/
+	
+	body.why-certify .leftCol {	width:100%;padding-right:0;}
+	body.why-certify .innerRightCol img {	display:block;}
+
+	body.why-certify .header{height:29.6em;}
+	body.why-certify .innerRightCol{
+		width:33.33333%;
+	}
+	body.why-certify .innerLeftCol{
+		display:inline-block;
+		width:66.66666%;
+	}
+	body.why-certify .innerRightCol h2{
+		margin-bottom:.7em;
+	}
+	
+	
+	body.training-register .form-block-submit{padding-bottom:0;}
+	
+}
+
+
+@media screen and (min-width: 900px) {
+	
+	body.training-register .rightCol {	display:inline-block; padding-left: 0;}
+	body.training-register .leftCol { width:75%; padding-right:2.9em; }
+	
+}
+
+
+
+
+
+
+
+
+body.training .rightCol { display:none;}
+body.training .leftCol   { width:100%; padding-right:0;position:relative;}
+
+@media screen and (min-width: 900px) {
+	body.training .rightCol { display:inline-block; width:25%; }
+	body.training .leftCol  { display:inline-block; width:75%; position:relative;padding-right:2.9em; }
+	
+	
+	body.why-certify .rightCol { display:inline-block; width:25%; }
+	body.why-certify .leftCol  { display:inline-block; width:75%; position:relative;padding-right:2.9em; }
+	/*
+	.rightCol .findproducts-container{display:block;}
+	.product-detail-container{margin-bottom:2em;}
+	*/
+}

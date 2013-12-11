@@ -1,0 +1,240 @@
+.rightCol{display:none;}
+.leftCol{width:100%;padding-right:0;}
+
+/********** HEADER *******************/
+
+.header {
+    overflow: hidden;
+    padding: 2em 0 1.6em;
+}
+.header h1 {
+	display:inline-block;
+	padding-left:0.833em;
+	padding-top:0.15em;
+	padding-right: 0.4em;
+	padding-bottom: 0;
+}
+
+.header-leftCol .getstarted-header-link {
+	display:inline-block;
+	color:white;
+	text-align:center;
+	font-weight:normal;
+	padding: 0 1em;
+}
+
+.header-leftCol .getstarted-header-link div {
+	line-height:1.5em;
+	margin:0;
+	white-space:nowrap;
+	font-size:1.5em;
+}
+
+.header-leftCol .getstarted-header-link:hover,
+body.premier-dealers .premier-dealers-link ,
+body.certified-integrators .certified-integrators-link {
+	background-color: #73bed5;
+}
+
+
+.header .header-leftCol a:hover{text-decoration:none;}
+
+.get-started-nav {
+	display: inline-block;
+	padding-left: 1em;
+	padding-top: 0.5em;
+}
+
+
+
+
+
+/********** GET STARTED MAIN PAGE *******************/
+
+body.get-started .get-started-block-container{
+	margin-left:-1em;margin-right:-1em; /* counter the padding on each block element */
+}
+body.get-started .get-started-block{padding-left:0.6666667em;padding-right:0.6666667em;}
+body.get-started .get-started-block{
+	vertical-align:top;	
+	font-size:1.5em;
+	line-height:1.4em;
+	width:100%;
+	margin-bottom:4em;
+}
+body.get-started .get-started-block h2{
+	font-size:1.2em;
+	margin-bottom:0.3em;
+}
+body.get-started .get-started-block p {
+	font-size: 0.9em;
+}
+body.get-started .get-started-block .rounded-corner-button{
+	font-size:0.8em;
+}
+
+
+/********** PREMIER DEALERS *******************/
+
+body.premier-dealers  .leftCol h2 {
+    background-color: #CEE1ED;
+    color: #666666;
+    font-size: 2.2em;
+    font-weight: normal;
+    line-height: 1.1em;
+    margin-bottom: 1.25em;
+    padding: 0.792em;
+}
+
+body.premier-dealers p.summary{font-size:1.5em;line-height:1.4em;margin-bottom:1.5em;}
+
+body.premier-dealers .premier-dealers-list{
+	margin-left:-1em; margin-right:-1em;
+	padding-bottom:5em;
+}
+body.premier-dealers .premier-dealers-list li{
+	vertical-align:top;
+	padding:1em 2.5em 1.5em 2.5em;
+	width:100%;
+	display:inline-block;
+}
+body.premier-dealers .premier-dealers-list li .name{font-size:1.5em;line-height:1.15em;font-weight:bold;}
+body.premier-dealers .premier-dealers-list li .address{font-size:1.5em;line-height:1.15em;}
+
+body.premier-dealers .premier-dealers-list li .logo {
+	margin-bottom: 1em;
+}
+body.premier-dealers .premier-dealers-list li .logo img {
+	max-width:45%;
+	max-height:5em;
+	vertical-align: middle;
+}
+
+
+/********** CERTIFIED INTEGRATORS *******************/
+body.certified-integrators .content p.summary {
+	font-size:1.5em;
+	line-height:1.4em;
+	margin-bottom:1.5em;
+}
+body.certified-integrators ul.integrator-list {
+	padding-bottom:3em;
+}
+body.certified-integrators ul.integrator-list li {
+	vertical-align:top;
+	padding:1em 0 1.5em 0;
+	width:100%;
+	display:inline-block;
+}
+body.certified-integrators ul.integrator-list li .icon {
+	margin-bottom: 1em;
+}
+body.certified-integrators ul.integrator-list li .icon img {
+	max-width:45%;
+	max-height:5em;
+	vertical-align: middle;
+}
+body.certified-integrators ul.integrator-list li .detail{
+	font-size:1.5em;
+	line-height:1.15em;
+}
+body.certified-integrators ul.integrator-list li .detail a{
+	display: block;
+	font-weight: bold;
+}
+body.certified-integrators ul.integrator-list li .detail .location {
+	display: none;
+	font-size:0.8em;
+}
+
+body.certified-integrators .content h2 {
+	background-color: #e6e6e6;
+	color: #666666;
+	font-size: 2.2em;
+	font-weight: normal;
+	line-height: 1.1em;
+	margin-bottom: 1.25em;
+	padding: 0.792em;
+	margin-top: 5em;
+}
+
+body.certified-integrators .content h2.isUS {
+	margin-top: 0;
+}
+
+body.certified-integrators .content h3 {
+	background-color: #CEE1ED;
+	color: #666666;
+	font-size: 2.2em;
+	font-weight: normal;
+	line-height: 1.1em;
+	margin-bottom: 0.5em;
+	padding: 0.4em 0.792em;
+}
+
+
+
+
+
+@media screen and (min-width: 360px) {
+	
+	body.premier-dealers .premier-dealers-list li{width:50%;}
+	body.premier-dealers .premier-dealers-list li .logo{height:5em;line-height:5em;margin-bottom:0.5em;}
+	body.premier-dealers .premier-dealers-list li .logo img {max-width:100%;}
+	
+	body.certified-integrators ul.integrator-list li{width:49%;}
+	body.certified-integrators ul.integrator-list li .icon{height:5em;line-height:5em;margin-bottom:0.5em;}
+	body.certified-integrators ul.integrator-list li .icon img {max-width:100%;}
+	
+}
+
+@media screen and (min-width: 600px) {	
+	
+	.header-leftCol .getstarted-header-link div{font-size:1.8em;line-height:2.0em;}
+	.header-leftCol .getstarted-header-link {margin-left: 1em;}
+	.header-leftCol .getstarted-header-link:first-child {margin-left: 0;}
+	body.get-started .get-started-block{
+		width:50%;
+		display:inline-block;
+		margin-bottom:0;
+	}
+	.get-started-nav {padding-left: 1.1em;}
+	.header h1 {padding-left:0.633em;}
+	
+	body.premier-dealers .premier-dealers-list li{width:33.333%;padding:1em 2.5em;}
+	body.premier-dealers .premier-dealers-list li .logo{height:7em;line-height:7em;margin-bottom:0.5em;}
+	body.premier-dealers .premier-dealers-list li .logo img {max-height:7em;}
+	
+	body.certified-integrators ul.integrator-list li {width:32%;padding:1em 2.5em 1em 1.6em;}
+	body.certified-integrators ul.integrator-list li .icon {height:7em;line-height:7em;margin-bottom:0.5em;}
+	body.certified-integrators ul.integrator-list li .icon img {max-height:7em;}
+	
+}
+
+@media screen and (min-width: 720px) {	
+	
+	.header-leftCol .getstarted-header-link div {font-size:2.1em;}
+	.header-leftCol .getstarted-header-link {margin-left: 2em;}
+	.header-leftCol .getstarted-header-link:first-child {margin-left: 0;}
+	
+	body.get-started .get-started-block h2 {font-size:1.4em;}
+	body.get-started .get-started-block p {font-size: 1.1em;}
+	
+}
+
+
+@media screen and (min-width: 900px) {	
+	
+	.rightCol{display:inline-block;}
+	.leftCol{width:75%;padding-right:2.9em;}
+	
+}
+
+
+@media screen and (min-width: 1124px) {	
+	
+	body.premier-dealers .premier-dealers-list li{width:25%;}
+	
+	body.certified-integrators ul.integrator-list li{width:24%;}
+	
+}

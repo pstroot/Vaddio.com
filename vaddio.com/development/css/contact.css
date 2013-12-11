@@ -1,0 +1,113 @@
+body.contact .header {
+     margin: 0;
+}
+
+body.contact .content {
+     padding: 0;
+     margin: 0;
+}
+
+body.contact .content .bodyCopy{font-size:1.2em;line-height:1.4em;}
+
+body.contact dl,
+body.contact .address,
+body.contact .content .email {
+     line-height:1.5em;
+     padding:1em 1.6em 1.6em 1.6em;
+     overflow: hidden;
+}
+
+body.contact dl > dt { 
+     float:left;
+     clear:left;
+     width:35%;
+     font-weight:bold;
+}
+
+body.contact dl.phone > dt { 
+     width:25%;
+}
+
+body.contact dl > dd{}
+
+.contact_map_container {
+     width: 100%;
+     margin-bottom: 3em;
+     position: relative;
+}
+
+#contact_map {
+     width: 100%;
+     height: 0;
+     padding-bottom: 75%;
+     border: 1px solid #ccc;
+     margin: 0;
+}
+
+.contact_pdf {
+     font-size: 1.4em;
+     margin-top: 1em;
+     text-align: center;
+}
+
+.bodyCopy {
+     width: 100%;
+}
+
+.bodyCopy h3 {
+     background-color: #e6e6e6;
+     font-size: 1.9em;
+     font-weight: normal;
+     padding: 0.65789474em 0.8em;
+}
+
+body.contact .email_col {
+     float: left;
+     width: 50%;
+     padding-left: 1em;
+}
+
+body.contact .email_col:first-child {
+     padding-right: 1em;
+     padding-left: 0;
+}
+
+body.contact .email_col li {
+     padding-bottom: 1em;
+}
+
+
+@media screen and (min-width: 740px) {
+     
+     body.contact .header {
+          margin-bottom: 3.5em;
+     }
+     
+     body.contact .content {
+          padding: 4em 4em 8em 4em;
+          margin: 0 auto;
+     }
+     
+     .contact_map_container {
+          width: 50%;
+          float: right;
+          margin-bottom: 3em;
+          position: relative;
+     }
+     
+     .contact_pdf {
+          text-align: right;
+     }
+     
+     .bodyCopy {
+          width: 50%;
+          padding-right: 2em;
+     }
+     
+     body.contact dl.phone > dt { 
+          width:23%;
+     }
+	
+}
+
+

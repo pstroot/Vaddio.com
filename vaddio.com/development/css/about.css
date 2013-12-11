@@ -1,0 +1,86 @@
+body.about {}
+
+body.about .about-nav{
+	font-size:1.5em;
+	line-height:1.4em;	
+}
+
+body.about .about-nav li {
+     padding-bottom: 0.7em;
+}
+
+body.about .about-nav li:nth-child(3n+3) {
+     padding-right: 0;
+}
+
+body.about .about-nav a {
+     display: block;
+     padding: 0.7em 1em;
+     background-color: #CEE1ED;
+     font-size: 1.2em;
+}
+
+
+body.about .leftCol h1{
+	color: #193C73;
+    font-size: 2.5em;
+	padding-bottom:0.5em;
+	padding-top:0.9em;
+	clear:left;
+}
+body.about .leftCol h2{
+	color: #193C73;
+    font-size: 1.9em;
+	padding-bottom:0.6em;
+}
+body.about .leftCol h2.extra-space-above{
+	margin-top:1.7em;
+}
+body.about .leftCol h3{
+	color: #193C73;
+    font-size: 1.5em;
+	padding-bottom:0.3em;
+	padding-top:0.4em;
+}
+body.about .leftCol p{
+    font-size: 1.5em;
+    line-height:1.4em;
+}
+body.about .leftCol img.about-rob{
+	margin-bottom:1em;
+	margin-right:2em;
+	padding-top:0.4em;
+}
+
+
+.rightCol{display:none;}
+.leftCol{width:100%;padding:0;margin-bottom: 2.5em;}
+
+@media screen and (min-width: 450px) {
+	body.about .leftCol img.about-rob{
+		float:left;
+		max-width:50%;
+	}
+}
+
+@media screen and (min-width: 600px) {
+	
+	body.about .about-nav li {
+          float: left;
+          width: 33.33%;
+          padding: 0 0.7em 0.7em 0;
+     }
+	 /* catalog and contact are in the utility links at the top, so no need to include them on the about page here */
+	body.about .about-nav li#about-catalog{display:none;}
+	body.about .about-nav li#about-contact{display:none;}
+     
+}
+
+
+@media screen and (min-width: 900px) {
+	
+	.rightCol{display:inline-block;}
+	.leftCol{width:75%;padding-right:2em;}
+}
+
+

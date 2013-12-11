@@ -1,0 +1,120 @@
+
+
+.ui-widget{font-size: 14px;}
+.ui-widget input[type=button]{margin-top:8px;font-size: 14px;}
+
+
+body{
+	margin:0px;
+	padding:0px;
+	margin-left:36px;
+	margin-right:36px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:1.5em;
+	line-height:1.3em;
+}
+
+#calendar{
+	margin-top:3px;
+	margin-bottom:36px;
+}
+
+
+body.demos-calendar h1{
+	font-weight:normal;
+	margin-top:18px;
+	margin-bottom:15px;
+	font-size:15px;
+}
+body.demos-calendar h2{
+	margin:0px;
+	font-size:34px;
+	font-weight:normal;
+}
+body.demos-calendar h3.arrow{
+	color:#5e5e5e;
+	font-weight:normal;	
+	width:100%em;
+	background-color:#e0e0e0;
+	font-size:1em;
+	margin-top: 0.933333em;
+}
+body.demos-calendar h3.arrow b{color:#193c73;}
+body.demos-calendar h3.arrow p{
+	margin:0;
+	padding:1em;
+}
+
+.display-time{
+	top:1.7em;
+	left:24.4em;
+	text-align:center;
+	border:.1em solid #e8762e;
+	background-color:#FFF;
+	padding:.7em 1em;
+
+}
+.display-time .line1{font-size:1.06em;color:#e8762e;}
+.display-time .timezone{font-size:1.26666667em;color:#e8762e;}
+.display-time .time{font-size:2.8em;color:#e8762e;line-height:40px;font-weight:bold;}
+.fc-header-title h2{color:#107ab2;}
+
+#calendar{margin-top:3em;}
+body.demos-calendar h2{font-size:1.5em;position:absolute;left:0;text-align:center;width:100%;margin-top:-1.2em;}
+@media (min-width:600px) {
+	#calendar{margin-top:0;}
+	body.demos-calendar h2{margin-top:0;}
+	body.demos-calendar h2{
+		font-size:34px;
+	}
+    body.demos-calendar h3.arrow p{
+		padding-top:1.6666667em;
+		padding-left:1.06em;
+		padding-right:1.5em;
+	}
+	.display-time{
+		position:absolute;
+		top:1.7em;
+		left:24.4em;
+		text-align:center;
+		border:.1em solid #e8762e;
+		background-color:#FFF;
+		padding:.7em 1em;
+	
+	}
+	body.demos-calendar h3.arrow{
+		background-color:#FFFFFF;
+		width:21.9999993em;
+		height:8.6666667em;
+		margin-top: 0.933333em;
+		background-image: url(../../images/schedule_a_demo/timezone_arrow.gif);
+		background-repeat: no-repeat;
+		background-position: left center;
+	}
+}
+	
+	
+ .ui-widget-header {
+	border: 1px solid #4297d7;
+	color: #ffffff;
+	font-weight: bold;
+	background-color: #107ab2;
+	background-image:none;
+	background-repeat: repeat-x;
+	background-position: 50% 50%;
+ }
+ 
+.fc-agenda-slots tr.fc-minor th {
+	border-top-style: none;
+	}
+.fc-agenda-slots tr.fc-minor td {
+	border-color:#d7d8da;
+	}
+.ui-widget-content{
+	border:1px solid #d7d8da
+	}
+	
+	
+.ui-widget{font-family:Arial, Helvetica, sans-serif;}
+.ui-widget-content{color:#2b2a2a;}
+	

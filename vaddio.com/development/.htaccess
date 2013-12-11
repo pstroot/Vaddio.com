@@ -1,0 +1,50 @@
+RewriteEngine on
+RewriteBase /
+
+
+
+
+# 301 redirects from previous version of website so that existing links to the site are not broken
+RewriteRule ^tech-center.php$ 							/about [R=301,L]
+RewriteRule ^about.php$ 								/about [R=301,L]
+RewriteRule ^catalog.php$ 								/catalog [R=301,L]
+RewriteRule ^request_info.php$ 							/contact [R=301,L]
+RewriteRule ^login.php$ 								/login [R=301,L]
+RewriteRule ^partner_application.php$ 					/register [R=301,L]
+RewriteRule ^products.php$ 								/products [R=301,L]
+RewriteRule ^press-releases.php$ 						/press [R=301,L]
+RewriteRule ^case_studies.php$ 							/case-studies [R=301,L]
+RewriteRule ^white_papers.php$ 							/white-papers [R=301,L]
+RewriteRule ^events.php$ 								/events [R=301,L]
+RewriteRule ^promotions.php$ 							/promotions [R=301,L]
+RewriteRule ^videos.php$ 								/videos [R=301,L]
+RewriteRule ^video/(.*)$ 								/videos/$1 [R=301,L]
+RewriteRule ^training_classes.php$ 						/training [R=301,L]
+RewriteRule ^training.php$ 								/training [R=301,L]
+RewriteRule ^certification_register.php$ 				/training/register/online [R=301,L]
+RewriteRule ^certification_register.php?id=1$ 			/training/register/online [R=301,L]
+RewriteRule ^certification_register.php?id=2$ 			/training/register/onsite [R=301,L]
+RewriteRule ^tracking_certification_installation.php$ 	/training/details/installation [R=301,L]
+RewriteRule ^tracking_certification_design.php$ 		/training/details/design [R=301,L]
+RewriteRule ^contact.php$ 								/contact [R=301,L]
+RewriteRule ^support.vaddio.com/products.php$ 			support.vaddio.com/products [R=301,L]
+RewriteRule ^support.vaddio.com/resources.php$ 			support.vaddio.com/resources [R=301,L]
+
+# TO DO: there is an issue with these redirects.
+RewriteRule ^partner_docs.php?pageID=1$ 				/dealers/docs/pricing [R=301,L]
+RewriteRule ^partner_docs.php?pageID=2$ 				/dealers/docs/promotions [R=301,L]
+RewriteRule ^partner_docs.php?pageID=3$ 				/dealers/docs/forms [R=301,L]
+RewriteRule ^partner_docs.php?pageID=4$ 				/dealers/docs/electronic_media [R=301,L]
+RewriteRule ^partner_docs.php?pageID=5$ 				/dealers/docs/presentations [R=301,L]
+RewriteRule ^partner_docs.php?pageID=6$ 				/dealers/docs/training_materials [R=301,L]
+RewriteRule ^partner_docs.php?pageID=20$ 				/dealers/docs/eol [R=301,L]
+RewriteRule ^partner_docs.php$ 							/dealers [R=301,L]
+
+
+# directories that are allowed web access
+RewriteCond $1 !^(index\.php|images|css|js|downloads|fonts|files|admin|email|cgi-bin|robots\.txt|google7846275dacacf8e1\.html)
+
+
+# Route EVERYTHING to index.php for CodeIgniter
+RewriteRule ^(.*)$ index.php/$1 [L]
+IndexIgnore *
