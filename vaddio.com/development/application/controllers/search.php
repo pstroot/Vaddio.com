@@ -17,20 +17,25 @@ class Search extends MX_Controller {
 		$this->output->javascript('/js/jquery/jquery.highlight.js');
 		$this->output->css('/css/search.css');
 
-		$this->load->model('search_model');			
+		$this->load->model('search_model');		
+		$content["googleResults"] = $this->search_model->search_google($search_for);
 		$content['searchTermArray'] = $this->search_model->searchstring_to_array($search_for);
-		$content['products']  =  $this->search_model->search_products($search_for,"OR",false);
 		$content['documents'] =  $this->search_model->search_downloads($search_for);
-		$content['categories'] = $this->search_model->search_categories($search_for);
-		$content['videos'] = 	 $this->search_model->search_videos($search_for);
+		
+		// For Google Search
+		$content['products'] = $content["googleResults"]["product"];
+		$content['categories'] = $content["googleResults"]["category"];
+		$content['videos'] = $content["googleResults"]["videos"];
+		$content['press'] = $content["googleResults"]["press"];
+		$content['caseStudies'] = $content["googleResults"]["case-studies"];
 			
-		set_title("Search Results for \"".$search_for."\"");
+		set_title("Search Results for \"".urldecode($search_for)."\"");
 		
 		$content["searchFor"] = urldecode($search_for);
 		$content["search_description"] = '"' . implode('" and "',$content['searchTermArray']) . '"';
 		
 		$data['bodyClass'] = "search";
-		$data['content'] = $this->load->view('search_view', $content, true);			
+		$data['content'] = $this->load->view('search_view', $content, true);
 		$this->load->view('templates/main_template', $data);	
 	}
 

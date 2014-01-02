@@ -11,7 +11,7 @@
     
     <p>This free, online tutorial teaches integrators, dealers, and consultants how to design Vaddio AutoTrak Camera Tracking Systems. The course lasts 1.5 hours.</p>
     <p>Certification requires the completion of a 60-minute online exam within 10 days of the course session. You must pass this exam in order to submit a purchase order for any tracking system products.</p>
-    <p>Visit <a href='" . base_url() . "whycertify'>Why Certify?</a> to learn about the benefits of certification.</p>
+    <p>Visit <a href='<?=base_url();?>training/whyCertify'>Why Certify?</a> to learn about the benefits of certification.</p>
     
     <p><b>Who should attend?</b></p>
     <p>This course is ideal for anyone working with Vaddio AutoTrak Camera Tracking Systems:</p>

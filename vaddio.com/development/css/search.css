@@ -1,19 +1,29 @@
+.rightCol {display:none;}
+.leftCol {width:100%;padding-right:0;}
 
-
+.header .searchForm {
+	position: relative;
+}
+.header h1 {
+	display: none;
+}
 .header .searchForm input[type=text]{
 	font-size:1.7em;
 	padding:.3em;
 	border:.1em solid #f3f3f3;
-	width:80%;
+	width:100%;
 }
 .header .searchForm input[type=submit]{
-    text-indent:1000%;
+    	position: absolute;
+    	right: 0;
+    	top: 0;
 	background-position: -3em bottom;
 	background-image: url(../images/layout/mobile_nav_icons.png);
 	background-size:9em 6.7em;;
-	background-color:transparent;
+	background-color:#e6e6e6;
 	
-	height:3.0em;
+	text-indent: -1000%;
+	height:100%;
 	width:3.1em;
 	font-size:1em;
 	padding:0;
@@ -22,22 +32,36 @@
 	cursor:pointer;
 }
 
-.content h2{
-	font-size:1.5em;
+.content h2 {
 	color:#666666;
+	font-weight: normal;
+	font-size: 1.4em;
+	line-height: 1.1em;
+	background-color: #CEE1ED;
+	padding: 0.792em;
+	margin-bottom: 0.3em;
+	font-weight: normal;
+	margin-left: -1em;
+	margin-right: -1em;
 }
 
 
+
+body.search .header {
+	margin-bottom: 1.5em;
+}
 
 body.search .leftCol section{
-	border-top:1px solid #CCCCCC;
 	font-size:1.5em;
 	line-height:1.2em;
-	margin-top:1.4666667em; /* 22px at 1.5 font size */
-	padding-top:0.3em;
+	margin-bottom:3em; /* 22px at 1.5 font size */
 }
 
-
+body.search .leftCol section .results-spacer {
+	padding: 0 1.2em;
+	margin-left: -1.5em;
+	margin-right: -1.5em;
+}
 body.search .leftCol section .number-of-results{
 	font-weight:bold;
 	padding:.2em 0 .4em 0;
@@ -46,7 +70,7 @@ body.search .leftCol section ul{
 	padding-top:.5em;	
 }
 body.search .leftCol section ul li{
-	padding-bottom:1.5em;
+	margin-bottom:1.5em;
 }
 
 body.search .leftCol section.product-results .image{
@@ -72,6 +96,7 @@ body.search .orange-button{
 	font-size:.733333em; /* @ 15px parent size = 11px */
 	height:2.2em;
 	line-height:2.2em;
+	cursor: pointer;
 }
 body.search .highlight{
 	background-color:#fce8a9;
@@ -100,9 +125,26 @@ body.search .highlight{
 
 
 @media screen and (min-width: 600px) {	
-	.rightCol {display:none;}
-	.leftCol {width:100%;padding-right:0;}	
-	.header .searchForm input[type=text]{width:50%;}
+	body.search .header {
+		margin-bottom: 3.5em;
+	}
+	.header h1 {
+		display: block;
+	}
+	.header .searchForm {
+		float: right;
+		width: 50%;
+		text-align: right;
+		margin-top: -0.4em;
+	}
+	.content h2 {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	body.search .leftCol section .results-spacer {
+		margin-left: 0;
+		margin-right: 0;
+	}
 }
 @media screen and (min-width: 900px) {
 	.rightCol {display:inline-block;width:25%;}

@@ -61,8 +61,15 @@
 	background-position: 0.9047619em 0.6em; /* 19px x 16px */
 	padding-left:2.5em;
 }
-
-
+.support-block-vaddioloader h2{
+	background-image: url(../images/icon_vaddio_loader.png);
+	background-size:1.28571429em 1.23809524em; /* 27px x 26px */
+	background-position: 0.9047619em 0.6em; /* 19px x 16px */
+	padding-left:2.5em;
+}
+.support-block-vaddioloader a{display:block;}
+.support-block-vaddioloader a.loader-link-1{margin-top:.2em;}
+.support-block-vaddioloader a.loader-link-2{margin-top:.4em;}
 .support-block-contact dl{margin-top:1em;}
 .support-block-contact dl > dt{font-weight:bold;}
 .support-block dl > dd,

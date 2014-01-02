@@ -145,6 +145,42 @@ class Doc_library_model extends MY_Model {
 		
 	}
 	
+	public function getVaddioLoaderFiles(){
+		$output = array();
+		
+		$query = $this->db->select('d.name, d.path, d.size, d.type')
+					  ->where("d.name LIKE '%Vaddio Loader%'")
+					  ->where("d.path LIKE '%.msi%'")
+					  ->where('d.isActive', 1)
+					  ->get("document_library  d");
+					  
+		$Results = $query->result_array();
+		for($i=0; $i<=(count($Results)-1); $i++){
+			$Results[$i]["type"] 		= $this->displayDocumentType($Results[$i]["type"],"(",")");
+			$Results[$i]["path"] 		= $this->filterDocPath($Results[$i]["path"]);
+			$Results[$i]["size"] 	= $this->formatFilesize($Results[$i]["size"]);
+		}
+		$output["vaddio_loader"] = $Results;
+		
+		
+		$query = $this->db->select('d.name, d.path, d.size, d.type')
+					  ->where("d.name LIKE '%Vaddio Loader%'")
+					  ->where("d.name LIKE '%Instructions%'")
+					  ->where('d.isActive', 1)
+					  ->get("document_library  d");
+					  
+		$Results = $query->result_array();
+		for($i=0; $i<=(count($Results)-1); $i++){
+			$Results[$i]["type"] 		= $this->displayDocumentType($Results[$i]["type"],"(",")");
+			$Results[$i]["path"] 		= $this->filterDocPath($Results[$i]["path"]);
+			$Results[$i]["size"] 	= $this->formatFilesize($Results[$i]["size"]);
+		}
+		$output["vaddio_loader_instructions"] = $Results;
+		
+		
+		return $output;
+	}
+	
 	
 	public function getFAQ_docs($product_id){		  
 		$q = $this->db->select('l.path, l.name, l.type, l.size, d.link_text')

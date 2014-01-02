@@ -18,7 +18,7 @@
 				foreach($products as $product){
 					echo '<li data-id="'.$product["id"].'">';
 					echo '<div class="title">' . $product["title"] . "</div>";
-					echo $product["summary"];
+					echo stripslashes($product["summary"]);
                     echo '<span class="home_products_scroller_callout_arrow"></span>';
 					echo '</li>';
 				}

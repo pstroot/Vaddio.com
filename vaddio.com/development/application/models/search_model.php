@@ -97,6 +97,162 @@ class Search_model extends MY_Model {
 	
 	
 	
+	public function search_google($searchString) {
+		
+		$this->load->helper('curl_class');
+		
+		$google_request_total = 40;
+		if ($google_request_total > 20) {
+			$google_request_num = 20;
+			$google_request_pages = $google_request_total / 20;
+		} else {
+			$google_request_num = $google_request_total;
+			$google_request_pages = 1;
+		}
+		
+		// Settings
+		$results = array(
+			"product" => array(),
+			"category" => array(),
+			"videos" => array(),
+			"press" => array(),
+			"case-studies" => array()
+		);
+          $prefix_list = array(
+               "product",
+               "category",
+               "videos",
+               "press"
+          );
+          
+          $result_count = 0;
+		for ($i = 0; $i < $google_request_pages; $i++) {
+			
+			// Setup Request URL
+			$google_request_url = "http://www.google.com/search?";
+			$google_request_url .= "start=".($i*20);
+			if ( ($i+1) < ceil($google_request_pages) ) {
+				$google_request_url .= "&num=20";
+			} else {
+				if ( ($i+1) == $google_request_pages ) {
+					$google_request_url .= "&num=20";
+				} else {
+					$google_request_url .= "&num=".(($google_request_pages-$i)*20);
+				}
+			}
+			$google_request_url .= "&as_q=".$searchString;
+			$google_request_url .= "&client=google-csbe";
+			$google_request_url .= "&output=xml_no_dtd";
+			$google_request_url .= "&cx=009747017498854254045:zbgfifopk-c";
+			
+			// Get request via cURL
+	          $curl = new curl();
+	          $curl->setURL($google_request_url);
+	          $curl->execute();
+	          
+	          // Process as XML
+          	$results_xml = simplexml_load_string(trim($curl->body));
+          	
+          	// Resize request length based upon first results
+          	if ((int)$results_xml->RES->M < $google_request_total) {
+          		$google_request_total = (int)$results_xml->RES->M;
+          		if ($google_request_total > 20) {
+					$google_request_num = 20;
+					$google_request_pages = $google_request_total / 20;
+				} else {
+					$google_request_num = $google_request_total;
+					$google_request_pages = 1;
+				}
+          	}
+	          
+	          // Organize results & categorize
+	          if (isset($results_xml->RES->R)) {
+	               foreach ($results_xml->RES->R as $row) {
+	                    
+	                    // Ignore check
+	                    $ignore = false;
+	                    
+	                    // Trim/clean-up URL
+	                    $url = $url = (string)$row->U;
+	                    $url = str_replace("http://www.vaddio.com","",$url);
+	                    $url = str_replace("http://vaddio.com","",$url);
+	                    $url = str_replace("https://www.vaddio.com","",$url);
+	                    $url = str_replace("https://vaddio.com","",$url);
+	                    $url = strtolower($url);
+	                    
+	                    // Remove results from "old" site
+	                    $prefix_check = false;
+	                    foreach ($prefix_list as $prefix) {
+	                         if (substr($url,0,strlen($prefix)+1) == "/".$prefix) {
+	                              $prefix_check = true;
+	                              $category = $prefix;
+	                         }
+	                    }
+	                    if (!$prefix_check) {
+	                         $ignore = true;
+	                    }
+	                    
+	                    // Add to array if ok
+	                    if (!$ignore) {
+	                         
+	                         // Set slug values
+                              $slug = str_replace("/".$category."/","",$url);
+                              $slug_parts = explode("/",$slug);
+                              $slug = $slug_parts[count($slug_parts)-1];
+                              
+                              // Setup results by category
+                              if ($category == "product") {
+                              	$query = $this->db->select('p.product_name, p.slug, p.product_thumb, p.product_nbr, p.product_nbr_label, p.product_addtl_nbrs, isDiscontinued')
+									  ->where('p.isActive', 1)
+									  ->where('p.slug', $slug)
+									  ->join('product_features f','p.product_id = f.product_id','left')
+						  			  ->join('product_specs s','p.product_id = s.product_id','left')
+									  ->get("products p");
+							$Results = $query->result_array();	
+							for($n=0; $n<=(count($Results)-1); $n++){		
+								$Results[$n]['product_number_full'] = showProductNumbers($Results[$n]["product_nbr"],$Results[$n]["product_nbr_label"],$Results[$n]["product_addtl_nbrs"]);
+							}
+						} else if ($category == "category") {
+							$query = $this->db->select('*')
+									  ->where("slug",$slug)
+									  ->get("product_categories");
+							$Results = $query->result_array();
+						} else if ($category == "videos") {
+							$query = $this->db->select('*')
+									  ->where('isActive', 1)
+									  ->where("slug",$slug)
+									  ->get("product_videos");
+							$Results = $query->result_array();
+						} else if ($category == "press") {
+							$query = $this->db->select('*')
+									  ->where('isActive', 1)
+									  ->where("slug",$slug)
+									  ->get("press_releases");
+							$Results = $query->result_array();
+							$Results[0]["description"] = (string)$row->S;
+							$query = $this->db->select("case_study_id")
+									  ->where("press_release_id",$Results[0]["id"])
+									  ->get("case_studies");
+							$case_studies_check = $query->result_array();
+							if (count($case_studies_check) > 0) {
+								$category = "case-studies";
+							}
+						}
+						if (count($Results) > 0) $results[$category][] = $Results[0];
+	                         
+	                    }
+	               }
+	          }
+			
+		}
+		
+		return $results;
+		
+	}
+	
+	
+	
+	
 	public function search_products($searchString,$and_or = "OR", $detailed_search = false){
 		$searchArr = $this->searchstring_to_array($searchString);
 		

@@ -11,7 +11,7 @@
 <p><b>Course Description</b></p>
 <p>This free, one-day certification course &mdash; held at Vaddio headquarters in Minneapolis, MN &mdash; is for installation technicians.</p>
 <p>Installation Certification is required to install and program Vaddio AutoTrak Camera Tracking Systems. Multi-employee integrators may have a single certified technician for a specific region. This technician must be onsite or available by phone to assist technicians during the installation process.</p>
-<p>Certification requires the completion of a 60-minute online exam within 10 days of the course session. Visit <a href='" . base_url() . "whycertify'>Why Certify?</a> to learn about the benefits of certification.</p>
+<p>Certification requires the completion of a 60-minute online exam within 10 days of the course session. Visit <a href='<?=base_url();?>training/whyCertify'>Why Certify?</a> to learn about the benefits of certification.</p>
 </section>
 
 
@@ -119,7 +119,7 @@ Distance to Vaddio from Hotel: 2 minutes / 1.09 miles</p>
 			<li>Local telephone calls</li>
 			<li>Two indoor pools and whirlpools</li>
 			<li>Newly updated fitness room</li>
-			<li>Woody's Grille Restaurant on-site</li>
+			<li>Grizzly's Bar & Grill attached to the hotel</li>
 			<li>Shuttle service to Vaddio and more!</li>
 		</ul>
 		

@@ -20,6 +20,7 @@ class SupportInfoBlock extends MX_Controller {
 		if($whichBlock == 'warranty') $this->warranty();
 		if($whichBlock == 'product support') $this->product_support();
 		if($whichBlock == 'helpful links') $this->helpful_links();
+		if($whichBlock == 'vaddio loader') $this->vaddio_loader();
 		
 		
 		$this->load->model('category_model');
@@ -46,6 +47,27 @@ class SupportInfoBlock extends MX_Controller {
 		$this->load->model('doc_library_model');	
 		$data["warranty"] = $this->doc_library_model->getDocLibraryPlacement('warranty');
 		$data["whichBlock"] = 'warranty';	
+		$this->load->view('SupportInfoBlock_view',$data);
+	}
+	
+	
+	
+	
+	public function vaddio_loader(){
+		$this->load->model('doc_library_model');	
+		$results = $this->doc_library_model->getVaddioLoaderFiles();
+		
+		$data["vaddio_loader_instructions_name"] = $results["vaddio_loader_instructions"][0]["name"];
+		$data["vaddio_loader_instructions_link"] = $results["vaddio_loader_instructions"][0]["path"];
+        $data["vaddio_loader_instructions_filetype"] = $results["vaddio_loader_instructions"][0]["type"];
+        $data["vaddio_loader_instructions_filesize"] = $results["vaddio_loader_instructions"][0]["size"];
+		
+		$data["vaddio_loader_name"] = $results["vaddio_loader"][0]["name"];
+		$data["vaddio_loader_link"] = $results["vaddio_loader"][0]["path"];
+        $data["vaddio_loader_filetype"] = $results["vaddio_loader"][0]["type"];
+        $data["vaddio_loader_filesize"] = $results["vaddio_loader"][0]["size"];
+				
+		$data["whichBlock"] = 'vaddio loader';	
 		$this->load->view('SupportInfoBlock_view',$data);
 	}
 	

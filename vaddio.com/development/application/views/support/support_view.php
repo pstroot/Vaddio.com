@@ -148,6 +148,7 @@
 
 </div><div class="rightCol">
        
+	   <? echo modules::run('SupportInfoBlock','vaddio loader'); ?>
 	   <? echo modules::run('SupportInfoBlock','contact'); ?>
 	   <? echo modules::run('SupportInfoBlock','warranty'); ?>
         
