@@ -19,13 +19,11 @@
         <div class='get-started-block'>
             <h2>VIP EasyUSB Integrators</h2>
             <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed dignissim massa, euismod
-            scelerisque lacus. Aliquam a diam quis tortor pharetra mattis nec ut diam. Phasellus malesuada viverra velit
-            sed congue. Pellentesque sodales massa non sapien egestas varius. Nullam hendrerit nisl quis.
+            Need help equipping a conference room, training room or classroom with Vaddio EasyUSB products? Following extensive training, these VIP EasyUSB integrators are Vaddio-certified to bring EasyUSB solutions to most any environment.
             </p>
             <a href="/premier-dealers" class="rounded-corner-button orange-button">Learn More</a>
         </div><div class='get-started-block'>
-            <h2>Certified Tracking Integraors</h2>
+            <h2>Certified Tracking Integrators</h2>
             <p>
             These tracking installation integrators have undergone extensive training to become certified by Vaddio to install AutoTrak camera tracking system.
             </p>

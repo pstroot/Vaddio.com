@@ -138,6 +138,19 @@ function slowAlert() {
 		 
 		 
 	divideIntoColumns($('.category-list-container'),4);
-	//$('nav.topnav>ul>li:last a').css("border-bottom","none");		
+	//$('nav.topnav>ul>li:last a').css("border-bottom","none");
+	
+	$(".resource_center_tab").click(function() {
+		$(".resource_center_tab").removeClass("_active");
+		$(".resource_center_list").removeClass("_active");
+		if (this.id == "resource_center_tab_products") {
+			$(this).addClass("_active");
+			$("#resource_center_products").addClass("_active");
+		} else {
+			$(this).addClass("_active");
+			$("#resource_center_other").addClass("_active");
+		}
+	});
+	
 });
 	

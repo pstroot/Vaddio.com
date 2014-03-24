@@ -3,13 +3,19 @@
 </div>
 
 <section class='rightCol'>
-	<a href="<?= base_url(); ?>library?path=pm&file=Summer_Blast_List.pdf">
+	<!--
+    <a href="<?= base_url(); ?>library?path=pm&file=Summer_Blast_List.pdf">
         <img src="<?= base_url(); ?>images/Summer_Blast_List.jpg" alt="Summer Blast Classroom Packages" border="0" />
     </a>
+    -->
 </section>
 
 
 <section class='leftCol'>
+
+    <h2 style="font-size:1.9em;">Sorry. Vaddio is featuring no special promotions at this time.</h2>
+    
+    <!--
     <h2>Summer Classroom Packages</h2>
     
     <div class='date'>Thru September 30, 2013</div>
@@ -49,6 +55,7 @@
                 </a>
             </div>
     </div>
+    -->
 </section>
 
 

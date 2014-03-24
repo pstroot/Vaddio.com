@@ -76,8 +76,8 @@
             </li>
             <li>
                 <b>Marketing and Communications</b><br/>
-                Kelly Perkins<br/>
-                <a href="mailto:kperkins@vaddio.com">kperkins@vaddio.com</a>
+                Hailey Klein <br/>
+                <a href="mailto:hklein@vaddio.com">hklein@vaddio.com</a>
             </li>
         </ul>
         <ul class="email_col">

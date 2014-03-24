@@ -35,9 +35,15 @@ foreach($categories as $cat){ ?>
                ?>
           </ul>
           <?php
-     } else {
-          print "<div class='no-results'>Sorry, There are currently no " . strtolower($cat['cat_name']) . " documents. Please check back for future updates.</div>"; 
-     }
+    } else {
+		if(strtolower($cat['cat_name']) == "promos"){
+			// custom message requested by Mwilson on 1/10/15
+			print "<div class='no-results' style='font-weight:bold;font-size:1.9em;padding-bottom:8em;'>Sorry. Vaddio is featuring no special promotions at this time.</div>"; 
+			print "<style>.content .summary{display:none;}</style>";
+		} else {
+        	print "<div class='no-results'>Sorry, There are currently no " . strtolower($cat['cat_name']) . " documents. Please check back for future updates.</div>"; 
+		}
+	}
 	?>
      
 <? } ?>

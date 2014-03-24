@@ -250,10 +250,6 @@ body.support-search .content form.searchForm input[type=submit]{
 	
 }
 
-.innerLeftCol {
-    padding-right: 2em;
-}
-
 
 ul.bulleted-list{margin-bottom:.8em;}
 ul.bulleted-list, body.support-details ul.bulleted-list ul{
@@ -383,6 +379,96 @@ html.js .expandable{display:none;position:relative;}
 	padding-top:.3em;	
 	margin-bottom:1em;
 }
+
+.resource_center_tabs {
+	overflow: hidden;
+}
+
+.resource_center_tab {
+	float: left;
+	font-size: 1.6em;
+	padding: .5em 1em;
+	line-height: 1.25;
+	color: #0562a7;
+	max-width: 50%;
+	cursor: pointer;
+}
+
+.resource_center_tab._active {
+	background-color: #e6e6e6;
+}
+
+.resource_center_tab:hover {
+	background-color: #efefef;
+}
+
+.resource_center_tab._active:hover {
+	background-color: #e6e6e6;
+}
+
+.resource_center_list {
+	display: none;
+	background-color: #e6e6e6;
+	margin-bottom: 3em;
+	padding: 1em;
+	overflow: hidden;
+}
+
+.resource_center_list._active {
+	display: block;
+}
+
+.resource_center_list li {
+	margin: 0.7em;
+}
+
+.resource_center_list li a {
+	display: block;
+	color: white;
+	line-height: 1.25;
+	padding: 0.75em 1.4286em;
+	font-size: 1.4em;
+	background-color: #107bb3;
+	cursor: pointer;
+}
+
+.resource_center_list li a:hover {
+	text-decoration: none;
+	background-color: white;
+	color: #107bb3;
+}
+
+@media screen and (min-width:600px) {
+	
+	.resource_center_tab {
+		font-size: 2.1em;
+		padding: 0 1em;
+		height: 2.2381em;
+		line-height: 2.2381em;
+		max-width: 100%;
+	}
+	
+	.resource_center_list {
+		padding: 1.6em;
+	}
+	
+	.resource_center_list li {
+		float: left;
+	}
+	
+	.resource_center_list li a {
+		height: 2.5714em;
+		line-height: 2.5714em;
+		padding: 0 1.4286em;
+	}
+	
+	.innerLeftCol {
+		padding-right: 2em;
+	}
+	
+}
+
+
 
 
 
@@ -587,10 +673,11 @@ body.support-detail .faq ul > li a{font-weight:bold;}
 
 
 /******************* RESOURCES DETAIL ******************/
-body.support-resources .leftCol h2{
-	font-size:3.4em;
+body.support-resources h2.main-headline {
+	font-size:2.4em;
 	color:#107ab2;
 	padding-top:0.1em;
+	margin-bottom: 0.9em;
 }
 body.support-resources .leftCol h3{
 	font-size:2.0em;
@@ -637,6 +724,10 @@ body.support-resources .leftCol ul.resource-list > li > ul{
 	font-size:0.8125em; /* 12px */	
 	padding-bottom:.5em;
 	padding-top:0.5em;
+}
+
+body.support-resources .rightCol {
+	padding-top: 4.7em;
 }
 
 
@@ -744,7 +835,9 @@ body.support-search .content .searchForm input[type=text]{
 		vertical-align:top;
 	}
 	
-	
+	body.support-resources h2.main-headline {
+		font-size:3.4em;
+	}
 	
 	
 	
@@ -956,6 +1049,6 @@ body.support-search  	.leftCol {width:100%;display:block;float:none;padding-righ
 	body.support 			.leftCol,
 	body.support-detail 	.leftCol,
 	body.support-resources  .leftCol,
-	body.support-search  	.leftCol {width:75%;float:left;margin-bottom: 4em;padding-top:.7em;padding-right:2.9em;}
+	body.support-search  	.leftCol {width:75%;float:left;margin-bottom: 4em;padding-top:0;padding-right:2.9em;}
 }
 

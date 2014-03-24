@@ -1,4 +1,4 @@
-<div class='header big-blue-header'>
+<div class='header big-blue-header header-accessories'>
     <h1>Accessories for <?php echo $name; ?></h1>
 </div>
 

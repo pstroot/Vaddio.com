@@ -106,6 +106,7 @@ class Register extends MX_Controller {
 	
 	
 	private function getValidationRules(){
+		$this->form_validation->set_message('is_unique', 'There is already a user with this email. <a href="/login/forgotPassword">Click here</a> if you\'ve forgotten your password.');
 		
 		$config = array(
 				   array(

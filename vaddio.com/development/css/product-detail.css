@@ -238,9 +238,8 @@ body.products .videos-container {
 
 /* ACCESSORIES */
 body.products .content .product-detail-accessories {
-	margin-bottom:2em;
 	clear:left;
-	display:table;
+	width: 100%;
 }
 body.products .content .product-detail-accessories .image {
 	width:3.85714286em; /* 54px square @ 1.4 font size */
@@ -273,6 +272,36 @@ body.products .content .product-detail-accessories  a{
 }
 body.products .content .product-detail-accessories  a:hover{
 	color:#193C73;
+}
+
+body.products .content .product-detail-accessories a.product-detail-accessories-link {
+	width: 100%;
+	background-image: url(../images/accessories_icon.png);
+	background-position: 0.9em 0.55em;
+	background-repeat: no-repeat;
+	background-color: #5bb4cf;
+	padding: 0 1.47em 0 4em;
+	display: inline-block;
+	-moz-border-radius: 1.47em;
+	-webkit-border-radius: 1.47em;
+	-khtml-border-radius: 1.47em;
+	border-radius: 1.47em;
+	height: 2.93em;
+	line-height: 2.93em;
+	color: white;
+	max-width: 21em;
+}
+
+body.products .content .product-detail-accessories a.product-detail-accessories-link:hover {
+	background-color: white;
+	background-position: 0.9em -4.75em;
+	color: #0a7ab2;
+}
+
+body.products .content .product-detail-accessories a.product-detail-accessories-link:active {
+	background-color: #0a7ab2;
+	background-position: 0.9em 0.55em;
+	color: white;
 }
 
 
@@ -424,12 +453,13 @@ body.products .no-alt-images .description{padding-top:1em;}
 	.product-detail-container{margin-bottom:2em;}
 	.findproducts-container{margin-top:0;}
 	.product-detail-compare{font-size:1.3em;}
+	body.products .content .product-detail-accessories a.product-detail-accessories-link span { display:none; }
 }
 
 @media screen and (min-width: 930px) {.header .support-button{width:23%;}}
 
 @media screen and (min-width: 1000px) {	.product-detail-compare{font-size:1.5em;}}
-@media screen and (min-width: 1080px) {	.product-detail-compare{font-size:1.7em;}}
+@media screen and (min-width: 1080px) {	.product-detail-compare{font-size:1.7em;} body.products .content .product-detail-accessories a.product-detail-accessories-link span { display:inline-block; } }
 
 /*
 @media screen and (min-width: 750px) {	

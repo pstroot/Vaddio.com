@@ -46,8 +46,8 @@ class Demos extends MX_Controller {
 		
 		$this->load->model('content_model');
 		
-		//$content["sendTo"] = "paul@dancingpaul.com"; // for testing
-		$content["sendTo"] = $this->content_model->getContent("VaddioLIVE Daily Event Notification");	
+		$content["sendTo"] = $this->content_model->getContent("VaddioLIVE Daily Event Notification");
+		//$content["sendTo"] = "paul@dancingpaul.com"; // for testing	
 
 		$data['bodyClass'] = "demos-schedule";
 		$data['content'] = $this->load->view('demos_schedule_view', $content, true);			
@@ -56,7 +56,7 @@ class Demos extends MX_Controller {
 	
 	
 	
-	public function calendar($rooms,$timeslots = NULL){
+	public function calendar($rooms,$timeslot_minutes = NULL){
 		$this->load->helper('google_api');
 		$gah = new googleApiHelper;
 		
@@ -68,14 +68,13 @@ class Demos extends MX_Controller {
 		$content["googleAPI"] = $gah->getKey();
 		$content["minTime"] = 8;
 		$content["maxTime"] = 17;
-		$content["increment"] = (isset($timeslots)) ? $timeslots : 60;
+		$content["increment"] = (isset($timeslot_minutes)) ? $timeslot_minutes : 60;
 		
-		date_default_timezone_set('America/Chicago');
-		
-		$this->output->javascript("/js/fullcalendar/fullcalendar.js");
+		date_default_timezone_set('America/Chicago');		
+		$this->output->javascript("/js/fullcalendar/fullcalendar.js");	// FullCalendar v1.5.4, creates a calendar based on specified inputs.
 		$this->output->javascript("/js/date.format.js");
 		$this->output->javascript("/js/JSON-js-master/json2.js");
-		$this->output->javascript("/js/demo_google_calendar.js");
+		$this->output->javascript("/js/demo_google_calendar.js");		// custom javascript for this Vaddio Calendar
 		
 		$this->output->css("/css/calendar/redmond/jquery-ui-1.8.23.custom.css");
 		$this->output->css("/js/fullcalendar/fullcalendar.css");
@@ -97,29 +96,8 @@ class Demos extends MX_Controller {
 		$label = $this->input->get('label');
 		$label = "Temporary Hold";
 		
-
-		/*============ timezone calculations ==================*/
-		$tz = new DateTimeZone('America/Chicago');
-		$theTime = time();
-		$transition = $tz->getTransitions($theTime, $theTime); 
-		// only one array should be returned into $transition. Now get the data: 
-		$timezone_abbr = $transition[0]['abbr'];  // "CDT" if Central Daylight Time (Summer), "CST" if Central Standard Time (Winter)		
-		$timezone_offset = $transition[0]['offset']/60/60; // number of hours offset from Grenich Mean Time
 		
-		// THESE TIMES WERE CDT ON 11/1/13 (summer time, before time change on sunday)
-		$startTime = $this->changeTimezone($startTime,$transition[0]['abbr']);
-		$endTime = $this->changeTimezone($endTime,$transition[0]['abbr']);
-				
-		$timestamp = strtotime("now"); 
-		$dtzone = new DateTimeZone("America/Chicago");
-		$time = date('r', $timestamp);
-		$dtime = new DateTime($time);
-		$dtime->setTimeZone($dtzone);
-		$time = $dtime->format('g:i A');
-		
-		
-		// CONNECT TO GOOGLE CALENDAR
-		
+		// CONNECT TO GOOGLE CALENDAR		
 		$this->load->helper('zend_framework');
 		$this->load->helper('google_api');		
 		$gah = new googleApiHelper;
@@ -138,8 +116,7 @@ class Demos extends MX_Controller {
 		$event->where = array($gdataCal->newWhere("Vaddio"));
 		
 		//$event->content = $service->newContent($_COOKIE["userID"]);
-		$event->content = $gdataCal->newContent("Pending Request Submitted at " . $time);
-			 
+		$event->content = $gdataCal->newContent("Pending Request Submitted at " . date('g:i A')); 
 		$when = $gdataCal->newWhen();
 		$when->startTime = $startTime;
 		$when->endTime = $endTime;
@@ -149,14 +126,13 @@ class Demos extends MX_Controller {
 		// A copy of the event as it is recorded on the server is returned
 		$uri = "http://www.google.com/calendar/feeds/".$calendar_id."/private/full"; 
 		
-		$newEvent = $gdataCal->insertEvent($event,$uri);		
+		$newEvent = $gdataCal->insertEvent($event,$uri);	
 		
 		$returnArray["room_name"] = $newEvent->who[0]->valueString;
 		$returnArray["event_id"] = $newEvent->id->text;
 		$returnArray["event_label"] = $newEvent->title->text;
 		$returnArray["start"] = $newEvent->when[0]->startTime;
-		$returnArray["end"] = $newEvent->when[0]->endTime;
-		
+		$returnArray["end"] = $newEvent->when[0]->endTime;		
 		$returnArray["result"] = "success";
 		
 		echo json_encode($returnArray);		
@@ -164,21 +140,12 @@ class Demos extends MX_Controller {
 	}
 	
 	
-	
-	
-	private function changeTimezone($date,$timezone_abbr){
-		// regardless of what timezone the date is when it's sent it, make sure it's GMT -6
-		// timeslot abbreviation should be either "CDT" or "CST"
-		if($timezone_abbr == "CST")
-			return  substr($date,0,count($date)-7) . "-06:00";	 // wintertime daylight savings time
-		else
-			return  substr($date,0,count($date)-7) . "-05:00";	 // summertime daylight savings time
-	}
-	
-	
-	
-	
+
+
 	public function ajax_remove_pending_events(){
+ 		//$this->nxs_cURLTest("https://www.google.com/intl/en/contact/", "HTTPS to Google", "Mountain View, CA");
+ 
+ 
 		$verbose = false;
 		
 		$this->load->model('demos_model');	
@@ -187,7 +154,6 @@ class Demos extends MX_Controller {
 		ini_set("include_path", ini_get("include_path").PATH_SEPARATOR.str_replace("/", "\\", BASEPATH)."libraries\\");
 		$this->load->helper('zend_framework');
 		$this->load->helper('google_api');
-		
 		$gah = new googleApiHelper;
 		$gdataCal = $gah->connect();
 		
@@ -282,17 +248,15 @@ class Demos extends MX_Controller {
 		////////////////////////////// FORMAT TIME AND TIMEZONES ////////////////////////////////////////////
 		////////////////////////////////////////////////////////////////////////////////////////////////////
 		
-		// regardless of what timezone the date is when it's sent it, make sure it's GMT -6
-		// we could also use the function "$this->changetimezone() "
-		$startTime = $this->input->post("startTime");
+		$startTime = $this->input->post("startTime"); // In GMT Time, i.e. 2014-02-04T17:00:00.000Z (note that there is no offset indicated.
 		$endTime = $this->input->post("endTime");
 		$startTimeTimezone = $this->input->post("startTimeTimezone");
 		$calendar_data = $this->input->post("calendar_data");
+ 
+		//$startTime = substr($startTime,0,count($startTime)-7) . "-06:00";	
+		//$endTime = substr($endTime,0,count($endTime)-7) . "-06:00";	
 		
-		$startTime = substr($startTime,0,count($startTime)-7) . "-06:00";	
-		$endTime = substr($endTime,0,count($endTime)-7) . "-06:00";	
-		
-		$data["startTimeTimezone"] = $startTime; //Central Standard Time/GMT-6 or Central Daylight Time/GMT-5
+		$data["startTimeTimezone"] = "Central Time";  
 		$calendar_data = json_decode(stripslashes($calendar_data));
 		
 		
@@ -339,10 +303,12 @@ class Demos extends MX_Controller {
 		////////////////////////////////////////////////////////////////////////////////////////////////////
 		////////////////////////////// INSERT INTO THE DATABASE ////////////////////////////////////////////
 		////////////////////////////////////////////////////////////////////////////////////////////////////
+		
+		
 		$calendars = array();			
 		$insertThis = array(
-			   'date_start' => date_format(date_create($startTime), "Y-m-d G:i:s") ,
-			   'date_end' => date_format(date_create($endTime), "Y-m-d G:i:s") ,
+			   'date_start' => date("Y-m-d G:i:s",strtotime($startTime)) ,
+			   'date_end' => date("Y-m-d G:i:s",strtotime($endTime)) ,
 			   'uID' => createRandomPassword(), // from google_api_helper.php
 			   'name' => $this->input->post("dealer_or_user_name"),
 			   'contact_name' => $this->input->post("contact_name"),
@@ -367,12 +333,12 @@ class Demos extends MX_Controller {
 		);
 		$this->db->insert('demo_requests', $insertThis);
 		$inserted_id = $this->db->insert_id();
-				
+		$returnArray["inserted_id"]	 = $inserted_id;
 		
 		
 		// used in both emails
-		$theDate = date_format(date_create($startTime), "M j");
-		$theTime = date_format(date_create($startTime), "g:i a") . " - " .  date_format(date_create($endTime), "g:i a");
+		$theDate = date("M j", strtotime($startTime));
+		$theTime = date( "g:i a", strtotime($startTime)) . " - " .  date( "g:i a", strtotime($endTime));
 		
 				
 	

@@ -169,6 +169,12 @@ body.compare-ptz .cell{
 	height:auto;
 	padding:10px;
 }
+	
+body.compare-ptz .cell li{ 
+	margin-top:0.2em; 
+	margin-bottom:0.3em;
+	margin-left:1.2em;
+}
 .scrolltable td{
 	/*border-right:1px solid #e8e8e8;*/
 }

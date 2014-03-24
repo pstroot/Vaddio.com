@@ -22,6 +22,7 @@ class Doc_library_model extends MY_Model {
 							  ->join('product_download_categories c','c.cat_id = d.cat_id','left')
 							  ->join('document_library l','l.doc_id = d.doc_id ','left')
 							  ->where('d.cat_id',$categories[$ii]["cat_id"])
+							  ->where('l.path != ""')
 							  ->order_by($order_by)
 							  ->distinct()
 							  ->get("product_downloads d");	
@@ -252,7 +253,7 @@ class Doc_library_model extends MY_Model {
 			// archives
 			'zip' => 'application/zip',
 			'rar' => 'application/x-rar-compressed',
-			'exe' => 'application/x-msdownload',
+			'exe' => 'application/octet-stream',
 			'msi' => 'application/x-msdownload',
 			'cab' => 'application/vnd.ms-cab-compressed',
 	

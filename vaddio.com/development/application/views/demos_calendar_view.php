@@ -1,14 +1,22 @@
-
 <script language="JavaScript">
-	var _roomsArray = <?php echo json_encode($rooms); ?>;
-	var _minTime = <?php echo json_encode($minTime); ?>;
-	var _maxTime = <?php echo json_encode($maxTime); ?>;
-	var _increment = <?php echo $increment; ?>;
-	var _timesetter = new Date(<?php echo date("Y,m-1,d,H,i,s");?>); // Note: m-1 to account for javascript Date() syntax
+	<?
+	// use PHP to get the date/time from the server. This is more reliable than javascript, which uses the user's computer.
+	$date = new DateTime();
+	$timezone = new DateTimeZone("America/Chicago" ); // Make sure we're displaying Central Time Zone, regardless of the server's location. 
+	$date->setTimezone( $timezone );
+	// Winter = central standard time (GMT-0600)
+	// Summer = central daylight time (GMT-0500)
+	?>
+	var _centralTimeOffset = <?php echo ($timezone->getOffset($date)/60/60); ?>;  // -6 for winter, -5 for summer	
+	var _timesetter = new Date("<?php echo  $date->format('c');?>"); 
+	// _timesetter format looks like this: "Mon Feb 03 2014 09:25:33 GMT-0600 (Central Standard Time)"
+	var _roomsArray = <?php echo json_encode($rooms); ?>;// Object { room_id="1", calendar_id="intercomagency.com_jsj7...oup.calendar.google.com", room_name="MGM"}
+	var _minTime = <?php echo json_encode($minTime); ?>; // "i.e. 8 for :8:00
+	var _maxTime = <?php echo json_encode($maxTime); ?>; // i.e. 17 for 5:00
+	var _increment = <?php echo $increment; ?>; 		 // i.e. 60 for 1 hour timeblocks
 	var _googleAPI = "<?= $googleAPI; ?>";
+	
 </script>
-
-
 
     <h3 class="arrow">
     	<p><b>IMPORTANT NOTE:</b> All time slots are listed in <b>Central Time</b> (North America). Please adjust your timeslot selection accordingly.</p>

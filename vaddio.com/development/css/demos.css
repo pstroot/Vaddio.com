@@ -178,7 +178,9 @@ input[type=radio]{margin-right:1.5em;}
 	margin-top: -0.3em;
 	padding: 0 1.6em;
 }
-
+.option-room-download .rounded-corner-button{
+	font-size:1em;
+}
 
 
 

@@ -67,7 +67,7 @@ class VideoThumbnail{
 		$thumb = "
 		<div class='videoThumbnail'>
 			<a href='" . $link . "' class='fancybox_videoDetail tooltipTrigger' id='".$id."'>
-				<div class='image' style='background: url(\"" . base_url() . $thumbImage . "\")'>
+				<div class='image' style='background-image: url(\"" . base_url() . $thumbImage . "\")'>
 					<div class='icon'></div>
 					<!--<img src='" . base_url() . urlencode($thumbImage) . "' class='thumbnailImage' id='thumbnailImage_".$id."'>-->
 				</div>

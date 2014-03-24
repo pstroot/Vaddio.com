@@ -12,7 +12,7 @@
     <div class="finder">
     	
         <div class="panel">
-            <label>Find a Product</label>
+            <label>Find Support by Product</label>
             <a href='/products' class='see-listing'>See a listing of all products</a>
                
             <form name="find-a-product-form">
@@ -108,29 +108,32 @@
             </div>
             -->
         </div>
-    </div> 
+    </div>
+
+<div class="resource_center">
+    <div class="resource_center_tabs">
+        <div class="resource_center_tab _active" id="resource_center_tab_products">Downloads for Products</div>
+        <div class="resource_center_tab" id="resource_center_tab_other">Other Resources</div>
+    </div>
+    <ul class="resource_center_list _active" id="resource_center_products">
+        <? foreach($resources as $r){ ?>
+        <li><a href='/resources#ani_cat_<?= $r["cat_id"]; ?>'><?= $r["cat_name"]; ?></a></li>
+        <? } ?>
+    </ul>
+    <ul class="resource_center_list" id="resource_center_other">
+        <? foreach($resources_other as $r){ ?>
+        <li><a href='/resources#ani_cat_<?= $r["cat_id"]; ?>'><?= $r["cat_name"]; ?></a></li>
+        <? } ?> 
+    </ul>
+</div>
     
 
 <div class="leftCol">
 
 	<div class="innerLeftCol">
     
-        <h2>Resource Library</h2> 
-               
-        <h3>For Products</h3>
-        <ul class="bulleted-list">
-        	<? foreach($resources as $r){ ?>
-			<li><a href='/resources#cat_<?= $r["cat_id"]; ?>'><?= $r["cat_name"]; ?></a></li>
-            <? } ?>
-        </ul>   
-        
-        <h3>Other Resources</h3>
-        <ul class="bulleted-list">
-        	<? foreach($resources_other as $r){ ?>
-			<li><a href='/resources#cat_<?= $r["cat_id"]; ?>'><?= $r["cat_name"]; ?></a></li>
-            <? } ?>			
-        </ul>
-    
+        <? echo modules::run('SupportInfoBlock','vaddio loader'); ?>
+
     </div><div class="innerRightCol">
     
    		<? foreach($featured as $f){ ?>
@@ -148,7 +151,7 @@
 
 </div><div class="rightCol">
        
-	   <? echo modules::run('SupportInfoBlock','vaddio loader'); ?>
+	   
 	   <? echo modules::run('SupportInfoBlock','contact'); ?>
 	   <? echo modules::run('SupportInfoBlock','warranty'); ?>
         

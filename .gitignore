@@ -107,6 +107,8 @@ maintenance
 source
 groupstation.vaddio.com
 
+vaddio.com/development/application/logs
+
 vaddio.com/development/application/config/production/database.php
 vaddio.com/development/application/config/production/config.php
 vaddio.com/development/application/config/staging

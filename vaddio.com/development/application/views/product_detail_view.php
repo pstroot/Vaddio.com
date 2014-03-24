@@ -233,25 +233,6 @@ if (isset($parentSystemsString)){
 	?>
     
     
-    
-    
-    <?
-	// **************************************** ACCESSORIES ****************************************
-    if($hasAccessories){ 
-		?>
-        <div class='product-detail product-detail-accessories'>
-            <h1>Accessories</h1>            
-            <a href='<?= base_url() . "accessories/".$slug; ?>' >
-                <div class="image"><img src='<?= base_url() . $product_thumb; ?>' ></div>
-                <?= stripslashes($name); ?> Accessories
-            </a>
-        	<div class="clearfix"></div>
-        </div>
-		<?
-    }
-    ?>
-    
-    
     <?
 	// **************************************** SYSTEM INCLUDES ****************************************
     if(count(@$systemIncludes) > 0){ 
@@ -292,6 +273,29 @@ if (isset($parentSystemsString)){
     	<?
     }
     ?>
+    
+    
+    
+    <?
+    // **************************************** ACCESSORIES ****************************************
+    if($hasAccessories){ 
+        ?>
+        <div class='product-detail product-detail-accessories'>
+            <a href="<?= base_url() . "accessories/".$slug; ?>" class="product-detail-accessories-link rounded-corner-button"><span>Related&nbsp;</span>Accessories</a>
+            <?php /*<h1>Accessories</h1>
+            <a href='<?= base_url() . "accessories/".$slug; ?>' >
+                <div class="image"><img src='<?= base_url() . $product_thumb; ?>' ></div>
+                <?= stripslashes($name); ?> Accessories
+            </a>
+            */ ?>
+            <div class="clearfix"></div>
+        </div>
+        <?
+    }
+    ?>
+    
+    
+    
     </div> <!-- END .product-detail-container -->
     
     <? 

@@ -15,20 +15,13 @@
                 <? echo modules::run('FindProducts'); ?> 
         </section>
         
-        <section class='home-videos home-blueboxes-right'>
-        
-            <a href="/videos" class="view-all rounded-corner-button yellow-button">All Videos</a>
-            <h1>Videos</h1>
+        <section class='home-getstarted home-blueboxes-right'>
+            <h1>Get Started</h1>
             <ul>
-                <? foreach($videos as $v){ ?>
-                    <li>
-                        <div class='icon'></div>
-                        <a href='videos/<?= $v['slug']; ?>'>
-                            <div class="videos-container" style="background-image:url('<?= base_url() . $v['video_thumbnail']; ?>')"><!--<img src='<?= base_url() . $v['video_thumbnail']; ?>' />--></div>
-                            <div class="title"><?= $v['video_name']; ?></div>
-                        </a>
-                    </li>
-                <? } ?>
+                <li class="home-getstarted-integrators"><span></span><a href="<?= base_url() ?>get_started">Find Certified Integrators</a></li>
+                <li class="home-getstarted-demos"><span></span><a href="<?= base_url() ?>demos">Schedule Product Demos</a></li>
+                <li class="home-getstarted-training"><span></span><a href="<?= base_url() ?>training">Training &amp; Certification</a></li>
+                <li class="home-getstarted-compare"><span></span><a href="<?= base_url() ?>compare_ptz_cameras">Compare PTZ Cameras</a></li>
             </ul>
         </section>
     
@@ -46,21 +39,26 @@
         </div>
     </section>
     
-    
-    
-    
-    <section class='home-engage'>
-        <div class='home-engage-inner'>
-    	<h1>Engage</h1>
+    <section class='home-videos'>
+        <a href="/videos" class="view-all rounded-corner-button orange-button">All Videos</a>
+        <h1>Videos</h1>
         <ul>
-            <li class='training-and-certification'><a href='<?= base_url(); ?>training'><span></span>Training & Certification</a></li>
-            <li class='product-demos'><a href='<?= base_url(); ?>demos'><span></span>Schedule Product Demos</a></li>
-            <li class='find-certified-integrators'><a href='<?= base_url(); ?>certified-integrators'><span></span>Find Certified Integrators</a></li>
-            <li class='compare-ptz-cameras'><a href='<?= base_url(); ?>compare_ptz_cameras' class='compare_ptz_link'><span></span>Compare PTZ Cameras</a></li>
+            <? foreach($videos as $v){ ?>
+                <li>
+                    <div class="home_video_container">
+                        <a href='videos/<?= $v['slug']; ?>'>
+                            <div class="home_video_thumb_container">
+                                <div class="home_video_thumb" style="background-image:url('<?= base_url() . $v['video_thumbnail']; ?>')"><!--<img src='<?= base_url() . $v['video_thumbnail']; ?>' />--></div>
+                            </div>
+                            <div class="title"><?= $v['video_name']; ?></div>
+                        </a>
+                    </div>
+                </li>
+            <? } ?>
         </ul>
-        </div>
     </section>
     
+    <hr class="gradient2" />
     
     <section class='home-events'>
     	<a href="/events" class="view-all rounded-corner-button orange-button">All Events</a>        
@@ -82,7 +80,6 @@
 		?></ul>
         <div class="clearfix"></div>
     </section>
-    
     
     <hr class="gradient2" />
     
@@ -112,7 +109,7 @@
 		}
 		?></ul><!-- END .news-container -->
     </section><hr class="gradient2 before-promotions" /><section class='home-promotions'>    	
-    	<a href="/promotions" class="view-all rounded-corner-button orange-button">All Promos</a>                
+    	<!--<a href="/promotions" class="view-all rounded-corner-button orange-button">All Promos</a>-->                
         <h1>Promos</h1>
     	<? echo modules::run('Promotions'); ?>
     </section>

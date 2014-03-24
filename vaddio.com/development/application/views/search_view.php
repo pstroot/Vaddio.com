@@ -8,12 +8,16 @@
 
 	<!--<h2>Searching for <?= $search_description; ?></h2>-->
     
+    <?php if(count($products)+count($documents)+count($categories)+count($videos)+count($press)+count($caseStudies) == 0) { ?>
+    <section><div class="results-spacer"><div class="number-of-results">No results found for your search.</div></div></section>
+    <?php } ?>
+    
     <? 
 	if(count($products) > 0){ ?>
     <section class='product-results'>
     <h2>Products</h2>
     <div class="results-spacer">
-    	<div class="number-of-results"><?=count($products);?> product match<?=count($products)>1?"es":""?></div>    
+    	<div class="number-of-results"><?=count($products);?> product match<?=count($products)>1?"es":""?></div>
         <ul>
     		<?
             foreach($products as $p){
@@ -47,7 +51,7 @@
     		<?
             foreach($documents as $doc){
             	echo "<li>";
-        		echo "<a href='" . base_url() . $doc["path"]."'>".stripslashes($doc["name"])." " . $doc["type"] . "</a>\n	";
+        		echo "<a href='" . base_url() . 'library?path=d&file=' . $doc["path"]."'>".stripslashes($doc["name"])." " . $doc["type"] . "</a>\n    ";
     			//echo "<div class='description'>" . $doc["description"] . "</div>";		
     			echo "</li>";
             }
@@ -146,11 +150,6 @@
 		$(".content section ul").highlight("<?= $s; ?>");
 		<? } ?>
 	</script>
-	
-	
-	 <? if(count($products) == 0 && count($documents) && count($categories) == 0 && count($videos) == 0){  ?>
-    	<h2>Enter keywords in the search field above</h2>  
-    <? } ?>
     
 </section>
 

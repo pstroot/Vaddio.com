@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www.vaddiodev.com/" />
+<title>Test Vaddio Demo Scheduler</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Test Vaddio Demo Scheduler</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/demos/schedule</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#room-selection-4 &gt; input[name=&quot;room-select&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>css=input[name=room_ids]</td>
+	<td>idsSelected</td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>css=input[name=room_names]</td>
+	<td>roomsSelected</td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>css=input[name=room_names]</td>
+	<td>roomsSelected</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=continue-select-room</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=#step2 &gt; h1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>Rooms Selected: ${roomsSelected}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=view-calendar-button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=.fancybox-overlay</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>css=.fancybox-iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=.fc-content .fc-event:last-child .fc-event-inner</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>css=.fc-content .fc-event:last-child .fc-event-inner</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.fc-button-month</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.fc-button-next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.fc-button-next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.fc-button-next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.fc-button-next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.fc-button-next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.fc-button-next</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseOver</td>
+	<td>css=.fc-content .fc-event:last-child .fc-event-inner</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=.fc-content .fc-event:last-child .fc-event-inner</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=.ui-dialog[aria-labelledby=ui-dialog-title-dialog-modal]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>css=.ui-dialog[aria-labelledby=ui-dialog-title-dialog-modal]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>relative=top</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=//button[contains(., 'Ok')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=#step3 &gt; h1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>css=#step3 &gt; h1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>css=input[name=calendar_data]</td>
+	<td>calendarData</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>CALENDAR DATA = ${calendarData}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>css=input[name=startTime]</td>
+	<td>startTime</td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>css=input[name=endTime]</td>
+	<td>endTime</td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>css=input[name=startTimeReturnedFromGoogle]</td>
+	<td>startTimeReturned</td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>css=input[name=endTimeReturnedFromGoogle]</td>
+	<td>endTimeReturned</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${startTime}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>javascript{new Date(storedVars[&quot;startTime&quot;])}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>javascript{new Date(storedVars[&quot;startTimeReturned&quot;])}</td>
+	<td>endTime</td>
+</tr>
+<tr>
+	<td>assertEval</td>
+	<td>javascript{new Date(storedVars[&quot;startTime&quot;]).toDateString() == new Date(storedVars[&quot;startTimeReturned&quot;]).toDateString() ? true : false}</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>css=#detailStep2 .confirm-box</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=company</td>
+	<td>Test Co. Inc</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=website</td>
+	<td>http://www.test.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=dealer_or_user_name</td>
+	<td>Paul (TEST)</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=contact_name</td>
+	<td>Stroot</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=address</td>
+	<td>123 Test Street</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=address2</td>
+	<td>Suite 34</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=city</td>
+	<td>Minneapolis</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=state</td>
+	<td>MN</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=zip</td>
+	<td>55408</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=phone_office</td>
+	<td>555-555-5555</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=phone_mobile</td>
+	<td>666-666-6666</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=phone_fax</td>
+	<td>777-777-7777</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=comments</td>
+	<td>This is a test</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>css=div.warning-message</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=email</td>
+	<td>paul@dancingpaul.com</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=#step4 &gt; #submitting-form</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>css=#step4 &gt; #submitting-form</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>~~~~~~~&gt; SUBMITTING FORM</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=#step4 &gt; #form-submit-success </td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>css=#step4 &gt; #form-submit-success </td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>~~~~~~~&gt; SUBMIT SUCCESS</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>css=#step4 &gt; #submitting-form</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>css=#detailStep3 .confirm-box</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>css=#detailStep4 .confirm-box</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyNotVisible</td>
+	<td>css=.warning-message</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=thankyou-date</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeValue</td>
+	<td>css=input[name=inserted_db_id]</td>
+	<td>inserted_db_id</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${inserted_db_id}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>id=thankyou-date</td>
+	<td>successText</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=#confirmation-rooms-list &gt; li</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=#confirmation-rooms-list &gt; li</td>
+	<td>successRooms</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>~~~~~~~&gt; BEGIN ADMINISTRATION</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/admin/demo_details.php?id=${inserted_db_id}&amp;ref=http%3A%2F%2Fwww.vaddio.dev%2Fadmin%2Fdemos_pending.php</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>View Demo Request</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value='Schedule This Request']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=admin_notes</td>
+	<td>Automated Submission for testing</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=sendConfirmation</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=.contentArea &gt; h1</td>
+	<td>Demo Scheduled!</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=.contentArea &gt; h1</td>
+	<td>Demo Scheduled!</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/admin/demo_delete.php?id=${inserted_db_id}&amp;ref=http%3A%2F%2Fwww.vaddio.dev%2Fadmin%2Fdemos_scheduled.php</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value='Yes. Delete this Request']</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

@@ -134,13 +134,22 @@ class Library extends MX_Controller {
 		/usr/home/vaddio/public_html/v2.vaddio.com/staging/application/document_library/library_docs/EasyTalkWirelessLavalierSystem.pdf
 		*/
 		
+		if($ext == "ppt" || $ext == "pot" || $ext == "pps" || $ext == "ppa") {
+			$content_type = "application/vnd.ms-powerpoint";
+		}
 		if($ext == "msi") {
 			$content_type = "application/octet-stream";
 		}
 		
-		if($content_type == "application/pdf" || $ext == "msi" || $ext == "hex" || $ext == "pdf" || $content_type == "application/zip" || $ext == "zip" )	$content_disposition = "attachment"; // Do not open PDFs in teh browser window, instead, prompt the user to download it or open it on their computer.	
+		if($content_type == "application/pdf" || $ext == "msi" || $ext == "hex" || $ext == "flash" || $ext == "pdf" || $content_type == "application/zip" || $ext == "zip" )	$content_disposition = "attachment"; // Do not open PDFs in teh browser window, instead, prompt the user to download it or open it on their computer.	
 		else									$content_disposition = "inline";
+
 		
+		// if IE		
+		if (preg_match('~MSIE|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT']) || strpos($_SERVER['HTTP_USER_AGENT'], 'Trident') !== false) { 
+			$content_disposition = "attachment";
+		}
+
 
 		header('Content-Type: ' . $content_type);
 		header('Content-Length: ' . filesize($path));		

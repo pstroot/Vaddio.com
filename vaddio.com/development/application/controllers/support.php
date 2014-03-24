@@ -6,7 +6,7 @@ class Support extends MX_Controller {
 	public function __construct() {
         parent::__construct(); 		
 		$this->output->css('/js/tokeninput/styles/token-input.css');
-		$this->output->css('/css/support.css');			
+		$this->output->css('/css/support.css?v=031214');			
 	}
 
 	public function index(){

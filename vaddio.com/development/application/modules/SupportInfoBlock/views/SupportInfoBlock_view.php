@@ -42,7 +42,7 @@
             <a href="<?= $vaddio_loader_instructions_link; ?>" class="loader-link-1"><?= $vaddio_loader_instructions_name; ?></a>
             <?= $vaddio_loader_instructions_filetype; ?> <?=$vaddio_loader_instructions_filesize; ?>
 			
-            <a href="<?= $vaddio_loader_name; ?>" class="loader-link-2"><?= $vaddio_loader_name; ?></a>
+            <a href="<?= $vaddio_loader_link; ?>" class="loader-link-2"><?= $vaddio_loader_name; ?></a>
             <?= $vaddio_loader_filetype; ?> <?=$vaddio_loader_filesize; ?>
 		
         </div>

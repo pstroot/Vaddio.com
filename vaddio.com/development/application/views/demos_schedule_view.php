@@ -1,5 +1,4 @@
 
-
 <div class='header big-blue-header'>
     <h1>Request a VaddioLIVE Demo</h1>
 </div>
@@ -42,7 +41,7 @@
                         <div class="prompt">You have scheduled:</div>                    
                         <div class="value" id="demo-date-value"></div>
                         <div id="please-note">
-                            <b>PLEASE NOTE:</b> Your timeslot is listed in Central Time.
+                            <b>PLEASE NOTE:</b> Your timeslot is listed in <span class='timezone-name'>Central Time</span>.
                         </div>                    
                         <a href="#" class="redoButton" id="choose-a-new-time-button">Revise Timeslot</a>                       
                     </div>
@@ -79,6 +78,8 @@
         echo form_hidden('calendar_ids','');
         echo form_hidden('startTime','');
         echo form_hidden('endTime','');
+        echo form_hidden('startTimeReturnedFromGoogle','');
+        echo form_hidden('endTimeReturnedFromGoogle','');
         echo form_hidden('calendar_data','');
         echo form_hidden('timezone','');
         ?>
@@ -296,7 +297,7 @@
                 <p><b>PLEASE NOTE:</b> Your timeslot is listed in Central Time (North America).</p>
                 <p>A Vaddio representative will contact you to confirm your request and provide you with instructions for connecting to the demonstration.</p>
                 <p>If you have questions, please contact Bernadette Yard at <a href="mailto:byard@vaddio.com">byard@vaddio.com</a> or 763-971-4466. You may want to add <a href="mailto:registration@vaddio.com">registration@vaddio.com</a> to your address book to help keep our emails from being marked as spam.</p>
-            
+            	<input type="text" name="inserted_db_id" value="" />
              <a href='javascript:resetForm()'>Register for an additional demo.</a>
              
             <div id="insert-response-message-here"></div>

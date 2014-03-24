@@ -254,6 +254,9 @@ html.js section.recent .expandable{display:block;}
 	overflow: hidden;
 	box-shadow: inset 0 0 0 2px #c2c2c2;
 	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: black;
 }
 .videoThumbnail img,
 .videoThumbnail .name{

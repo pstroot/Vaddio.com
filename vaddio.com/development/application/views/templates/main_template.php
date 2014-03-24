@@ -5,7 +5,6 @@
     <title><?php echo get_title(); ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="<?php echo get_metadescription(); ?>">
-    <meta name="keywords" content="<?php echo get_keywords(); ?>">
     <? if(ENVIRONMENT != 'production') { ?> <meta name="robots" content="noindex"><? } ?>
     <link rel="shortcut icon" href="<?php echo base_url(); ?>images/favicon.ico" type="image/x-icon" />
     <meta name="format-detection" content="telephone=no" />

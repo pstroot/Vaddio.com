@@ -1,0 +1,96 @@
+
+
+.product-parade{height:23em;}
+
+/* MOBILE */
+.product-parade h2 {font-size:2.5em;}
+.product-parade .products{display:none;}
+.product-parade .products-mobile{display:block;}
+.product-parade .products-mobile img{width:100%;}
+.product-parade{
+	position:relative;
+	background-color:#000000;
+	background-image: url(../images/product_parade/bkg-mobile.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	overflow:hidden;
+}
+
+
+
+
+.product-parade .inner-content-with-side-padding{
+	text-align:left;
+	height:100%;
+	z-index:2;
+}
+.product-parade h2 {
+	position:absolute;
+	bottom:0.64516129em;
+	color:rgb(89,110,146);
+	color:rgba(255,255,255,0.25);
+}
+
+.product-parade .products,
+.product-parade .products-mobile{
+	position:absolute;
+	top:0;
+	z-index:1;
+	white-space:nowrap;
+	text-align:center;
+	margin:auto;
+}
+.product-parade .products-mobile{
+	text-align:center;
+	width:100%;
+}
+.product-parade .products .product{
+	display:inline-block;
+	vertical-align:bottom;
+	margin:0 1.5em;
+}
+.product-parade .products .product img{max-width:100%;}
+
+
+.product-parade .products #product-1{width:9.9em;}
+.product-parade .products #product-2{width:18.7em;}
+.product-parade .products #product-3{width:11.5em;}
+.product-parade .products #product-4{width:11.2em;}
+.product-parade .products #product-5{width:9.8em;}
+.product-parade .products #product-6{width:20.0em;}
+.product-parade .products #product-7{width:19.7em;}
+.product-parade .products #product-8{width:15.4em;}
+.product-parade .products #product-9{width:28.4em;}
+
+
+
+
+
+@media screen and (min-width: 260px) {
+	.product-parade{height:29.6em;}
+	.product-parade h2{font-size:3em;}
+}
+@media screen and (min-width: 330px) {
+	.product-parade{height:39.6em;}
+	.product-parade h2{font-size:4em;}
+}
+@media screen and (min-width: 500px) {
+	.product-parade{height:56.2em;}
+	.product-parade h2{font-size:6em;}
+}
+@media screen and (min-width: 595px) {
+	.product-parade{height:56.2em;}
+	.product-parade h2{font-size:7.5em;}
+}
+
+@media screen and (min-width: 640px) {
+	.product-parade{height:39.6em;}
+	
+	.product-parade .products{display:block;}
+	.product-parade .products-mobile{display:none;}
+	
+	.product-parade{background-image: url(../images/product_parade/bkg.jpg);}
+
+	.product-parade h2{font-size:6.2em;}
+	.product-parade .products{font-size:0.7em;font-size:1em;}
+}

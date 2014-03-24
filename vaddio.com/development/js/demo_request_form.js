@@ -176,9 +176,17 @@ var timeslotChosen //This is the placeholder which sets the scope for the timesl
 			//alert("TIMESLOT SAVED!")
 			//alert(JSON.stringify(response_data,null,5))			
 			
-			$('#demo-date-value').html(display);	
+			$('#demo-date-value').html(display);
 			$('input[name=startTime]').val(start);
 			$('input[name=endTime]').val(end);
+			
+			$('input[name=startTimeReturnedFromGoogle]').val(response_data[0]["start"]);
+			$('input[name=endTimeReturnedFromGoogle]').val(response_data[0]["end"]);
+			
+			
+			//console.log("Start Date clicked and passed: " + new Date(start));
+			//console.log("Start date returned from cal: " + new Date(response_data[0]["start"]));
+			
 			$('input[name=timezone]').val(timezone_name);
 			//alert(response_data)
 			//alert(JSON.stringify(response_data))
@@ -387,7 +395,7 @@ var timeslotChosen //This is the placeholder which sets the scope for the timesl
 						$('.demo-steps td#detailStep4 h3').text('Confirmation');
 						$('#detailStep4 .confirm-box').slideDown(transitionSpeed);
 						$('.demo-steps td:last').removeClass('active').addClass('complete');
-						
+						$('input[name=inserted_db_id]').val(data.inserted_id)
 						// if the php script sent back any warning messages, display them on the screen.
 						if(data.warnings.length > 0){
 							var warningMsg = "";

@@ -1,5 +1,5 @@
 <div class='header big-blue-header'>
-    <h1>404 Page Not Fund</h1>
+    <h1>404 Page Not Found</h1>
 </div>
 
 <section class='leftCol' style='font-size:1.5em;line-height:1.4em;'>

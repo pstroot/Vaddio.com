@@ -42,7 +42,7 @@ RewriteRule ^partner_docs.php$ 							/dealers [R=301,L]
 
 
 # directories that are allowed web access
-RewriteCond $1 !^(index\.php|images|css|js|downloads|fonts|files|admin|email|cgi-bin|robots\.txt|google7846275dacacf8e1\.html)
+RewriteCond $1 !^(index\.php|images|css|js|downloads|fonts|files|admin|email|cgi-bin|robots\.txt|google7846275dacacf8e1\.html|china)
 
 
 # Route EVERYTHING to index.php for CodeIgniter

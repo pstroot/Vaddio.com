@@ -40,7 +40,7 @@
     <h2>Thank You</h2>
     
     <div class='bodycopy'>
-    	<p>Your password has been reset. You will receive an email shortly with your temporary password that you can use to <a href='/login'>log in</a>.</p>
+    	<p>Your password has been reset. You will receive an email shortly with your temporary password that you can use to <a href='/login'>log in</a>. Please add <strong>registeration@vaddio.com</strong> to your spam filter.</p>
     </div>
     
     <? if (isset($errorMessage)){ ?>

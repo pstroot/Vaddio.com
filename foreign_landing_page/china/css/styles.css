@@ -1,0 +1,256 @@
+@charset "utf-8";
+
+/* base font size is 10px */
+html{
+	font-size:62.5%;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+body, input, select, option {
+	background-color: #fff;
+	font-family:   Tahoma, Arial, Helvetica, "Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", 宋体, SimSun, STXihei, "华文细黑", sans-serif; 
+	color: #5e5e5e;
+}
+html,body{margin:0;padding:0;}
+
+::selection{ background-color: #CEE1ED; color: #193C73; }
+::moz-selection{ background-color: #CEE1ED; color: #193C73; }
+::webkit-selection{ background-color: #CEE1ED; color: #193C73; }
+
+textarea, input { outline: none; }
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    box-sizing:         border-box;
+	outline:0;
+}
+
+
+header, .content, .inner-content-with-side-padding {
+	width: 100%;
+	max-width: 110.5em;
+	padding-left:2em;
+	padding-right:2em;
+	margin:auto;
+	position:relative;
+}
+header{
+	height:11.2em;
+	top:0;
+	padding-top:4em;
+}
+header a{
+	border:0;text-decoration:none;
+}
+.headline{ 
+	border-top:1px solid #d8d8d8;
+	padding-top:3.8em;
+	margin-bottom:2.9em;
+}
+
+nav{
+	position:absolute;
+	top:0;
+	width:100%;
+	text-align:right;
+	left:0;
+}
+
+nav ul{	
+}
+nav ul li{
+	display:inline-block;
+	margin-left:.5em;
+}
+nav ul li a{
+	display:block;
+	font-size:1.4em;
+	background-color:#e0e0e0;	
+	padding:.55em .7em;	
+	color:#666666;
+	text-decoration:none;
+}
+
+nav ul li a:hover{background-color:#C0C0C0;}
+
+h1{
+	width:15.8em;
+	height:5.1em;
+	background-image: url(../images/logo.jpg);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-size:100%;
+	overflow:hidden;
+	text-indent:-200%;	
+}
+
+body#contact-page h2{
+	background-color:#107ab2;
+	font-size:3.4em;
+	color:#FFFFFF;
+	padding:0.68em;
+}
+body#contact-page h3{
+	background-color:#e0e0e0;
+	font-size:2.3em;
+	color:#5e5e5e;
+	padding:0.5em 0.8em;
+}
+
+
+.content {
+	padding-top:4em;
+}
+.content a{color:#107ab2;}
+.content .col{
+	width:100%;	
+	padding-bottom:3em;
+	display:inline-block; 
+	vertical-align:top;
+}
+.content #col1{
+	font-size:1.8em;
+	line-height:1.7em;
+	width:100%;
+}
+
+
+body#home-page .content #col2{
+	font-size:1.5em;
+	line-height:1.35em;
+}
+
+.content #col1 p{margin-bottom:1em;}
+.content #col2 p{margin-bottom:1em;}
+.content #col2 img{max-width:100%;}
+
+
+
+
+
+
+.content #col2 h3{font-size:1.26666666666667em;margin-bottom:1.5em;}
+.content #col1 .rounded-corner-button{font-size:0.722222222em;}
+.rounded-corner-button{
+	display: inline-block;
+	font-size: 1.3em;
+	padding: 0 1.7em;
+	height: 1.84613385em;
+	line-height: 1.84613385em;
+	-moz-border-radius: 0.92307692em;
+	-webkit-border-radius: 0.92307692em;
+	-khtml-border-radius: 0.92307692em;
+	border-radius: 0.92307692em;
+	text-decoration: none !important;
+	white-space: nowrap;
+	border: none;
+}
+.yellow-button{background-color:#e3ca84;color:#15366b !important;}
+.yellow-button:hover{background-color:#fce8a9;color:#107ab2 !important;}
+
+
+
+
+.markets{
+	padding-top:3em;
+	padding-bottom:8.7em;
+	border-top:1px solid #d6d6d6;
+	display:relative;
+}
+.markets .yellow-button{float:right;}
+.markets h3{font-size:2.8em;}
+.markets ul{margin:0 -1.71em ;}
+.markets ul li{
+	list-style:none;
+	display:inline-block;
+	width:100%;
+	vertical-align:top;
+	margin-top:2.3em;
+}
+.markets ul li a{
+	display:block;
+	font-size:1.9em;
+	color:#5e5e5e;
+	text-decoration:none;
+	margin:0 0.9em;
+}
+.markets ul li a img{
+	width:100%;
+	margin-top:0.52631579em;
+}
+
+
+
+
+footer{
+	height:33em;
+	background-color:#15181a;
+	padding-top:3em;
+}
+footer{border:none;text-decoration:none;}
+footer .logo{
+	width:15.8em;
+	height:5.2em;
+	background-image: url(../images/logo_footer.jpg);
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-size:100%;
+	overflow:hidden;
+	text-indent:-200%;	
+}
+footer .copyright{
+	padding-top:0.61538462em;
+	float:right;
+	font-size:1.4em;
+	color:#404344;
+}
+
+
+/* SPECIFIC TO THE CONTACT PAGE */
+body#contact-page .content #col1,
+body#contact-page .content #col2{
+	line-height:1.5em;
+	font-size:1.8em;
+}
+body#contact-page .content #col2{padding-bottom:7em;}
+body#contact-page .content #col1 p,
+body#contact-page .content #col2 p{margin-bottom:0.5em;}
+
+
+body#contact-page .content #col1 label{float:left;padding-right:.4em;}
+body#contact-page .content #col1 label#address{float:none;}
+
+
+@media screen and (min-width: 400px) {
+	.markets ul li{
+		width:50%;
+	}
+	header, .content, .inner-content-with-side-padding {
+		padding-left:4em;
+		padding-right:4em;
+	}
+	nav{		
+		margin-left:-8em; /* counteract the left and right padding that is on .header */
+		left:auto;
+	}
+}
+@media screen and (min-width: 600px) {
+	.markets ul li{
+		width:33.333333333333333%;
+	}
+}
+@media screen and (min-width: 700px) {
+	body#home-page .content #col1{	width:35%;}
+	body#home-page .content #col2{	width:65%;}
+	body#home-page .content #col1 .col-inner{margin-right:4.6em;}
+	.content #col2 .col-inner{margin-right:1em;}
+	
+	body#contact-page .content #col1 .col-inner{margin-right:2em;}
+	body#contact-page .content #col1{	width:15%;}
+	body#contact-page .content #col2{	width:85%;}
+}
+@media screen and (min-width: 900px) {
+	.markets ul li{
+		width:16.66666666667%;
+	}
+}

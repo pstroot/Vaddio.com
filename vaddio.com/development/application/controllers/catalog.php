@@ -13,7 +13,7 @@ class Catalog extends MX_Controller {
 		//set_metadescription($content->description);
 		
 		
-		$this->output->css('/css/catalog.css');
+		$this->output->css('/css/catalog.css?v=03212014');
 		$data['bodyClass'] = "catalog";
 		$content = array();
 		$data['content'] = $this->load->view('catalog_view', $content, true);

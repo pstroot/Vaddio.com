@@ -73,6 +73,18 @@ body.forgot-password .errormessage{
 }
 
 
+body.forgot-password .content h2{
+	clear: left;
+    color: #193C73;
+    font-size: 2.5em;
+    padding-bottom: 0.5em;
+    padding-top: 0.9em;
+}
+body.forgot-password .bodycopy p{
+	font-size: 1.25em;
+	line-height:1.4em;	
+}
+
 @media screen and (min-width: 600px) {
 	html body.login  input[type=password],
 	html body.login  input[type=text]{width:70%;}

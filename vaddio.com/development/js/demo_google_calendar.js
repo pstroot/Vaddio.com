@@ -4,17 +4,17 @@ $(document).ready(function() {
 	var minTime = 0;
 	var maxTime = 0;
 	
-	var calendarData = new Array(); // an array of data objectes that will be retrieved from google calendar
-	var roomsArray = _roomsArray /* this is set in demos_calendar_view.php */
-	var times = new Array();// create a new array that will hold all of our timeslots.
-	var activeEvent = null; // the clicked event. We'll change this to "Pending" if the user confirms the time
-	var eventsRendered = new Array(); // keep track of which events were rendered so that we don't re-render them
+	var calendarData = new Array(); 	// an array of data objects that will be retrieved from google calendar
+	var roomsArray = _roomsArray 		// this is set in demos_calendar_view.php, it's a json encoded string of room information (room_id, calendar_id, room_name)
+	var times = new Array(); 			// create a new array that will hold all of our possible timeslots.
+	var activeEvent = null; 			// the clicked event. We'll change this to "Pending" if the user confirms the time
+	var eventsRendered = new Array();	 // keep track of which events were rendered so that we don't re-render them
+	// var _centralTimeOffset - set in demos_calendar_view.php because we want to use PHP go get the server time. it's value is either -5 or -6 depending on daylight savings
 	
 	var gmtHours = new Date().getTimezoneOffset()/60;
 	if (gmtHours <= 9){ gmtHours = "0"+gmtHours; }
-	var timezoneAdjust = "-" + gmtHours + ":00";
-	//var timezone_name = hideAlert.determine().name();
-
+	// timezone offset of the user
+	var timezoneAdjust = "-" + gmtHours + ":00"; // this is used when retrieving events from google maps, in case the google map timezone is different from ours.
 
 	// utility function to find out if an array contains a string. (needed for IE<9)
 	if(!Array.prototype.indexOf) {
@@ -28,6 +28,7 @@ $(document).ready(function() {
 		};
 	}
 	
+
 	
 	// modal dialog for confirming a timeslot click
 	$( "#dialog-modal" ).dialog({
@@ -71,20 +72,16 @@ $(document).ready(function() {
 		maxTime: _maxTime, /* this is set in demos_calendar_view.php */
 		events: [ ],		
 		header: {
-				left: 'prev,next today',
-				center: 'title',
-				right: 'month,agendaWeek'
+			left: 'prev,next today',
+			center: 'title',
+			right: 'month,agendaWeek'
 		},
 		eventRender: function(event, element, view){},
 		loading:function(isLoading,view){},
 		dayClick: function(){}, 
 		eventClick: function(calEvent, jsEvent, view) {
-			
-			var timezone_name = getTimezoneDisplay(calEvent.start);
-			var timezonehours = getTimezoneOffsetDisplay(calEvent.start);
-
+			var timezone_name = getTimezoneDisplay(calEvent.start);		
 			activeEvent = calEvent;
-
 			var roomString = "";
 			for (var i = 0; i<calEvent.calendars.length; i++) { 
 				if(i > 0 && i == calEvent.calendars.length-1) roomString += " and ";
@@ -93,13 +90,23 @@ $(document).ready(function() {
 			}
 			
 			$( "#dialog-modal p" ).html("Would you like to request this Demo time and location?<BR>Rooms: "+roomString+"<BR>" +  $.fullCalendar.formatDate(calEvent.start,"MMMM  d '('dddd')'") + "<BR>"+$.fullCalendar.formatDate(calEvent.start,"h:mm tt")+" - "+$.fullCalendar.formatDate(calEvent.end,"h:mm tt")+"<BR><BR><font style='font-size:14px;font-weight:bold;'>(Please note that times are given in "+timezone_name+") </font>");
-			$( "#dialog-modal input[name=start]" ).val(calEvent.start.format("isoDateTime") + timezonehours)
-			$( "#dialog-modal input[name=end]" ).val(calEvent.end.format("isoDateTime") + timezonehours)
+			
+			var startTime = calEvent.start
+			var endTime = calEvent.end
+			//console.log("clicked start: " + startTime); //i.e. Date {Tue Feb 18 2014 08:00:00 GMT-0500 (Eastern Standard Time)}
+			//console.log("clicked end: " + endTime);   // i.e. Date {Tue Feb 18 2014 09:00:00 GMT-0500 (Eastern Standard Time)}
+
+			var usersTimezone = new Date().getTimezoneOffset()/-60
+			var timezoneDiff = (usersTimezone - _centralTimeOffset); // difference between the user's computer and the server time. Important because the fullcalendar contains times with the user's computer timezone.
+			
+			//startTime = correctTime(startTime,timezoneDiff)
+			//endTime = correctTime(endTime,timezoneDiff)
+
+			$( "#dialog-modal input[name=start]" ).val(startTime.toISOString())
+			$( "#dialog-modal input[name=end]" ).val(endTime.toISOString())
 			
 			$( "#dialog-modal input[name=calendar_data]" ).val(JSON.stringify(calEvent.calendars))
 			$( "#dialog-modal" ).dialog( "open" );
-			// change the border color just for fun
-			//$(this).css('background-color', 'red');
 		},
 		eventMouseover: function( event, jsEvent, view ){
 			$(this).find('.fc-event-skin').css('background-color', '#e8762e');
@@ -129,12 +136,9 @@ $(document).ready(function() {
 	   
 	});
 	
-	
-	
 	function populateWithDefaultTimeslots(view){
 		 //alert('The new title of the view is ' + view.visStart + " - " + view.visEnd);
 		//$('#calendar').fullCalendar('removeEvents');
-		
 		
 		times = new Array();
 	
@@ -144,11 +148,14 @@ $(document).ready(function() {
 		// get the first date that is being displayed on the screen
 		var loopDate = new Date();
 		loopDate.setTime(view.visStart.valueOf());
-			
+		
+		
 		// loop through each date
 		while (loopDate.valueOf() < view.visEnd.valueOf()) {
+			
 			var dayOfWeek = $.fullCalendar.formatDate(loopDate,"dddd");
 			
+			// this may not be necessary because weekends=false when initializing fullCalendar, but it's here just in case
 			if(dayOfWeek == "Saturday" || dayOfWeek == "Sunday"){
 				loopDate.incrementDays(1);
 				continue;
@@ -158,42 +165,43 @@ $(document).ready(function() {
 			var startAt = new Date(loopDate.valueOf());
 			startAt.setMinutes ( startAt.getMinutes() + (_minTime*60) ); // set to the time of the first timeslot of the day
 			
-			
 			var endTime = new Date(loopDate.valueOf());
 			endTime.setMinutes ( endTime.getMinutes() + (_maxTime*60) ); // set to the time of the last timeslot of the day
 					
 			// loop through each timeslot and push it into the "times" array
-			for ($i = 0; startAt.valueOf() < endTime.valueOf(); $i ++) {  // 1800 = half hour, 86400 = one day
+			while ( startAt.valueOf() < endTime.valueOf() ) {  // 1800 = half hour, 86400 = one day
 				
 				var endAt = new Date ( startAt );
-				endAt.setMinutes ( startAt.getMinutes() + _increment ); //* _increment is set in demos_calendar_view.php */
-				var stringID = startAt+endAt;
+				endAt.setMinutes ( startAt.getMinutes() + _increment ); // _increment is set in demos_calendar_view.php */
+				var stringID = startAt+endAt; // create a unique ID for this timeslot so we can compare it to existing times, preventing duplicates
 				
-				if(eventsRendered.indexOf(stringID) == -1){ // if this timeslot has not already been rendered!
-					if(startAt.valueOf() > rightnow.valueOf()){	
-						var event = new Object();       
+				if(eventsRendered.indexOf(stringID) == -1){ 	// if this timeslot has not already been rendered!
+					if(startAt.valueOf() > rightnow.valueOf()){	// make sure that the timeslot we're recording is not in the past
+						var event = new Object();       		// this objects attributes are formatted especially to work with fullCalendar
 						event.title = 'Available';
 						event.start = startAt;
 						event.end = endAt;
 						event.allDay = false;		
 						event.ignoreTimezone = true;
-				
 						times.push(event);
 					}	
 				}
 				
-				startAt = endAt;
+				startAt = endAt; // reset startAt so it will be ready for the next loop iteration
 				
 			}
 			
 			loopDate.incrementDays(1); // append the date by one day.
 		}
-	
+		
+		
+		/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		So Far So Good, We now have a calendar full of timelots that all say "Available", 
+		Next, to retrieve google calendar events and remove any timeslots that overlap existing events.
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 		calendarData = new Array();
-		googleMapRoomIndex = 0;
-		
+		googleMapRoomIndex = 0;		
 		inspectGoogleMap(googleMapRoomIndex, view.visStart, view.visEnd)
-		
 	}
 	
 	
@@ -219,7 +227,7 @@ $(document).ready(function() {
 				dataType: 'jsonp',
 				url: feedURL,
 				error: function(jqXHR, textStatus, errorThrown) {
-					alert("Sorry, we cannot setup a call to access google calendar using this browser.");;
+					alert("Sorry, we cannot setup a call to access google calendar using this browser.");
 					//alert(errorThrown);
 				},
 				success: function(data) {
@@ -238,6 +246,12 @@ $(document).ready(function() {
 			});
 			
 		} else {
+			
+			
+			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			We now have an array named "calendarData" containing all of our google map events for the week that is being displayed.
+			The next step is to loop through all possible timeslots and remove any timeslots that overlap with a google event.
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */		
 			showAlert("Checking Availability");
 			setTimeout(function(){checkTimeslots();}, 1);
 			//checkTimeslots();		
@@ -246,7 +260,6 @@ $(document).ready(function() {
 	
 	
 	function checkTimeslots(t){
-			
 		var availableTimes = new Array(); 
 		for (var t = 0; t<times.length; t++) { 
 			var tStartTime = times[t]["start"].valueOf();
@@ -276,13 +289,14 @@ $(document).ready(function() {
 				
 				if(calEvents != null){															// if there are ANY events scheduled for the current room
 					for (var i = 0; i<calEvents.length; i++) {									// Loop through each event from the current room we're looping on																		
-						if(calEvents[i].start != null){
+						if(calEvents[i].start != null && calEvents[i].start.dateTime != null){
 							var calStartTime = dateFromISO8601(calEvents[i].start.dateTime.toString()).valueOf();
 							var calEndTime = dateFromISO8601(calEvents[i].end.dateTime.toString()).valueOf();					
 							if((tStartTime < calEndTime) && (tEndTime > calStartTime)){ 							// If there is an overlap between start and end dates
+								//console.log("OVERLAP! calendar start time is " + calEvents[i].start.dateTime + " : slot start time is "+times[t]["start"])
 								roomTaken = true 																	// One of our rooms is NOT available for this timeslot, so update this flag to TRUE				
 							}
-						}					
+						}										
 					}
 				}
 					
@@ -294,16 +308,22 @@ $(document).ready(function() {
 				
 			}
 			if(thisTimeIsAvailable == true){
-				times[t]["title"] = "Available"; //calTitles.join(", ") ;// + " ("+times[t]["start"].getTimezoneOffset()+")"; // print the timezone offset for testing
+				times[t]["title"] = "Available"; 
 				times[t]["calendars"] = calendarDataForThisTimeslot;
-				//alert("Available timeslot = " + JSON.stringify(calendarDataForThisTimeslot) )
 				availableTimes.push(times[t]); // found an available room, place it in the calendar and move to the next timeslot
 			}
 		}
 		
-		
 		hideAlert();
 		
+		
+		/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Now we have an array named availableTimes that contains all of our available timeslots, with slots removed that have been taken by existing google events.
+		This array holds objects that will populate our fullCalendar widget.
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+		
+		
+		// insert our "availabletimes" array into the fullCalendar. It will now display on-screen
 		$('#calendar').fullCalendar( 'addEventSource', availableTimes ) 
 		
 		// If there are no available timeslots in this calendar period, progress to the next one.
@@ -339,24 +359,34 @@ $(document).ready(function() {
 	}
 	
 
-	
+	var response_data = new Array()
 	function insertPendingEvent(start,end,calendar_data,index,response_data){
+		//console.log("INSERT PENDING EVENT")
+		//console.log("START: "+start)
+		//console.log("END: "+end)
+		
 		if(index == null) index = 0;
 		if(response_data == null) response_data = new Array();
 		$( "#dialog-modal" ).dialog('close');
 		
 		var arr_from_json = JSON.parse( calendar_data );
 		
+		//alert ("Start time sent to form input: " + start);
+		//alert ("End time sent to form input: " + end);
+		
 		// ALL DONE SAVING TO GOOGLE CALENDAR!
 		if(index > arr_from_json.length - 1){
-			var timezone = "Central Time (North America)"; //getTimezoneDisplay(dateFromISO8601(start));
-			var startDate = $.fullCalendar.parseDate( start );
-			var endDate = $.fullCalendar.parseDate( end );
-			var formattedStart = $.fullCalendar.formatDate(startDate,"yyyy-MM-dd H:mm:ss");
-			var formattedEnd = $.fullCalendar.formatDate(endDate,"yyyy-MM-dd H:mm:ss");	
-			var displayText = $.fullCalendar.formatDate(startDate,"dddd, MMM  d") + "<br>"+$.fullCalendar.formatDate(startDate," h:mm TT")+" - "+$.fullCalendar.formatDate(endDate,"h:mm TT");
-			//displayText += " (" + timezone + ")"
 			
+			var timezone = getTimezoneDisplay(dateFromISO8601(start));
+						
+			 var dteStart = new Date(start); 
+			 var dteEnd = new Date(end); 
+			
+			var formattedDay = $.fullCalendar.formatDate(dteStart,"dddd, MMM  d");
+			var formattedStart = $.fullCalendar.formatDate(dteStart," h:mm TT");
+			var formattedEnd   = $.fullCalendar.formatDate(dteEnd,  " h:mm TT");	
+			var displayText = formattedDay + "<br>"+formattedStart+" - "+formattedEnd;
+
 			activeEvent.title = "Pending";
 			activeEvent.backgroundColor = "#CCCCCC";
 			$('#calendar').fullCalendar('updateEvent', activeEvent);
@@ -395,6 +425,8 @@ $(document).ready(function() {
 				response_data.push(data);
 				showAlert("Timeslot saved for " +  room_name, false);
 				if(data.result == "success"){
+					//alert ("Start time received back from Google Calendar: " + data.start);
+					//alert ("End time received back from Google Calendar: " + data.end);
 					insertPendingEvent(start,end,calendar_data,++index,response_data)
 				} else {
 					alert("There was a problem updating the google calendar");
@@ -421,37 +453,12 @@ $(document).ready(function() {
 	
 		var firstParenPos = dateObj.toString().indexOf("(")+1;
 		var lastParenPos = dateObj.toString().indexOf(")");
-		var timezone_name= "Central Time (North America)"; //dateObj.toString().substr(firstParenPos,lastParenPos-firstParenPos) 
+		var timezone_name= dateObj.toString().substr(firstParenPos,lastParenPos-firstParenPos) 
 		
-		// if timezone name is nothing, maybe the browser formats differently, so lets try a new method
-		if(timezone_name == ""){
-			var lastSpace = dateObj.toString().lastIndexOf(" ");
-			var timezone_name= dateObj.toString().substr(0,lastSpace) 
-			var lastSpace = timezone_name.lastIndexOf(" ");
-			var timezone_name = timezone_name.substr(lastSpace+1) 
-			if (timezone_name == "CST") timezone_name = "Central Standard Time";
-			if (timezone_name == "CDT") timezone_name = "Central Daylight Time";
-		}
-		//if(appendShortcode){
-			if(timezone_name == "Central Daylight Time")
-				timezone_name += " - CDT";
-			else if (timezone_name == "Central Standard Time")
-				timezone_name += " - CST";
-		//}
 		return timezone_name;	
 		
 	} 
-	function getTimezoneOffsetDisplay(dateObj) { 
-		var timezoneminutes = dateObj.getTimezoneOffset();
-		var timezonehours = PadDigits(dateObj.getTimezoneOffset()/60,2) + ":00";
-		if (timezoneminutes < 0)
-			timezonehours = "+" + timezonehours;
-		else
-			timezonehours = "-" + timezonehours;
-			
-		return timezonehours;
-	}
-	
+
 	
 	// this function is used instead of our typical Date() function because IE8 and lower cannot parse the ISO8601 Date format provide by the google calendar API
 	function dateFromISO8601(isostr) {
@@ -459,6 +466,7 @@ $(document).ready(function() {
 		 return new Date(parts[0], parts[1] - 1, parts[2], parts[3], parts[5], parts[5]);
 	}
 
+	_timesetter = calcTime(_timesetter,_centralTimeOffset);
 	ShowClock();
 	
 	
@@ -479,7 +487,7 @@ Date.prototype.incrementDays = function(n) {
 
 /* _timesetter variable is set in demos_calendar_view.php (because it requires php) */
 function ShowClock(){
-	setTimeout("ShowClock();",1000);
+	//setTimeout("ShowClock();",1000);
 	_timesetter.setTime(_timesetter.getTime()+1000);
 	var hhN  = _timesetter.getHours();
 	if(hhN > 12){
@@ -499,4 +507,27 @@ function ShowClock(){
 	var ss  = String(_timesetter.getSeconds());
 	TimeNow = ((hh < 10) ? " " : "") + hh + ((mm < 10) ? ":0" : ":") + mm + " " + AP ; //+ ((ss < 10) ? ":0" : ":") + ss ;
 	$('.display-time .time').text(TimeNow)
+}
+
+
+
+// given a correct date and time, adjust to a different timezone. offset = the GMT offset.
+function calcTime(d, offset) {
+	// convert to msec
+	// add local time zone offset
+	// get UTC time in msec
+	utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+	// create new Date object for different city
+	// using supplied offset
+	nd = new Date(utc + (3600000*offset));
+	// return time as a string
+	return nd;
+}
+
+
+
+// adjusts the given date/time by the number of hours indicated by offsetHours. This is needed when the correct time is displayed by the incorrect timezone.
+function correctTime(d,offsetHours) {
+	nd = new Date(d.getTime() + (offsetHours * 60 * 60 * 1000));
+	return nd;
 }
