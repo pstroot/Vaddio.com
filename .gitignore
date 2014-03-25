@@ -111,13 +111,15 @@ vaddio.com/development/application/logs
 
 vaddio.com/development/application/config/production/database.php
 vaddio.com/development/application/config/production/config.php
-vaddio.com/development/application/config/staging
+vaddio.com/development/application/config/staging/database.php
+vaddio.com/development/application/config/staging/config.php
 vaddio.com/development/application/config/development-mac
 vaddio.com/development/application/config/development/config.php
 vaddio.com/development/application/config/development/database.php
 
 vaddio.com/development/system/libraries/Zend
 vaddio.com/development/admin
+vaddio.com/development/email
 vaddio.com/development/admin/config.php
 vaddio.com/development/admin/config (live).php
 vaddio.com/development/admin/config (staging).php
